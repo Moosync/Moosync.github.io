@@ -1,3 +1,3 @@
 if (window.location.pathname.includes('ytoauth2callback')) {
-    console.log(window.location)
+    open('moosync://ytoauth2callback' + window.location.search)
 }
