@@ -1,5 +1,3 @@
-if (window.location.pathname === '/ytoauth2callback/') {
+if (window.location.pathname.includes('ytoauth2callback')) {
     console.log(window.location)
 }
-
-console.log(window.location)
