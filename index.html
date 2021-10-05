@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/210f6e27a7.js" crossorigin="anonymous"></script>
+</head>
+
+
+
+<body>
+    <div class="container">
+        <div class="navbar">
+            <div class="logo-container">
+                <img class="logo" src="assets/logo.svg" alt="moosync logo" />
+            </div>
+            <div class="socials">
+                <div class="logo-container">
+                    <a href="https://github.com/Moosync/moosync-app">
+                        <img class="logo" src="assets/github.svg" alt="github logo" />
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="main-content">
+            <div class="title">
+                Moosync, a simple music player
+            </div>
+            <div class="cta-ctn inline">
+                <ul>
+                    <li>
+                        <div onclick="location.href='#';" style="cursor: pointer;" class="download android">
+                            <i class="fab fa fa-windows fa-3x"></i>
+                            <span class="df">Download for</span>
+                            <span class="dfn">Windows</span>
+                        </div>
+                    </lI>
+                    <li>
+                        <div onclick="location.href='#';" style="cursor: pointer;" class="download apple">
+                            <i class="fab fa fa-linux fa-3x"></i>
+                            <span class="df">Download for</span>
+                            <span class="dfn">Linux</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<style>
+    body {
+        font-family: 'Open Sans', sans-serif;
+        background: #212121;
+        color: #ffffff;
+    }
+
+    .navbar {
+        height: 30px;
+        display: flex;
+    }
+
+    .logo,
+    .logo-container {
+        height: 100%;
+    }
+
+    .socials {
+        margin-left: auto;
+    }
+
+    .main-content {
+        margin-top: 50px;
+    }
+
+    .title {
+        margin-top: 300px;
+        width: 100%;
+        text-align: center;
+        font-size: 50px;
+    }
+
+    ul {
+        width: 100%;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    li,
+    .dl-btn {
+        display: inline-block;
+        margin: 10px;
+    }
+
+    .download {
+        width: 200px;
+        height: 75px;
+        background: #65CB88;
+        float: left;
+        border-radius: 5px;
+        position: relative;
+        color: #000;
+        cursor: pointer;
+        border: 1px solid #fff;
+    }
+
+    .download>.fa {
+        color: #000;
+        position: absolute;
+        top: 50%;
+        left: 15px;
+        transform: translateY(-50%);
+    }
+
+    .df,
+    .dfn {
+        position: absolute;
+        left: 70px;
+    }
+
+    .df {
+        top: 20px;
+        font-size: .68em;
+    }
+
+    .dfn {
+        top: 33px;
+        font-size: 1.08em;
+    }
+
+    .download:hover {
+        -webkit-filter: invert(100%);
+        filter: invert(100%);
+    }
+</style>
