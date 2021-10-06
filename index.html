@@ -5,20 +5,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Moosync</title>
     <script src="https://kit.fontawesome.com/210f6e27a7.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
+
 </head>
 
 
 
 <body>
-    <div class="container">
-        <div class="navbar">
+    <div class="dots-container">
+        <div class="dots"></div>
+    </div>
+
+    <div class="main-container">
+        <div class="navbar-custom">
             <div class="logo-container">
                 <img class="logo" src="assets/logo.svg" alt="moosync logo" />
             </div>
             <div class="socials">
                 <div class="logo-container">
+                    <a href="/legal/privacy" class="me-3">
+                        Privacy policy
+                    </a>
                     <a href="https://github.com/Moosync/moosync-app">
                         <img class="logo" src="assets/github.svg" alt="github logo" />
                     </a>
@@ -26,29 +36,83 @@
             </div>
         </div>
         <div class="main-content">
-            <div class="title">
-                Moosync, a simple music player
-            </div>
-            <div class="cta-ctn inline">
-                <ul>
-                    <li>
-                        <div onclick="location.href='#';" style="cursor: pointer;" class="download android">
-                            <i class="fab fa fa-windows fa-3x"></i>
-                            <span class="df">Download for</span>
-                            <span class="dfn">Windows</span>
+            <div class="container container-fluid">
+                <div class="row justify-content-center">
+                    <div class="col col-auto custom-card">
+                        <div class="title">
+                            <div class="d-flex g-0 justify-content-center">
+                                <img class="logo-m me-4" src="assets/logo-m.svg" alt="logo but only m" />
+                                <b>Moosync</b>
+                            </div>
+
+                            <div class="desc">
+                                A simple music player
+                            </div>
                         </div>
-                    </lI>
-                    <li>
-                        <div onclick="location.href='#';" style="cursor: pointer;" class="download apple">
-                            <i class="fab fa fa-linux fa-3x"></i>
-                            <span class="df">Download for</span>
-                            <span class="dfn">Linux</span>
+                        <div class="download-btns container-fluid">
+                            <div class="row justify-content-center mb-5 mt-4">
+                                <div class="col col-auto">
+                                    <div onclick="location.href='#';" style="cursor: pointer;" class="download android">
+                                        <i class="fab fa fa-windows fa-3x"></i>
+                                        <span class="df">Download for</span>
+                                        <span class="dfn">Windows</span>
+                                    </div>
+                                </div>
+                                <div class="col col-auto">
+                                    <div onclick="location.href='#';" style="cursor: pointer;" class="download apple">
+                                        <i class="fab fa fa-linux fa-3x"></i>
+                                        <span class="df">Download for</span>
+                                        <span class="dfn">Linux</span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </li>
-                </ul>
+
+                        <div class="container container-fluid">
+                            <div class="row g-0 justify-content-center">
+                                <div class="col-auto">
+                                    <div class="features-ul">
+                                        <div class="list-title">Features:</div>
+
+                                        <li>Play audio files on your desktop.</li>
+                                        <li>Seamlessly integrate your Spotify and Youtube playlists.</li>
+                                        <li>Add Spotify and Youtube tracks and playlists by URLs.</li>
+                                        <li>Play songs directly from youtube using youtube embed</li>
+                                        <li>Scrobble your tracks on LastFM.</li>
+                                        <li>Get music recommendations directly from Spotify, Youtube and LastFM</li>
+                                        <li>Mix and match songs from different providers in a single playlist</li>
+                                        <li>Easy to use interface</li>
+                                        <li>Customizable theme engine</li>
+                                        <li>Develop own apps on top of Moosync Extension API</li>
+                                        <li>Available on Windows and Linux</li>
+                                    </div>
+                                    <div class="notice">
+                                        <div class="list-title-notice mt-4">Notice:</div>
+                                        Moosync does not track any user data.<br />Moosync is not responsible for data
+                                        tracked
+                                        using
+                                        third
+                                        party
+                                        integrations.<br />Some private user data may be stored in your device
+                                        locally.<br />By
+                                        signing in
+                                        to Youtube,
+                                        Spotify or LastFM you agree to their respective<br /> privacy policy and terms
+                                        and
+                                        conditions<br /> <br />
+                                        Moosync's use and transfer to any other app of information received from Google
+                                        APIs<br /> will adhere to the Google API
+                                        Services User Data Policy, including the Limited Use requirements.
+                                        </divc>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+
         </div>
-    </div>
 </body>
 
 </html>
@@ -56,11 +120,39 @@
 <style>
     body {
         font-family: 'Open Sans', sans-serif;
-        background: #212121;
-        color: #ffffff;
+        color: #ffffff
     }
 
-    .navbar {
+    .dots-container {
+        position: absolute;
+        width: 100%;
+        bottom: -150px;
+        top: 0;
+        z-index: -999;
+        overflow: hidden;
+        background-color: #111111;
+
+    }
+
+    .dots {
+        position: absolute;
+        top: 0;
+        left: -100%;
+        transform: rotate(45deg);
+        background: url(assets/dots.svg);
+        width: 500%;
+        height: 500%;
+        opacity: 0.2;
+    }
+
+
+    .main-container {
+        margin-top: 15px;
+        margin-left: 8px;
+        margin-right: 8px;
+    }
+
+    .navbar-custom {
         height: 30px;
         display: flex;
     }
@@ -70,22 +162,28 @@
         height: 100%;
     }
 
+    .logo-container>a {
+        color: gray;
+        text-decoration: none;
+    }
+
+    .logo-m {
+        height: 80px;
+    }
+
     .socials {
         margin-left: auto;
     }
 
-    .main-content {
-        margin-top: 50px;
-    }
 
     .title {
-        margin-top: 300px;
+        margin-top: 0px;
         width: 100%;
         text-align: center;
-        font-size: 50px;
+        font-size: 60px;
     }
 
-    ul {
+    .download-ul {
         width: 100%;
         text-align: center;
         margin: 0;
@@ -95,30 +193,30 @@
         transform: translateY(-50%);
     }
 
-    li,
     .dl-btn {
         display: inline-block;
         margin: 10px;
     }
 
     .download {
-        width: 200px;
-        height: 75px;
-        background: #65CB88;
-        float: left;
+        width: 230px;
+        height: 105px;
         border-radius: 5px;
         position: relative;
-        color: #000;
+        color: #fff;
         cursor: pointer;
-        border: 1px solid #fff;
     }
 
     .download>.fa {
-        color: #000;
+        color: #65CB88;
         position: absolute;
         top: 50%;
         left: 15px;
         transform: translateY(-50%);
+    }
+
+    .download-btns {
+        margin-top: 80px;
     }
 
     .df,
@@ -128,17 +226,52 @@
     }
 
     .df {
-        top: 20px;
-        font-size: .68em;
+        top: 30px;
+        font-size: 16px;
     }
 
     .dfn {
-        top: 33px;
-        font-size: 1.08em;
+        top: 48px;
+        font-size: 20px;
     }
 
-    .download:hover {
-        -webkit-filter: invert(100%);
-        filter: invert(100%);
+    .download:hover .fa {
+        color: #66ec95;
+    }
+
+    .list-title {
+        font-size: 26px;
+    }
+
+    .list-title-notice {
+        font-size: 18px;
+    }
+
+    .notice {
+        color: #727272;
+
+    }
+
+    .desc {
+        height: 30px;
+        font-weight: 100;
+        font-size: 30px;
+    }
+
+    .extra-content {}
+
+    .features-ul {
+        width: max-content;
+    }
+
+    .features-container {
+        width: max-content;
+    }
+
+    .custom-card {
+        background-color: #212121;
+        padding: 40px 20px;
+        border-radius: 15px;
+        margin-bottom: 35px;
     }
 </style>
