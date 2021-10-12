@@ -1,1 +1,1 @@
-open('com.moosync://spotifyoauthcallback' + window.location.search)
+open('moosync://spotifyoauthcallback' + window.location.search)

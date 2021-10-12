@@ -1,1 +1,1 @@
-open('com.moosync://ytoauth2callback' + window.location.search)
+open('moosync://ytoauth2callback' + window.location.search)

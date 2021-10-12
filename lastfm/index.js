@@ -1,1 +1,1 @@
-open('com.moosync://lastfmCallback' + window.location.search)
+open('moosync://lastfmCallback' + window.location.search)
