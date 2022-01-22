@@ -9,6 +9,7 @@
   margin: 0;
   padding: 0;
   text-decoration: none;
+  font-family: "Poppins", sans-serif;
 }
 
 .main {
@@ -120,6 +121,10 @@
   text-transform: uppercase;
   font-size: 1rem;
   letter-spacing: 0.1rem;
+  color: white;
+}
+
+#heading__info__text__1 {
   color: var(--green-primary);
 }
 
@@ -130,6 +135,17 @@
   color: white;
   text-align: center;
   line-height: 6.5rem;
+}
+
+.circle__div__0 {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url("../img/headerbg.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 .circle__div__1 {
@@ -203,9 +219,85 @@
 
 .icons {
   height: 1.5rem;
-  width: 1.5rem;
   margin-right: 10px;
   object-fit: cover;
+}
+
+.moosync__usage {
+  padding: 5rem 0;
+  background-color: #141414;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.moosync__usage__heading {
+  margin-bottom: 2.5rem;
+  display: block;
+  text-align: center;
+  font-size: 2rem;
+  color: white;
+}
+
+.usage__icons__text {
+  width: 45%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#usage__icons__text__mid {
+  width: 80%;
+  margin-bottom: 2rem;
+}
+
+#usage__mid__img {
+  width: 80%;
+  object-fit: cover;
+}
+
+.usage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.usage__icons {
+  width: 5rem;
+  object-fit: cover;
+}
+
+.usage__text {
+  width: 10rem;
+  padding: 1rem 0;
+  text-align: center;
+}
+
+.moosync__video {
+  padding: 5rem 0;
+  background-color: #202125;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#video__info__text__1 {
+  width: 75%;
+  text-align: center;
+  text-transform: none;
+}
+
+.moosync__video__player {
+  width: 75%;
+  height: 50%;
+  margin: 5rem 0;
+  border: none;
+  border-radius: 1rem;
 }
 
 .footer__section {
@@ -280,7 +372,7 @@
 }
 
 .email__input {
-  width: 15rem;
+  width: 20vw;
   padding: 0.75rem 1.25rem;
   font-family: "Poppins", sans-serif;
   font-size: 1rem;
