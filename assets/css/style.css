@@ -286,7 +286,6 @@
   font-size: 1rem;
   border: none;
   border-radius: 5px;
-  cursor: pointer;
 }
 
 .email__input:focus {
