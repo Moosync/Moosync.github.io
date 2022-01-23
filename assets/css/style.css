@@ -429,63 +429,56 @@
   font-weight: 300;
   color: white;
 }
-.moosyn_testinomial
-{
+.moosyn_testinomial {
   padding: 5rem 0;
   background-color: #141414;
 }
-.appreaciation_text
-{
+.appreaciation_text {
   font-size: 1rem;
-  
 }
-.align_comments
-{
-  display:flex;
+.align_comments {
+  display: flex;
   flex-direction: row;
   border-spacing: 5rem;
-
 }
-.message
-{
-  border-radius: 1rem,1rem;
+.message {
+  border-radius: 1rem, 1rem;
   margin: 4rem;
   background-color: white;
-  clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 54% 76%, 50% 89%, 47% 76%, 0% 75%);
- text-align: self;
- border-radius: 15px;
- size-adjust: content;
-
+  clip-path: polygon(
+    0% 0%,
+    100% 0%,
+    100% 75%,
+    54% 76%,
+    50% 89%,
+    47% 76%,
+    0% 75%
+  );
+  text-align: self;
+  border-radius: 15px;
+  size-adjust: content;
 }
 
-.personName
-{
-  color:white;
-  
+.personName {
+  color: white;
 }
-.images
-{
+.images {
   width: 1.75rem;
   height: 1.75rem;
   object-fit: cover;
   border-radius: 50%;
 }
-.personAbout
-{
-  color:white;
+.personAbout {
+  color: white;
   font-size: 0.5rem;
 }
-.fordata
-{
-
-  display:flex;
+.fordata {
+  display: flex;
   flex-direction: row;
- justify-content: center;
-  
+  justify-content: center;
 }
-.personInfo
-{
-  padding-left: .5rem;
-  display:flex;
-  flex-direction:column;
+.personInfo {
+  padding-left: 0.5rem;
+  display: flex;
+  flex-direction: column;
 }

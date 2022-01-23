@@ -1,215 +1,237 @@
 <!DOCTYPE html>
-<html lang = "en">
-    <!-- Head Starts Here -->
-    <head>
-        <meta charset = "UTF-8" \>
-        <meta name = "description" content = "A simple music player" \>
-        <meta name = "keywords" content = "Moosync, Spotify, Youtube, Songs, Playlist" \>
-        <meta name = "author" content = "Moosync" \>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name = "viewport" content = "width = device-width, initial-scale=1.0" \>
-        <meta name="theme-color" content="#ffffff">
-        <meta name="msapplication-TileColor" content="#da532c">
+<html lang="en">
 
-        <link rel="apple-touch-icon" sizes="180x180" href="./assets/img/apple-touch-icon.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="./assets/img/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="./assets/img/favicon-16x16.png">
-        <link rel="manifest" href="./assets/img/site.webmanifest">
-        <link rel="mask-icon" href="./assets/img/safari-pinned-tab.svg" color="#5bbad5">
+<head>
+    <meta charset="UTF-8" \ />
+    <meta name="description" content="A simple music player" \ />
+    <meta name="keywords" content="Moosync, Spotify, Youtube, Songs, Playlist" \ />
+    <meta name="author" content="Moosync" \ />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width = device-width, initial-scale=1.0" \ />
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="msapplication-TileColor" content="#da532c" />
 
-        <link rel="stylesheet" type="text/css" href="./assets/css/style.css" >
-        <title>Moosync</title>
-    </head>
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/img/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/img/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/img/favicon-16x16.png" />
+    <link rel="manifest" href="./assets/img/site.webmanifest" />
+    <link rel="mask-icon" href="./assets/img/safari-pinned-tab.svg" color="#5bbad5" />
 
-    <!-- Body Starts Here -->
-    <body class="main">
-        <nav class="nav__bar">
-            <a href="#home__page">
-                <span class="title__logo">
-                    <span class="logo">
-                        <img src="./assets/img/logo.svg" title="Moosync" alt="moosync logo" class="logo__img">
-                    </span>
-                    <span class="title">moosync</span>
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
+    <title>Moosync</title>
+</head>
+
+<body class="main">
+    <nav class="nav__bar">
+        <a href="#home__page">
+            <span class="title__logo">
+                <span class="logo">
+                    <img src="./assets/img/logo.svg" title="Moosync" alt="moosync logo" class="logo__img" />
                 </span>
-            </a>
-            <span class="navbar__buttons">
-                <a href="#home__page"><button class="navigation__buttons">Home</button></a>
-                <button class="navigation__buttons">Privacy Policy</button>
-                <button class="navigation__buttons">Documentation</button>
-                <a href="https://discord.gg/A5yePzN2" target="_blank"><button id="join__us" class="navigation__buttons">Join Us</button></a>
+                <span class="title">moosync</span>
             </span>
-        </nav>
-        <header id="home__page" class="heading__page">
-            <span id="heading__info__text__1" class="info__text__1">switch to the audio system of 21st century</span>
-            <span class="title__line">It's the music player for community</span>
-            <div class="circle__div__container">
-                <div id="circle__div__1" class="circle__div">
-                    <div id="circle__div__2" class="circle__div">
-                        <div id="circle__div__3" class="circle__div">
-                            <img src="./assets/img/playbutton.svg" title="Play" alt="" class="play__button__img">
-                        </div>
+        </a>
+        <span class="navbar__buttons">
+            <a href="#home__page"><button class="navigation__buttons">Home</button></a>
+            <button class="navigation__buttons">Privacy Policy</button>
+            <button class="navigation__buttons">Documentation</button>
+            <a href="https://discord.gg/A5yePzN2" target="_blank"><button id="join__us" class="navigation__buttons">Join
+                    Us</button></a>
+        </span>
+    </nav>
+    <header id="home__page" class="heading__page">
+        <span id="heading__info__text__1" class="info__text__1">switch to the audio system of 21st century</span>
+        <span class="title__line">It's the music player for community</span>
+        <div class="circle__div__container">
+            <div id="circle__div__1" class="circle__div">
+                <div id="circle__div__2" class="circle__div">
+                    <div id="circle__div__3" class="circle__div">
+                        <img src="./assets/img/playbutton.svg" title="Play" alt="" class="play__button__img" />
                     </div>
                 </div>
             </div>
-            <div class="buttons">
-                <button title="Click to download for WindowsOS" class="link__buttons">
-                    <img src="./assets/img/windows.svg" alt="" class="icons">Download
-                </button>
-                <button title="Click to download for LinuxOS" class="link__buttons">
-                    <img src="./assets/img/linux.svg" alt="" class="icons">Download
-                </button>
-            </div>
-        </header>
-        <section class="moosync__usage">
-            <p class="moosync__usage__heading">Why use Moosync</p>
-            <div class="usage__icons__text">
-                <span class="usage">
-                        <img src="./assets/img/usageIcon1.svg" alt="" class="usage__icons">
-                        <span class="usage__text">Customizable theme engine & Easy to use interface</span>
-                </span>
-                <span class="usage">
-                    <img src="./assets/img/usageIcon2.svg" alt="" class="usage__icons">
-                    <span class="usage__text">Develop own apps on top of Moosync Extension API</span>
-                </span>
-            </div>
-            <div id="usage__icons__text__mid" class="usage__icons__text">
-                <span class="usage">
-                        <img src="./assets/img/usageIcon3.svg" alt="" class="usage__icons">
-                        <span class="usage__text">Seamlessly integrate your Spotify and Youtube playlists.</span>
-                </span>
-                <span class="usage">
-                    <img src="./assets/img/laptopbg.svg" alt="" id="usage__mid__img">
-                </span>
-                <span class="usage">
-                    <img src="./assets/img/usageIcon4.svg" alt="" class="usage__icons">
-                    <span class="usage__text">Play songs directly from youtube using youtube embed</span>
-                </span>
-            </div>
-            <div class="usage__icons__text">
-                <span class="usage">
-                        <img src="./assets/img/usageIcon5.svg" alt="" class="usage__icons">
-                        <span class="usage__text">Mix and match songs from different providers in a single playlist</span>
-                </span>
-                <span class="usage">
-                    <img src="./assets/img/usageIcon6.svg" alt="" class="usage__icons">
-                    <span class="usage__text">Add Spotify and Youtube tracks and playlists by URLs</span>
-                </span>
-            </div>
-        </section>
-        <section class="moosync__video">
-            <p class="moosync__usage__heading">Simple Yet Powerful</p>
-            <p id="video__info__text__1" class="info__text__1">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud asbjdhad kjasdkjh asdsajd. labore et dolore magna aliqua. Ut enim ad minim veniam, 
-            </p>
-            <video autoplay muted class="moosync__video__player">
-                <source src="https://storage.coverr.co/videos/ZqXv1BIo00WFH1QiOp7J2fhONrsn8Yy4X?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6Ijg3NjdFMzIzRjlGQzEzN0E4QTAyIiwiaWF0IjoxNjQyODU2OTQ4fQ.R8zsKrppHz5keNKOCLdj0caIV3QqAp2QzZ59y_34CXM" type="video/mp4">
-            </video>
-            <div class="buttons">
-                <button title="Click to download for WindowsOS" class="link__buttons">
-                    <img src="./assets/img/windows.svg" alt="" class="icons">Download
-                </button>
-                <button title="Click to download for LinuxOS" class="link__buttons">
-                    <img src="./assets/img/linux.svg" alt="" class="icons">Download
-                </button>
-            </div>
-        </section>
-        <section class="moosyn_testinomial">
-            <p class="moosync__usage__heading">What users say</p>
-            <div class="align_comments">
-              <div class="outermessage">
-              <div class="message">
-                <p class="appreaciation_text">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Placeat
-                  laboriosam consequatur debitis, illum officia officiis neque
-                  voluptatum reprehenderit dolorem in veniam quas, incidunt molestiae
-                  sequi praesentium necessitatibus consequuntur tempore voluptatem!
-                </p>
-              </div>
-                <div class="fordata">
-                  <img src="./assets/img/randomimage.jpeg" alt="" class="images" />
-                  <div class="personInfo">
-                  <p class="personName">Garvitrajpandey</p>
-                  <p class="personAbout">CEO,ABC Coorporation</p>
-               </div>
-              </div>
-          </div>
-              <div class="outermessage">
+        </div>
+        <div class="buttons">
+            <button title="Click to download for WindowsOS" class="link__buttons">
+                <img src="./assets/img/windows.svg" alt="" class="icons" />Download
+            </button>
+            <button title="Click to download for LinuxOS" class="link__buttons">
+                <img src="./assets/img/linux.svg" alt="" class="icons" />Download
+            </button>
+        </div>
+    </header>
+    <section class="moosync__usage">
+        <p class="moosync__usage__heading">Why use Moosync</p>
+        <div class="usage__icons__text">
+            <span class="usage">
+                <img src="./assets/img/usageIcon1.svg" alt="" class="usage__icons" />
+                <span class="usage__text">Customizable theme engine & Easy to use interface</span>
+            </span>
+            <span class="usage">
+                <img src="./assets/img/usageIcon2.svg" alt="" class="usage__icons" />
+                <span class="usage__text">Develop own apps on top of Moosync Extension API</span>
+            </span>
+        </div>
+        <div id="usage__icons__text__mid" class="usage__icons__text">
+            <span class="usage">
+                <img src="./assets/img/usageIcon3.svg" alt="" class="usage__icons" />
+                <span class="usage__text">Seamlessly integrate your Spotify and Youtube playlists.</span>
+            </span>
+            <span class="usage">
+                <img src="./assets/img/laptopbg.svg" alt="" id="usage__mid__img" />
+            </span>
+            <span class="usage">
+                <img src="./assets/img/usageIcon4.svg" alt="" class="usage__icons" />
+                <span class="usage__text">Play songs directly from youtube using youtube embed</span>
+            </span>
+        </div>
+        <div class="usage__icons__text">
+            <span class="usage">
+                <img src="./assets/img/usageIcon5.svg" alt="" class="usage__icons" />
+                <span class="usage__text">Mix and match songs from different providers in a single
+                    playlist</span>
+            </span>
+            <span class="usage">
+                <img src="./assets/img/usageIcon6.svg" alt="" class="usage__icons" />
+                <span class="usage__text">Add Spotify and Youtube tracks and playlists by URLs</span>
+            </span>
+        </div>
+    </section>
+    <section class="moosync__video">
+        <p class="moosync__usage__heading">Simple Yet Powerful</p>
+        <p id="video__info__text__1" class="info__text__1">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+            veniam, quis nostrud asbjdhad kjasdkjh asdsajd. labore et dolore magna
+            aliqua. Ut enim ad minim veniam,
+        </p>
+        <video autoplay muted class="moosync__video__player">
+            <source
+                src="https://storage.coverr.co/videos/ZqXv1BIo00WFH1QiOp7J2fhONrsn8Yy4X?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6Ijg3NjdFMzIzRjlGQzEzN0E4QTAyIiwiaWF0IjoxNjQyODU2OTQ4fQ.R8zsKrppHz5keNKOCLdj0caIV3QqAp2QzZ59y_34CXM"
+                type="video/mp4" />
+        </video>
+        <div class="buttons">
+            <button title="Click to download for WindowsOS" class="link__buttons">
+                <img src="./assets/img/windows.svg" alt="" class="icons" />Download
+            </button>
+            <button title="Click to download for LinuxOS" class="link__buttons">
+                <img src="./assets/img/linux.svg" alt="" class="icons" />Download
+            </button>
+        </div>
+    </section>
+    <section class="moosyn_testinomial">
+        <p class="moosync__usage__heading">What users say</p>
+        <div class="align_comments">
+            <div class="outermessage">
                 <div class="message">
-                  <p class="appreaciation_text">
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Placeat
-                    laboriosam consequatur debitis, illum officia officiis neque
-                    voluptatum reprehenderit dolorem in veniam quas, incidunt
-                    molestiae sequi praesentium necessitatibus consequuntur tempore
-                    voluptatem!
-                  </p>
-              </div>
-      
-                  <div class="fordata">
-                    <img src="./assets/img/randomimage.jpeg" alt="" class="images" />
-                    <div class="personInfo">
-                    <p class="personName">Garvitraj pandey</p>
-                    <p class="personAbout">CEO,ABC Coorporation</p>
-                  </div>
+                    <p class="appreaciation_text">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Placeat
+                        laboriosam consequatur debitis, illum officia officiis neque
+                        voluptatum reprehenderit dolorem in veniam quas, incidunt
+                        molestiae sequi praesentium necessitatibus consequuntur tempore
+                        voluptatem!
+                    </p>
                 </div>
-              </div>
-              <div class="outermessage">
-              <div class="message">
-                <p class="appreaciation_text">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Placeat
-                  laboriosam consequatur debitis, illum officia officiis neque
-                  voluptatum reprehenderit dolorem in veniam quas, incidunt molestiae
-                  sequi praesentium necessitatibus consequuntur tempore voluptatem!
-                </p>
-              </div>
                 <div class="fordata">
-                  <img src="./assets/img/randomimage.jpeg" alt="" class="images" />
-                  <div class="personInfo">
-                  <p class="personName">Garvitraj pandey</p>
-                  <p class="personAbout">CEO,ABC Coorporation</p>
-              </div>
-              </div>
-              </div>
-          </div>
-            </div>
-          </section>  
-        <footer class="footer__section">
-            <div class="footer__container">
-                <div class="footer__content">
-                    <a href="#home__page">
-                        <span class="title__logo">
-                            <img src="./assets/img/logo.svg" title="Moosync" alt="" id="footer__logo" class="logo__img">
-                            <span class="title">moosync</span>
-                        </span>
-                    </a>
-                    <p class="info__text__2">Incase of any query or suggestion feel free to reach us.</p>
-                    <a href="mailto:support@moosync.app"><p class="info__text__3">support@moosync.app <img src="./assets/img/link.svg" alt="" id="link__icon" > </p></a>
-                </div>
-                <div class="footer__content">
-                    <span id="footer__info__text__1" class="info__text__1">Subscribe to the newsletter for updates</span>
-                    <form action="" class="subscribe">
-                        <input type="email" placeholder="yourname@domain.com" required autocomplete="off" class="email__input">
-                        <button type="submit" id="subscribe__button" class="link__buttons" >Subscribe</button>
-                    </form>
-                    <div class="general__info__links">
-                        <div class="footer__general">
-                            <span id="footer__info__text__heading" class="info__text__1">general</span>
-                            <ul class="general__info__link__list">
-                                <li class="list__items">About Us</li>
-                                <li class="list__items">Privacy Policy</li>
-                                <li class="list__items">Documentation</li>
-                            </ul>
-                        </div>
-                        <div class="footer__general">
-                            <span id="footer__info__text__heading" class="info__text__1">community</span>
-                            <ul class="general__info__link__list">
-                                <a href="https://github.com/Moosync" target="_blank"><li class="list__items">GitHub Repositories</li></a>
-                                <a href="https://discord.gg/A5yePzN2" target="_blank"><li class="list__items">Join us on Discord</li></a>
-                            </ul>
-                        </div>
+                    <img src="./assets/img/testimonial.png" alt="" class="images" />
+                    <div class="personInfo">
+                        <p class="personName">Garvitrajpandey</p>
+                        <p class="personAbout">CEO,ABC Coorporation</p>
                     </div>
                 </div>
             </div>
-            <div class="copyright__text">Copyright &copy; 2022 Moosync</div>
-        </footer>
-    </body>
+            <div class="outermessage">
+                <div class="message">
+                    <p class="appreaciation_text">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Placeat
+                        laboriosam consequatur debitis, illum officia officiis neque
+                        voluptatum reprehenderit dolorem in veniam quas, incidunt
+                        molestiae sequi praesentium necessitatibus consequuntur tempore
+                        voluptatem!
+                    </p>
+                </div>
+
+                <div class="fordata">
+                    <img src="./assets/img/testimonial.png" alt="" class="images" />
+                    <div class="personInfo">
+                        <p class="personName">Garvitraj pandey</p>
+                        <p class="personAbout">CEO,ABC Coorporation</p>
+                    </div>
+                </div>
+            </div>
+            <div class="outermessage">
+                <div class="message">
+                    <p class="appreaciation_text">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Placeat
+                        laboriosam consequatur debitis, illum officia officiis neque
+                        voluptatum reprehenderit dolorem in veniam quas, incidunt
+                        molestiae sequi praesentium necessitatibus consequuntur tempore
+                        voluptatem!
+                    </p>
+                </div>
+                <div class="fordata">
+                    <img src="./assets/img/testimonial.png" alt="" class="images" />
+                    <div class="personInfo">
+                        <p class="personName">Garvitraj pandey</p>
+                        <p class="personAbout">CEO,ABC Coorporation</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer__section">
+        <div class="footer__container">
+            <div class="footer__content">
+                <a href="#home__page">
+                    <span class="title__logo">
+                        <img src="./assets/img/logo.svg" title="Moosync" alt="" id="footer__logo" class="logo__img" />
+                        <span class="title">moosync</span>
+                    </span>
+                </a>
+                <p class="info__text__2">
+                    Incase of any query or suggestion feel free to reach us.
+                </p>
+                <a href="mailto:support@moosync.app">
+                    <p class="info__text__3">
+                        support@moosync.app
+                        <img src="./assets/img/link.svg" alt="" id="link__icon" />
+                    </p>
+                </a>
+            </div>
+            <div class="footer__content">
+                <span id="footer__info__text__1" class="info__text__1">Subscribe to the newsletter for updates</span>
+                <form action="" class="subscribe">
+                    <input type="email" placeholder="yourname@domain.com" required autocomplete="off"
+                        class="email__input" />
+                    <button type="submit" id="subscribe__button" class="link__buttons">
+                        Subscribe
+                    </button>
+                </form>
+                <div class="general__info__links">
+                    <div class="footer__general">
+                        <span id="footer__info__text__heading" class="info__text__1">general</span>
+                        <ul class="general__info__link__list">
+                            <li class="list__items">About Us</li>
+                            <li class="list__items">Privacy Policy</li>
+                            <li class="list__items">Documentation</li>
+                        </ul>
+                    </div>
+                    <div class="footer__general">
+                        <span id="footer__info__text__heading" class="info__text__1">community</span>
+                        <ul class="general__info__link__list">
+                            <a href="https://github.com/Moosync" target="_blank">
+                                <li class="list__items">GitHub Repositories</li>
+                            </a>
+                            <a href="https://discord.gg/A5yePzN2" target="_blank">
+                                <li class="list__items">Join us on Discord</li>
+                            </a>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright__text">Copyright &copy; 2022 Moosync</div>
+    </footer>
+</body>
+
 </html>
