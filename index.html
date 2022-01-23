@@ -24,26 +24,28 @@
     <!-- Body Starts Here -->
     <body class="main">
         <nav class="nav__bar">
-            <span class="title__logo">
-                <span class="logo">
-                    <img src="./assets/img/logo.svg" title="Moosync" alt="moosync logo" class="logo__img">
+            <a href="#home__page">
+                <span class="title__logo">
+                    <span class="logo">
+                        <img src="./assets/img/logo.svg" title="Moosync" alt="moosync logo" class="logo__img">
+                    </span>
+                    <span class="title">moosync</span>
                 </span>
-                <span class="title">moosync</span>
-            </span>
+            </a>
             <span class="navbar__buttons">
-                <button class="navigation__buttons">Home</button>
+                <a href="#home__page"><button class="navigation__buttons">Home</button></a>
                 <button class="navigation__buttons">Privacy Policy</button>
                 <button class="navigation__buttons">Documentation</button>
-                <button id="join__us" class="navigation__buttons">Join Us</button>
+                <a href="https://discord.gg/A5yePzN2" target="_blank"><button id="join__us" class="navigation__buttons">Join Us</button></a>
             </span>
         </nav>
-        <header class="heading__page">
+        <header id="home__page" class="heading__page">
             <span id="heading__info__text__1" class="info__text__1">switch to the audio system of 21st century</span>
             <span class="title__line">It's the music player for community</span>
-            <div class="circle__div__0">
-                <div class="circle__div__1">
-                    <div class="circle__div__2">
-                        <div class="circle__div__3">
+            <div class="circle__div__container">
+                <div id="circle__div__1" class="circle__div">
+                    <div id="circle__div__2" class="circle__div">
+                        <div id="circle__div__3" class="circle__div">
                             <img src="./assets/img/playbutton.svg" title="Play" alt="" class="play__button__img">
                         </div>
                     </div>
@@ -114,10 +116,12 @@
         <footer class="footer__section">
             <div class="footer__container">
                 <div class="footer__content">
-                    <span class="title__logo">
-                        <img src="./assets/img/logo.svg" title="Moosync" alt="" id="footer__logo" class="logo__img">
-                        <span class="title">moosync</span>
-                    </span>
+                    <a href="#home__page">
+                        <span class="title__logo">
+                            <img src="./assets/img/logo.svg" title="Moosync" alt="" id="footer__logo" class="logo__img">
+                            <span class="title">moosync</span>
+                        </span>
+                    </a>
                     <p class="info__text__2">Incase of any query or suggestion feel free to reach us.</p>
                     <a href="mailto:support@moosync.app"><p class="info__text__3">support@moosync.app <img src="./assets/img/link.svg" alt="" id="link__icon" > </p></a>
                 </div>
@@ -139,8 +143,8 @@
                         <div class="footer__general">
                             <span id="footer__info__text__heading" class="info__text__1">community</span>
                             <ul class="general__info__link__list">
-                                <li class="list__items">GitHub Repository</li>
-                                <li class="list__items">Join us on Discord</li>
+                                <a href="https://github.com/Moosync" target="_blank"><li class="list__items">GitHub Repositories</li></a>
+                                <a href="https://discord.gg/A5yePzN2" target="_blank"><li class="list__items">Join us on Discord</li></a>
                             </ul>
                         </div>
                     </div>
