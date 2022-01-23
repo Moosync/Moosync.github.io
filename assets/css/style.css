@@ -1,8 +1,8 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@200;400;500;700;800&display=swap");
 
 :root {
-  --green-primary: #65CB88;
-  --green-secondary: #80ED99;
+  --green-primary: #65cb88;
+  --green-secondary: #80ed99;
 }
 
 * {
@@ -11,6 +11,7 @@
   text-decoration: none;
   font-family: "Poppins", sans-serif;
   scroll-behavior: smooth;
+  font-family: "Lexend Deca", sans-serif;
 }
 
 .main {
@@ -21,7 +22,7 @@
 
 .nav__bar {
   padding: 0.625rem 2.5rem;
-  background-color: #202125;
+  background-color: #212121;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -38,21 +39,21 @@
   cursor: pointer;
 }
 
-.logo {
+/* .logo {
   background-color: #141414;
   margin-right: 0.625rem;
   padding: 0.625rem 0.625rem;
   border-radius: 50%;
-}
+} */
 
 .logo__img {
-  width: 1.75rem;
-  height: 1.75rem;
+  width: 3.5rem;
+  margin-right: 0.8rem;
   object-fit: cover;
 }
 
 .title {
-  font-family: "Poppins", sans-serif;
+  font-family: "Lexend Deca", sans-serif;
   font-size: 1.5rem;
   color: white;
 }
@@ -68,7 +69,7 @@
 .navigation__buttons {
   background-color: inherit;
   margin-left: 3.125rem;
-  font-family: "Poppins", sans-serif;
+  font-family: "Lexend Deca", sans-serif;
   font-size: 1rem;
   color: white;
   border: none;
@@ -93,7 +94,7 @@
 
 #join__us {
   background-color: #5bb67a;
-  padding: 0.313rem 1.25rem;
+  padding: 0.5rem 1.25rem;
   color: black;
   border-radius: 10px;
 }
@@ -110,12 +111,12 @@
 
 .heading__page {
   padding: 6.25rem 0 3.125rem 0;
-  background-color: #202125;
+  background-color: #212121;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-family: "Poppins", sans-serif;
+  font-family: "Lexend Deca", sans-serif;
 }
 
 .info__text__1 {
@@ -198,7 +199,7 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  font-family: "Poppins", sans-serif;
+  font-family: "Lexend Deca", sans-serif;
   font-size: 1.25rem;
   color: black;
   border: none;
@@ -273,7 +274,7 @@
 
 .moosync__video {
   padding: 5rem 0;
-  background-color: #202125;
+  background-color: #212121;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -322,7 +323,7 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: baseline;
-  font-family: "Poppins", sans-serif;
+  font-family: "Lexend Deca", sans-serif;
 }
 
 .info__text__2 {
@@ -337,7 +338,7 @@
   padding-bottom: 1rem;
   display: block;
   text-align: center;
-  font-family: "Poppins", sans-serif;
+  font-family: "Lexend Deca", sans-serif;
   font-weight: 200;
   font-size: 1.3rem;
   color: white;
@@ -368,7 +369,7 @@
 .email__input {
   width: 20vw;
   padding: 0.75rem 1.25rem;
-  font-family: "Poppins", sans-serif;
+  font-family: "Lexend Deca", sans-serif;
   font-size: 1rem;
   border: none;
   border-radius: 5px;
@@ -408,7 +409,7 @@
 .list__items {
   list-style-type: none;
   font-size: 1rem;
-  font-family: "Poppins", sans-serif;
+  font-family: "Lexend Deca", sans-serif;
   font-weight: 200;
   color: white;
   line-height: 2rem;
@@ -424,7 +425,7 @@
   margin-top: 1.875rem;
   display: block;
   text-align: center;
-  font-family: "Poppins", sans-serif;
+  font-family: "Lexend Deca", sans-serif;
   font-weight: 300;
   color: white;
 }
