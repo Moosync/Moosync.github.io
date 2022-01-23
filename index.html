@@ -23,7 +23,7 @@
 
 <body class="main">
     <nav class="nav__bar">
-        <a href="#home__page">
+        <a href="#">
             <span class="title__logo">
                 <span class="logo">
                     <img src="https://res.cloudinary.com/thepranaygupta/image/upload/v1642925133/moosync/logo_fcub7l.svg"
@@ -47,8 +47,11 @@
             <div id="circle__div__1" class="circle__div">
                 <div id="circle__div__2" class="circle__div">
                     <div id="circle__div__3" class="circle__div">
+                        <audio id="music"
+                            src="https://res.cloudinary.com/thepranaygupta/video/upload/v1642932499/moosync/music_j5upv5.mp3"
+                            type="audio/mpeg"></audio>
                         <img src="https://res.cloudinary.com/thepranaygupta/image/upload/v1642925133/moosync/playbutton_gbdn8n.svg"
-                            title="Play" alt="" class="play__button__img" />
+                            title="Play" alt="" class="play__button__img" id="playButton" onclick="playPause()" />
                     </div>
                 </div>
             </div>
@@ -250,6 +253,8 @@
         </div>
         <div class="copyright__text">Copyright &copy; 2022 Moosync</div>
     </footer>
+
+    <script src="./assets/js/script.js"></script>
 </body>
 
 </html>
