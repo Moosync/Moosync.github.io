@@ -151,6 +151,7 @@ a {
 }
 
 .circle__div {
+  margin: 2.5rem 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -161,6 +162,16 @@ a {
 #circle__div__1 {
   width: 50vw;
   height: 50vw;
+  z-index: 3;
+}
+
+#music__person__img {
+  width: 52.5vw;
+}
+
+.music__person__img__container {
+  position: absolute;
+  z-index: 5;
 }
 
 #circle__div__2 {
@@ -523,7 +534,10 @@ a {
 
 .info__text__3 {
   padding-bottom: 1rem;
-  display: block;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
   text-align: center;
   font-family: "Lexend Deca", sans-serif;
   font-weight: 200;
@@ -659,6 +673,10 @@ a {
   #circle__div__1 {
     width: 60vw;
     height: 60vw;
+  }
+
+  #music__person__img {
+    width: 63vw;
   }
 
   .moosync__video__player {
@@ -823,6 +841,10 @@ a {
     height: 75vw;
   }
 
+  #music__person__img {
+    width: 78.75vw;
+  }
+
   #playButton {
     width: 20vw;
   }
@@ -899,11 +921,12 @@ a {
   }
 
   .info__text__3 {
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
 
   #link__icon {
-    margin-left: 0;
+    width: 0.5rem;
+    height: 0.5rem;
   }
 }
 
