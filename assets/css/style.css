@@ -826,3 +826,19 @@
     margin-top: 2rem;
   }
 }
+.all_counts {
+  padding: 5rem 0;
+  background-color: #212121;
+}
+.count_matters_boxes
+{
+  padding-left: 12rem;
+  display: flex;
+  flex-direction: row;
+}
+.countimages
+{
+  height: 283px; ;
+  width:283px;
+
+}
