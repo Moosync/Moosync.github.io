@@ -14,6 +14,10 @@
   font-family: "Lexend Deca", sans-serif;
 }
 
+a {
+  color: inherit;
+}
+
 .main {
   min-height: 100vh;
   background-color: none;
@@ -536,6 +540,11 @@
   object-fit: cover;
 }
 
+#link__icon:hover {
+  transform: scale(1.5);
+  transition: all 0.2s;
+}
+
 #footer__info__text__1 {
   padding: 0;
   color: white;
@@ -640,7 +649,7 @@
   color: white;
 }
 
-@media (max-width:900px) {
+@media (max-width: 900px) {
   .title__line {
     width: 90%;
     font-size: 10vw;
@@ -682,10 +691,10 @@
 
   .footer__general {
     margin-right: 3rem;
-}
+  }
 }
 
-@media (max-width:800px) {
+@media (max-width: 800px) {
   .nav__bar {
     padding-bottom: 1rem;
     flex-direction: column;
@@ -702,8 +711,8 @@
   }
 
   #join__us {
-  padding: 0.25rem 0.5rem;
-  border-radius: 5px;
+    padding: 0.25rem 0.5rem;
+    border-radius: 5px;
   }
 
   .footer__container {
@@ -766,22 +775,22 @@
   }
 }
 
-@media (max-width:700px) {
+@media (max-width: 700px) {
   .testimonial__heading {
     flex-direction: column;
   }
-  
+
   #quote__icon__visible {
     width: 8rem;
     padding: 0;
   }
-  
+
   #quote__icon__hidden {
     display: none;
   }
 }
 
-@media (max-width:550px) {
+@media (max-width: 550px) {
   .navbar__buttons {
     width: auto;
     flex-direction: column;
@@ -862,17 +871,17 @@
   }
 }
 
-@media (max-width:500px) {
+@media (max-width: 500px) {
   .testimonial__message__container {
     width: 75vw;
   }
 
   #footer__info__text__2 {
     font-size: 1.5rem;
-}
+  }
 }
 
-@media (max-width:450px) {
+@media (max-width: 450px) {
   .reviewer__info {
     flex-direction: column;
   }
@@ -881,11 +890,11 @@
     align-items: center;
   }
 
-  #reviewer__name{
+  #reviewer__name {
     text-align: center;
   }
 
-  #reviewer__designation{
+  #reviewer__designation {
     text-align: center;
   }
 
@@ -895,6 +904,12 @@
 
   #link__icon {
     margin-left: 0;
+  }
+}
+
+@media (max-width: 350px) {
+  .email__input {
+    width: 75vw;
   }
 
   .general__info__links {
@@ -916,8 +931,21 @@
   }
 }
 
-@media (max-width:350px) {
+@media (max-width: 350px) {
   .email__input {
     width: 75vw;
   }
+}
+.all_counts {
+  padding: 5rem 0;
+  background-color: #212121;
+}
+.count_matters_boxes {
+  padding-left: 12rem;
+  display: flex;
+  flex-direction: row;
+}
+.countimages {
+  height: 283px;
+  width: 283px;
 }
