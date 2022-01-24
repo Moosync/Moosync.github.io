@@ -190,7 +190,7 @@
 }
 
 .link__buttons {
-  padding: 10px 20px;
+  padding: 5px 20px;
   margin: 0 2.5rem;
   background-color: #65cb88;
   display: flex;
@@ -212,9 +212,14 @@
 }
 
 .icons {
-  height: 1.5rem;
+  font-size: 2rem;
   margin-right: 10px;
   object-fit: cover;
+}
+
+#discord__icon {
+  height: 1.5rem;
+  padding: 0.5rem 0;
 }
 
 .moosync__usage {
@@ -399,14 +404,62 @@
 }
 
 #reviewer__img {
-  height: 5rem;
-  margin: 0 1rem;
+  height: 4rem;
+  margin: 0 0.75rem;
   object-fit: cover;
 }
 
 #reviewer__name {
   padding: 0.25rem 0;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
+}
+
+#reviewer__designation {
+  font-size: 0.8rem;
+}
+
+.moosync__numbers {
+  padding: 5rem 0;
+  background-color: #212121;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.moosync__countbox__container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.count__box {
+  width: 15rem;
+  height: 15rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: url("https://res.cloudinary.com/thepranaygupta/image/upload/v1642947849/moosync/hexagon_cvamui.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+#number__count {
+  font-size: 1.9rem;
+  font-weight: 500;
+}
+
+#number__description {
+  padding: 0.25rem 0;
+  font-size: 0.8rem;
+}
+
+#moosync__numbers__button {
+  margin-top: 2rem;
 }
 
 .footer__section {
@@ -445,6 +498,14 @@
 }
 
 #right__footer__content {
+  width: fit-content;
+  margin: auto;
+}
+
+#right__footer__content__wrapper {
+  width: 100vw;
+  display: block;
+  align-content: center;
   margin-left: 15px;
 }
 
@@ -508,7 +569,7 @@
 }
 
 .general__info__links {
-  width: 300px;
+  width: fit-content;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
@@ -518,6 +579,11 @@
 .footer__general {
   display: block;
   margin-right: 5rem;
+}
+
+#right__footer__general {
+  width: fit-content;
+  margin: 0;
 }
 
 #footer__info__text__heading {
@@ -543,9 +609,30 @@
   color: var(--green-secondary);
 }
 
-.copyright__text {
+#notice {
+  width: 60%;
+  margin: 1rem 0;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  text-align: center;
+  color: #444444;
+}
+
+#notice__text__container {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+#copyright__text {
   width: 100%;
-  margin-top: 1.875rem;
   display: block;
   text-align: center;
   font-family: "Lexend Deca", sans-serif;
@@ -591,10 +678,6 @@
 
   #subscribe__button {
     margin: 0.5rem 0 0 0;
-  }
-
-  .general__info__links {
-    width: 400px;
   }
 
   .footer__general {
@@ -655,7 +738,7 @@
 
   .general__info__links {
     width: 100%;
-    justify-content: space-around;
+    justify-content: space-evenly;
   }
 
   .footer__general {
@@ -672,6 +755,14 @@
 
   #right__footer__content {
     margin-left: 0;
+  }
+
+  #right__footer__content__wrapper {
+    width: fit-content;
+  }
+
+  #notice {
+    width: 80vw;
   }
 }
 
@@ -805,12 +896,6 @@
   #link__icon {
     margin-left: 0;
   }
-}
-
-@media (max-width:350px) {
-  .email__input {
-    width: 75vw;
-  }
 
   .general__info__links {
     flex-direction: column;
@@ -825,20 +910,14 @@
   #right__footer__general {
     margin-top: 2rem;
   }
-}
-.all_counts {
-  padding: 5rem 0;
-  background-color: #212121;
-}
-.count_matters_boxes
-{
-  padding-left: 12rem;
-  display: flex;
-  flex-direction: row;
-}
-.countimages
-{
-  height: 283px; ;
-  width:283px;
 
+  #notice {
+    width: 90vw;
+  }
+}
+
+@media (max-width:350px) {
+  .email__input {
+    width: 75vw;
+  }
 }
