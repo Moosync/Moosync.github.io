@@ -166,7 +166,7 @@ a {
 }
 
 #music__person__img {
-  width: 52.5vw;
+  width: 45vw;
 }
 
 .music__person__img__container {
@@ -180,8 +180,9 @@ a {
 }
 
 #circle__div__3 {
-  width: 60%;
-  height: 60%;
+  padding: 4vw;
+  z-index: 10;
+  position: absolute;
 }
 
 .play__button__img {
@@ -294,7 +295,7 @@ a {
 
 .moosync__video {
   padding: 5rem 0;
-  background-color: #212121;
+  background-color: #141414;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -317,7 +318,7 @@ a {
 
 .moosync_testinomial {
   padding: 5rem 0;
-  background-color: #141414;
+  background-color: #212121;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -514,13 +515,13 @@ a {
 
 #right__footer__content {
   width: fit-content;
-  margin: auto;
 }
 
 #right__footer__content__wrapper {
   width: 100vw;
-  display: block;
-  align-content: center;
+  display: flex;
+  align-items: center;
+  justify-content:flex-end;
   margin-left: 15px;
 }
 
