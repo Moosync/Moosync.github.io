@@ -6,11 +6,13 @@ const playPause = () => {
   if (isPlaying == 0) {
     isPlaying = 1;
     music.play();
+    playButton.title = "Pause";
     playButton.src =
       "https://res.cloudinary.com/thepranaygupta/image/upload/v1642931820/moosync/pausebutton_kaq80l.svg";
   } else {
     isPlaying = 0;
     music.pause();
+    playButton.title = "Play";
     playButton.src =
       "https://res.cloudinary.com/thepranaygupta/image/upload/v1642925133/moosync/playbutton_gbdn8n.svg";
   }
