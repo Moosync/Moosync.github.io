@@ -17,3 +17,14 @@ const playPause = () => {
       "https://res.cloudinary.com/thepranaygupta/image/upload/v1642925133/moosync/playbutton_gbdn8n.svg";
   }
 };
+
+$(document).ready(function () {
+  $("#download__btn").click(function () {
+    $("html, body").animate(
+      {
+        scrollTop: $("#download").offset().top - 300,
+      },
+      "1000"
+    );
+  });
+});

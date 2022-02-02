@@ -20,8 +20,9 @@ a {
 
 .main {
   min-height: 100vh;
-  background-color: none;
+  /* background-color: none; */
   display: block;
+  background-color: #212121;
 }
 
 .nav__bar {
@@ -33,6 +34,10 @@ a {
   justify-content: space-between;
   position: sticky;
   top: 0;
+  background: rgba(33, 33, 33, 0.45);
+  box-shadow: 0 8px 32px 0 rgba(33, 33, 33, 0.37);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
   z-index: 99999;
 }
 
@@ -58,7 +63,7 @@ a {
 
 .navbar__buttons {
   width: 500px;
-  background-color: inherit;
+  background-color: none;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -90,26 +95,26 @@ a {
   transform: scaleX(1);
 }
 
-#join__us {
+#download__btn {
   background-color: #5bb67a;
   padding: 0.5rem 1.25rem;
   color: black;
   border-radius: 10px;
 }
 
-#join__us:hover {
+#download__btn:hover {
   border-bottom: none;
   transform: scale(1.1);
   transition: all 0.2s;
 }
 
-#join__us:focus {
+#download__btn:focus {
   border-bottom: none;
 }
 
 .heading__page {
   width: 100%;
-  padding: 6.25rem 0 3.125rem 0;
+  padding: 3.25rem 0 3.125rem 0;
   background-color: #212121;
   display: flex;
   flex-direction: column;
@@ -548,16 +553,15 @@ a {
   cursor: pointer;
 }
 
+.info__text__3:hover #link__icon {
+  transform: scale(1.25);
+  transition: all 0.2s;
+}
 #link__icon {
   height: 0.75rem;
   width: 0.75rem;
   margin-left: 15px;
   object-fit: cover;
-}
-
-#link__icon:hover {
-  transform: scale(1.5);
-  transition: all 0.2s;
 }
 
 #footer__info__text__1 {
@@ -729,7 +733,7 @@ a {
     margin: 5px 0;
   }
 
-  #join__us {
+  #download__btn {
     padding: 0.25rem 0.5rem;
     border-radius: 5px;
   }
@@ -820,7 +824,7 @@ a {
     flex-direction: column;
   }
 
-  #join__us {
+  #download__btn {
     padding: 0.25rem 0.5rem;
     margin-top: 10px;
     border-radius: 5px;
