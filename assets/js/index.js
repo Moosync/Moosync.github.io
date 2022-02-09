@@ -1,4 +1,4 @@
-import './script.js'
+import {setupPageFunctionality} from  './script.js'
 import { getProviderFromURL, getProviderRedirectURL, getQueryParams } from './locationUtils.js'
 
 const providerMatch = getProviderFromURL()
@@ -7,4 +7,6 @@ if (providerMatch && providerMatch.length > 0) {
 
   window.location.href = 'moosync://' + redirectPath + getQueryParams()
 }
+
+setupPageFunctionality()
 

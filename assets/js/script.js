@@ -1,30 +1,28 @@
-const music = document.getElementById("music");
-const playButton = document.getElementById("playButton");
-let isPlaying = 0;
+export function setupPageFunctionality () {
+  const music = document.getElementById("music");
+  music.volume = 0.2
+  const playButton = document.getElementById("playButton");
+  let isPlaying = false;
 
-const playPause = () => {
-  if (isPlaying == 0) {
-    isPlaying = 1;
-    music.play();
-    playButton.title = "Pause";
-    playButton.src =
-      "https://res.cloudinary.com/thepranaygupta/image/upload/v1642931820/moosync/pausebutton_kaq80l.svg";
-  } else {
-    isPlaying = 0;
-    music.pause();
-    playButton.title = "Play";
-    playButton.src =
-      "https://res.cloudinary.com/thepranaygupta/image/upload/v1642925133/moosync/playbutton_gbdn8n.svg";
+  const playPause = () => {
+    if (!isPlaying) {
+      isPlaying = true;
+
+      music.play();
+      playButton.title = "Pause";
+      playButton.src = "./assets/img/pausebutton_kaq80l.svg";
+    } else {
+      isPlaying = false;
+      
+      music.pause();
+      playButton.title = "Play";
+      playButton.src = "./assets/img/playbutton_gbdn8n.svg";
+    }
+  };
+
+  playButton.onclick = playPause
+
+  document.getElementById('download__btn').onclick = () => {
+    document.getElementById('download').scrollIntoView({behavior: 'smooth', block: 'center', inline: 'center'})
   }
-};
-
-$(document).ready(function () {
-  $("#download__btn").click(function () {
-    $("html, body").animate(
-      {
-        scrollTop: $("#download").offset().top - 300,
-      },
-      "1000"
-    );
-  });
-});
+}
