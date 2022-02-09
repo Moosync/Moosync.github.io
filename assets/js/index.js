@@ -1,4 +1,4 @@
-import {setupPageFunctionality} from  './script.js'
+import {setupPageFunctionality} from  './domUtils.js'
 import { getProviderFromURL, getProviderRedirectURL, getQueryParams } from './locationUtils.js'
 
 const providerMatch = getProviderFromURL()
