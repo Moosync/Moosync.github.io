@@ -1,4 +1,7 @@
-import { shouldRegenRequest, getExpiryTime} from './commonUtils.js'
+import { shouldRegenRequest, getExpiryTime, setCache } from './commonUtils.js'
+
+// TODO: fetch this from all-contributors spec
+const noCodeContributorsCount = 3
 
 async function getGithubDownloadCount () {
   const cache = JSON.parse(localStorage.getItem('downloads_counter'))
@@ -15,7 +18,7 @@ async function getGithubDownloadCount () {
       }
     }
 
-    localStorage.setItem('downloads_counter', { count: downloadCount, expiry: getExpiryTime() })
+    setCache('downloads_counter', { count: downloadCount, expiry: getExpiryTime() })
     return downloadCount
   }
 
@@ -38,8 +41,8 @@ async function getGithubContributorsCount () {
       }
     }
 
-    localStorage.setItem('contributors_counter', { count: Object.keys(contributors), expiry: getExpiryTime() })
-    return Object.keys(contributors)
+    setCache('contributors_counter', { count: Object.keys(contributors).length, expiry: getExpiryTime() })
+    return Object.keys(contributors).length
   }
   return cache.count
 }
@@ -58,7 +61,7 @@ export function setupCounters () {
 
   (async () => {
     const activeContributorsCount = document.getElementById('contri__count')
-    activeContributorsCount.innerHTML = (await getGithubContributorsCount()) + "+"
+    activeContributorsCount.innerHTML = ((await getGithubContributorsCount()) + noCodeContributorsCount) + "+"
   })();
 
   (async () => {

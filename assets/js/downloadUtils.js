@@ -1,4 +1,4 @@
-import { shouldRegenRequest, getExpiryTime} from './commonUtils.js'
+import { shouldRegenRequest, getExpiryTime, setCache} from './commonUtils.js'
 
 const OSEnum = Object.freeze({
   WINDOWS: 'win',
@@ -56,7 +56,7 @@ async function getReleaseInfo (os) {
         ret.push({ version: latest.name, url: asset.browser_download_url, ext: extractExtension(asset.name) })
       }
 
-      localStorage.setItem('artifacts', {data: ret, expiry: getExpiryTime()})
+      setCache('artifacts', {data: ret, expiry: getExpiryTime()})
       return ret
     }
   }
