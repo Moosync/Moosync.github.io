@@ -77,8 +77,6 @@ export async function setupDownloadButton () {
   const os = getOS()
   const downloadParent = document.getElementById('downloads')
 
-  console.log(os)
-
   if (os && os !== OSEnum.UNDEFINED) {
     const releases = await getReleaseInfo(os)
     const buttonTemplate = document.getElementById('download-template').content
