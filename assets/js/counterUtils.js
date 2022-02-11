@@ -1,4 +1,4 @@
-import { shouldRegenRequest, getExpiryTime} from './commonUtils'
+import { shouldRegenRequest, getExpiryTime} from './commonUtils.js'
 
 async function getGithubDownloadCount () {
   const cache = JSON.parse(localStorage.getItem('downloads_counter'))
@@ -44,6 +44,12 @@ async function getGithubContributorsCount () {
   return cache.count
 }
 
+async function getDiscordCount () {
+  const resp = await (await fetch('https://discord.com/api/guilds/919246266167332894/widget.json')).json()
+  console.log(resp)
+  return resp.members.length || 0
+}
+
 export function setupCounters () {
   (async () => {
     const downloadsCounter = document.getElementById('downloads__count')
@@ -53,5 +59,10 @@ export function setupCounters () {
   (async () => {
     const activeContributorsCount = document.getElementById('contri__count')
     activeContributorsCount.innerHTML = (await getGithubContributorsCount()) + "+"
+  })();
+
+  (async () => {
+    const discordCount = document.getElementById('discord__count')
+    discordCount.innerHTML = (await getDiscordCount()) + "+"
   })();
 }

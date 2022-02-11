@@ -1,4 +1,4 @@
-import { shouldRegenRequest, getExpiryTime} from './commonUtils'
+import { shouldRegenRequest, getExpiryTime} from './commonUtils.js'
 
 const OSEnum = Object.freeze({
   WINDOWS: 'win',
