@@ -977,3 +977,14 @@ a {
   height: 283px;
   width: 283px;
 }
+
+.other__platform {
+  color: blue;
+  margin-top: 15px;
+  cursor: pointer;
+  user-select: none;
+}
+
+[hidden] {
+    display: none !important;
+}

@@ -65,13 +65,17 @@
                     id="playButton" onclick="playPause()" />
             </div>
         </div>
-        <div id="download" class="buttons">
-            <button title="Click to download for Windows" class="link__buttons">
-                <i class="uil uil-windows icons"></i>Download
-            </button>
-            <button title="Click to download for Linux" class="link__buttons">
-                <i class="uil uil-linux icons"></i>Download
-            </button>
+        <div id="downloads" class="buttons">
+            <template id="download-template">
+                <button id="download-button" title="Click to download for ${os}" class="link__buttons">
+                    <i id="download-icon" class="uil ${icon-class} icons"></i>Download ${version}
+                </button>
+            </template>
+        </div>
+
+        <!-- TODO: Popup modal on button press -->
+        <div class="other__platform">
+            Get for another platform
         </div>
     </header>
     <section class="moosync__usage">
