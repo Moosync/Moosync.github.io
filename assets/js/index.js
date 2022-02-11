@@ -1,6 +1,7 @@
 import {setupPageFunctionality} from  './domUtils.js'
 import { getProviderFromURL, getProviderRedirectURL, getQueryParams } from './locationUtils.js'
 import { setupDownloadButton } from './downloadUtils.js'
+import { setupCounters } from './counterUtils.js'
 
 const providerMatch = getProviderFromURL()
 if (providerMatch && providerMatch.length > 0) {
@@ -11,4 +12,5 @@ if (providerMatch && providerMatch.length > 0) {
 
 setupPageFunctionality()
 setupDownloadButton()
+setupCounters()
 

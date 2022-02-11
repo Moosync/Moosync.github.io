@@ -1,3 +1,5 @@
+import { shouldRegenRequest, getExpiryTime} from './commonUtils'
+
 const OSEnum = Object.freeze({
   WINDOWS: 'win',
   MACOS: 'mac',
@@ -41,16 +43,25 @@ function getLatestAsset (os, assets) {
 }
 
 async function getReleaseInfo (os) {
-  const resp = await (await fetch('https://api.github.com/repos/Moosync/Moosync/releases')).json()
-  if (resp.length > 0) {
-    const latest = resp[0]
-    const downloadAssets = getLatestAsset(os, latest.assets)
-    const ret = []
-    for (const asset of downloadAssets) {
-      ret.push({version: latest.name, url: asset.browser_download_url, ext: extractExtension(asset.name) })
+  const cache = JSON.parse(localStorage.getItem('artifacts'))
+
+  if (shouldRegenRequest(cache)) {
+
+    const resp = await (await fetch('https://api.github.com/repos/Moosync/Moosync/releases')).json()
+    if (resp.length > 0) {
+      const latest = resp[0]
+      const downloadAssets = getLatestAsset(os, latest.assets)
+      const ret = []
+      for (const asset of downloadAssets) {
+        ret.push({ version: latest.name, url: asset.browser_download_url, ext: extractExtension(asset.name) })
+      }
+
+      localStorage.setItem('artifacts', {data: ret, expiry: getExpiryTime()})
+      return ret
     }
-    return  ret
   }
+
+  return cache.data
 }
 
 function getIconClass (os) {

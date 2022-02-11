@@ -469,12 +469,12 @@ a {
   background-position: center;
 }
 
-#number__count {
+.count__box > p:first-child {
   font-size: 1.9rem;
   font-weight: 500;
 }
 
-#number__description {
+.count__box > p:last-child {
   padding: 0.25rem 0;
   font-size: 0.8rem;
 }
