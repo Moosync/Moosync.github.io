@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
+    <meta charset="utf-8" />
     <meta name="description" content="A simple music player" />
     <meta name="keywords" content="Moosync, Spotify, Youtube, Songs, Playlist" />
     <meta name="author" content="Moosync" />
@@ -35,8 +35,7 @@
             <button class="navigation__buttons"><a href="https://www.iubenda.com/privacy-policy/70189564/full-legal"
                     target="_blank" rel="noopener noreferrer">privacy policy</a>
             </button>
-            <button class="navigation__buttons"><a href="https://moosync.app/docs/extensions_api/" target="_blank"
-                    rel="noopener noreferrer">documentation</a>
+            <button class="navigation__buttons"><a href="/docs/index.html" rel="noopener noreferrer">documentation</a>
             </button>
             <button id="download__btn" class="navigation__buttons">Download
             </button>
@@ -70,18 +69,22 @@
             <div id="circle__div__3" class="circle__div">
                 <audio id="music"
                     src="https://res.cloudinary.com/thepranaygupta/video/upload/v1643119296/moosync/bg-music_x3sspk.mp3"
-                    type="audio/mpeg"></audio>
-                <img src="./assets/img/playbutton.svg" title="Play" alt="" class="play__button__img" id="playButton"
-                    onclick="playPause()" />
+                    type="audio/mpeg" volume="0.2"> </audio>
+                <img src="./assets/img/playbutton_gbdn8n.svg" title="Play" alt="" class="play__button__img"
+                    id="playButton" onclick="playPause()" />
             </div>
         </div>
-        <div id="download" class="buttons">
-            <button title="Click to download for Windows" class="link__buttons">
-                <i class="uil uil-windows icons"></i>Download
-            </button>
-            <button title="Click to download for Linux" class="link__buttons">
-                <i class="uil uil-linux icons"></i>Download
-            </button>
+        <div id="downloads" class="buttons">
+            <template id="download-template">
+                <button id="download-button" title="Click to download for ${os}" class="link__buttons">
+                    <i id="download-icon" class="uil ${icon-class} icons"></i>Download ${version}
+                </button>
+            </template>
+        </div>
+
+        <!-- TODO: Popup modal on button press -->
+        <div class="other__platform">
+            Get for another platform
         </div>
     </header>
     <section class="moosync__usage">
@@ -125,20 +128,20 @@
         <p class="moosync__section__heading">Some counts that matters</p>
         <div class="moosync__countbox__container">
             <div class="count__box">
-                <p id="number__count">1000+</p>
-                <p id="number__description">Downloads</p>
+                <p id="downloads__count">100+</p>
+                <p id="downloads__description">Downloads</p>
             </div>
             <div class="count__box">
-                <p id="number__count">500+</p>
-                <p id="number__description">Discord Community</p>
+                <p id="discord__count">15+</p>
+                <p id="discord__description">Discord Community</p>
             </div>
             <div class="count__box">
-                <p id="number__count">30+</p>
-                <p id="number__description">Active Contributors</p>
+                <p id="contri__count">7+</p>
+                <p id="contri__description">Active Contributors</p>
             </div>
             <div class="count__box">
-                <p id="number__count">3+</p>
-                <p id="number__description">Programs Participated</p>
+                <p id="programs__count">3+</p>
+                <p id="programs__description">Programs Participated</p>
             </div>
         </div>
         <div id="moosync__numbers__button" class="buttons">
@@ -215,8 +218,8 @@
                                         href="https://www.iubenda.com/privacy-policy/70189564/full-legal"
                                         target="_blank" rel="noopener noreferrer">Privacy Policy</a>
                                 </li>
-                                <li class="list__items"><a href="https://moosync.app/docs/extensions_api/"
-                                        target="_blank" rel="noopener noreferrer">Documentation</a>
+                                <li class="list__items"><a href="/docs/index.html"
+                                        rel="noopener noreferrer">Documentation</a>
                                 </li>
                             </ul>
                         </div>
@@ -244,8 +247,34 @@
         <span id="copyright__text">Copyright &copy; 2022 Moosync</span>
     </footer>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="./assets/js/script.js"></script>
+    <!-- Start Single Page Apps for GitHub Pages -->
+    <script type="text/javascript">
+        // Single Page Apps for GitHub Pages
+        // MIT License
+        // https://github.com/rafgraph/spa-github-pages
+        // This script checks to see if a redirect is present in the query string,
+        // converts it back into the correct url and adds it to the
+        // browser's history using window.history.replaceState(...),
+        // which won't cause the browser to attempt to load the new url.
+        // When the single page app is loaded further down in this file,
+        // the correct url will be waiting in the browser's history for
+        // the single page app to route accordingly.
+        (function (l) {
+            if (l.search[1] === '/') {
+                var decoded = l.search.slice(1).split('&').map(function (s) {
+                    return s.replace(/~and~/g, '&')
+                }).join('?');
+                window.history.replaceState(null, null,
+                    l.pathname.slice(0, -1) + decoded + l.hash
+                );
+            }
+
+            console.log('changed window')
+        }(window.location))
+    </script>
+    <!-- End Single Page Apps for GitHub Pages -->
+
+    <script src="./assets/js/index.js" type="module"></script>
 </body>
 
 </html>

@@ -527,12 +527,12 @@ a {
   background-position: center;
 }
 
-#number__count {
+.count__box > p:first-child {
   font-size: 1.9rem;
   font-weight: 500;
 }
 
-#number__description {
+.count__box > p:last-child {
   padding: 0.25rem 0;
   font-size: 0.8rem;
 }
@@ -1000,4 +1000,34 @@ a {
   #notice {
     width: 90vw;
   }
+}
+
+@media (max-width: 350px) {
+  .email__input {
+    width: 75vw;
+  }
+}
+.all_counts {
+  padding: 5rem 0;
+  background-color: #212121;
+}
+.count_matters_boxes {
+  padding-left: 12rem;
+  display: flex;
+  flex-direction: row;
+}
+.countimages {
+  height: 283px;
+  width: 283px;
+}
+
+.other__platform {
+  color: blue;
+  margin-top: 15px;
+  cursor: pointer;
+  user-select: none;
+}
+
+[hidden] {
+  display: none !important;
 }
