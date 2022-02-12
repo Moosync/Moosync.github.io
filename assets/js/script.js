@@ -34,7 +34,9 @@ const overlayElement = document.getElementById("menu-overlay");
 
 function overlayHandler() {
   if (toggleStatus) {
-    overlayElement.classList.remove("moosync__navbar-mobileScreen-overlayClose");
+    overlayElement.classList.remove(
+      "moosync__navbar-mobileScreen-overlayClose"
+    );
     overlayElement.classList.add("moosync__navbar-mobileScreen-overlayOpen");
     toggleStatus = false;
   } else {

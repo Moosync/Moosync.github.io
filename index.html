@@ -10,14 +10,12 @@
     <meta name="viewport" content="width = device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#ffffff" />
     <meta name="msapplication-TileColor" content="#da532c" />
-
     <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon/favicon-16x16.png" />
     <link rel="manifest" href="./assets/favicon/site.webmanifest" />
     <link rel="mask-icon" href="./assets/favicon/safari-pinned-tab.svg" color="#5bbad5" />
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
-
     <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
     <title>Moosync</title>
 </head>
@@ -27,8 +25,7 @@
         <a href="#">
             <span class="title__logo">
                 <span class="logo">
-                    <img src="https://res.cloudinary.com/thepranaygupta/image/upload/v1642925133/moosync/logo_fcub7l.svg"
-                        title="Moosync" alt="moosync logo" class="logo__img" />
+                    <img src="./assets/img/logo.svg" title="Moosync" alt="moosync logo" class="logo__img" />
                 </span>
                 <span class="title">moosync</span>
             </span>
@@ -45,14 +42,16 @@
             </button>
         </div>
         <div class="moosync__navbar-mobileScreen">
-            <img src="https://res.cloudinary.com/thepranaygupta/image/upload/v1644659645/moosync/HamburgerIcon_ixj63k.svg" alt="Menu" id="hamburger-open" onclick="overlayHandler()">
+            <img src="./assets/img/hamburgerIcon.svg" alt="Menu" id="hamburger-open" onclick="overlayHandler()">
             <div class="moosync__navbar-mobileScreen-overlayClose flex__center slide__bottom" id="menu-overlay">
-                <img src="https://res.cloudinary.com/thepranaygupta/image/upload/v1644659645/moosync/HamburgerCloseIcon_cabrbd.svg" alt="Close" id="hamburger-close" onclick="overlayHandler()">
+                <img src="./assets/img/hamburgerCloseIcon.svg" alt="Close" id="hamburger-close"
+                    onclick="overlayHandler()">
                 <ul class='moosync__navbar-mobileScreen-links'>
-                  <li class='p__normal' onclick="overlayHandler()"><a href="#">Home</a></li>
-                  <li class='p__normal' onclick="overlayHandler()"><a href="#">Privacy Policy</a></li>
-                  <li class='p__normal' onclick="overlayHandler()"><a href="#">Documentation</a></li>
-                  <li onclick="overlayHandler()"><button type="button" name="button" class="navigation__buttons" id="download__btn">Download</button></li>
+                    <li class='p__normal' onclick="overlayHandler()"><a href="#">Home</a></li>
+                    <li class='p__normal' onclick="overlayHandler()"><a href="#">Privacy Policy</a></li>
+                    <li class='p__normal' onclick="overlayHandler()"><a href="#">Documentation</a></li>
+                    <li onclick="overlayHandler()"><button type="button" name="button" class="navigation__buttons"
+                            id="download__btn">Download</button></li>
                 </ul>
             </div>
         </div>
@@ -62,9 +61,7 @@
         <span class="title__line">It's the music player for community</span>
         <div class="circle__div__container">
             <div class="music__person__img__container">
-                <img id="music__person__img"
-                    src="https://res.cloudinary.com/thepranaygupta/image/upload/v1643117003/moosync/person_rcdrft.png"
-                    alt="">
+                <img id="music__person__img" src="./assets/img/person.png" alt="">
             </div>
             <div id="circle__div__1" class="circle__div">
                 <div id="circle__div__2" class="circle__div">
@@ -74,8 +71,8 @@
                 <audio id="music"
                     src="https://res.cloudinary.com/thepranaygupta/video/upload/v1643119296/moosync/bg-music_x3sspk.mp3"
                     type="audio/mpeg"></audio>
-                <img src="https://res.cloudinary.com/thepranaygupta/image/upload/v1642925133/moosync/playbutton_gbdn8n.svg"
-                    title="Play" alt="" class="play__button__img" id="playButton" onclick="playPause()" />
+                <img src="./assets/img/playbutton.svg" title="Play" alt="" class="play__button__img" id="playButton"
+                    onclick="playPause()" />
             </div>
         </div>
         <div id="download" class="buttons">
@@ -91,42 +88,35 @@
         <p id="usage__section__heading" class="moosync__section__heading">Why use Moosync</p>
         <div class="usage__icons__text">
             <span class="usage">
-                <img src="https://res.cloudinary.com/thepranaygupta/image/upload/v1642925132/moosync/usageIcon1_m3wjcy.svg"
-                    alt="" class="usage__icons" />
+                <img src="./assets/img/usageIcon1.svg" alt="" class="usage__icons" />
                 <span class="info__text__4">Customizable theme engine & Easy to use interface</span>
             </span>
             <span class="usage">
-                <img src="https://res.cloudinary.com/thepranaygupta/image/upload/v1642925131/moosync/usageIcon2_kaftpx.svg"
-                    alt="" class="usage__icons" />
+                <img src="./assets/img/usageIcon2.svg" alt="" class="usage__icons" />
                 <span class="info__text__4">Develop own apps on top of Moosync Extension API</span>
             </span>
         </div>
         <div id="usage__icons__text__mid" class="usage__icons__text">
             <span id="usage__mid" class="usage">
-                <img src="https://res.cloudinary.com/thepranaygupta/image/upload/v1642925131/moosync/usageIcon3_m7ovk2.svg"
-                    alt="" class="usage__icons" />
+                <img src="./assets/img/usageIcon3.svg" alt="" class="usage__icons" />
                 <span class="info__text__4">Seamlessly integrate your Spotify and Youtube playlists.</span>
             </span>
             <span class="usage">
-                <img src="https://res.cloudinary.com/thepranaygupta/image/upload/v1642925133/moosync/laptopbg_onhvwd.svg"
-                    alt="" id="usage__mid__img" />
+                <img src="./assets/img/laptopbg.svg" alt="" id="usage__mid__img" />
             </span>
             <span id="usage__mid" class="usage">
-                <img src="https://res.cloudinary.com/thepranaygupta/image/upload/v1642925131/moosync/usageIcon4_myizgc.svg"
-                    alt="" class="usage__icons" />
+                <img src="./assets/img/usageIcon4.svg" alt="" class="usage__icons" />
                 <span class="info__text__4">Play songs directly from youtube using youtube embed</span>
             </span>
         </div>
         <div class="usage__icons__text">
             <span class="usage">
-                <img src="https://res.cloudinary.com/thepranaygupta/image/upload/v1642925134/moosync/usageIcon5_gptzsw.svg"
-                    alt="" class="usage__icons" />
+                <img src="./assets/img/usageIcon5.svg" alt="" class="usage__icons" />
                 <span class="info__text__4">Mix and match songs from different providers in a single
                     playlist</span>
             </span>
             <span class="usage">
-                <img src="https://res.cloudinary.com/thepranaygupta/image/upload/v1642925134/moosync/usageIcon6_u9trnn.svg"
-                    alt="" class="usage__icons" />
+                <img src="./assets/img/usageIcon6.svg" alt="" class="usage__icons" />
                 <span class="info__text__4">Add Spotify and Youtube tracks and playlists by URLs</span>
             </span>
         </div>
@@ -154,8 +144,7 @@
         <div id="moosync__numbers__button" class="buttons">
             <a href="https://discord.gg/A5yePzN2" target="_blank" rel="noopener noreferrer">
                 <button title="Join us on Discord" class="link__buttons">
-                    <img src="https://res.cloudinary.com/thepranaygupta/image/upload/v1643033360/moosync/Discord-Logo-Black_ccmr97.svg"
-                        alt="" class="icons" id="discord__icon" />Join Discord
+                    <img src="./assets/img/discordLogo.svg" alt="" class="icons" id="discord__icon" />Join Discord
                 </button>
             </a>
             <a href="https://github.com/Moosync/Moosync" target="_blank" rel="noopener noreferrer">
@@ -192,8 +181,7 @@
             <div id="left__footer__content" class="footer__content">
                 <a href="#home__page">
                     <span class="title__logo">
-                        <img src="https://res.cloudinary.com/thepranaygupta/image/upload/v1642925133/moosync/logo_fcub7l.svg"
-                            title="Moosync" alt="" id="footer__logo" class="logo__img" />
+                        <img src="./assets/img/logo.svg" title="Moosync" alt="" id="footer__logo" class="logo__img" />
                         <span class="title">moosync</span>
                     </span>
                 </a>
@@ -203,8 +191,7 @@
                 <a href="mailto:support@moosync.app">
                     <p class="info__text__3">
                         support@moosync.app
-                        <img src="https://res.cloudinary.com/thepranaygupta/image/upload/v1642925133/moosync/link_evanux.svg"
-                            alt="" id="link__icon" />
+                        <img src="./assets/img/link.svg" alt="" id="link__icon" />
                     </p>
                 </a>
             </div>
