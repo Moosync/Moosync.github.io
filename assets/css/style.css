@@ -20,7 +20,6 @@ a {
 
 .main {
   min-height: 100vh;
-  /* background-color: none; */
   display: block;
   background-color: #212121;
 }
@@ -39,6 +38,15 @@ a {
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
   z-index: 99999;
+}
+
+.login__navbar {
+  background-color: none;
+  background-image: linear-gradient(
+    180deg,
+    rgba(40, 40, 40, 0.3),
+    rgba(86, 86, 86, 0.3)
+  );
 }
 
 .title__logo {
@@ -112,6 +120,157 @@ a {
   border-bottom: none;
 }
 
+/* ------------------------------------------------------------------ */
+
+.moosync__navbar-mobileScreen {
+  display: none;
+}
+
+#hamburger-open {
+  width: 30px;
+  height: 30px;
+}
+
+.moosync__navbar-mobileScreen-overlayClose {
+  display: none;
+}
+
+.moosync__navbar-mobileScreen-overlayOpen {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  background-color: var(--color-primary-black);
+  flex-direction: column;
+  top: 0;
+  left: 0;
+  transition: 0.5s ease;
+  z-index: 9999;
+}
+
+.moosync__navbar-mobileScreen-links {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  list-style-type: none;
+}
+
+.moosync__navbar-mobileScreen-links li {
+  margin-top: 2rem;
+  font-size: 2rem;
+  color: var(--color-white);
+  text-align: center;
+  cursor: pointer;
+}
+
+.moosync__navbar-mobileScreen-links li button {
+  margin-top: 3rem;
+  font-size: 2rem;
+}
+
+.moosync__navbar-mobileScreen-links li:hover {
+  color: var(--color-text-green);
+}
+
+#hamburger-close {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 1.5rem;
+  right: 3rem;
+  cursor: pointer;
+}
+
+/* ------------------------------------------------------------------ */
+
+.moosync__navbar-mobileScreen {
+  display: none;
+}
+
+#hamburger-open {
+  width: 30px;
+  height: 30px;
+}
+
+.moosync__navbar-mobileScreen-overlayClose {
+  display: none;
+}
+
+.moosync__navbar-mobileScreen-overlayOpen {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  background-color: #141414;
+  flex-direction: column;
+  top: 0;
+  left: 0;
+  transition: 0.5s ease;
+  z-index: 9999;
+}
+
+.moosync__navbar-mobileScreen-links {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  list-style-type: none;
+}
+
+.moosync__navbar-mobileScreen-links li {
+  margin-top: 2rem;
+  font-size: 2rem;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+}
+
+.moosync__navbar-mobileScreen-links li:hover {
+  color: var(--green-primary);
+}
+
+#hamburger-close {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 1.5rem;
+  right: 3rem;
+  cursor: pointer;
+}
+
+.slide__bottom {
+  -webkit-animation: slide-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: slide-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@-webkit-keyframes slide-bottom {
+  0% {
+    -webkit-transform: translateY(-25%);
+    transform: translateY(-25%);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-bottom {
+  0% {
+    -webkit-transform: translateY(-25%);
+    transform: translateY(-25%);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+/* ------------------------------------------------------------------ */
+
 .heading__page {
   width: 100%;
   padding: 3.25rem 0 3.125rem 0;
@@ -121,6 +280,11 @@ a {
   align-items: center;
   justify-content: center;
   font-family: "Lexend Deca", sans-serif;
+}
+
+#login__heading__page {
+  height: 90vh;
+  justify-content: flex-start;
 }
 
 .info__text__1 {
@@ -143,13 +307,21 @@ a {
   line-height: 6.5rem;
 }
 
+#login__title__line {
+  width: 500px;
+  margin-top: 7.5rem;
+  font-size: 1.75rem;
+  line-height: normal;
+  font-weight: normal;
+}
+
 .circle__div__container {
   width: 100%;
   margin: 5rem 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url("https://res.cloudinary.com/thepranaygupta/image/upload/v1642925136/moosync/headerbg_ek2juj.svg");
+  background-image: url("../img/headerbg.svg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -298,6 +470,8 @@ a {
   text-align: center;
 }
 
+/* Video Section Style */
+
 .moosync__video {
   padding: 5rem 0;
   background-color: #141414;
@@ -321,123 +495,7 @@ a {
   border-radius: 1rem;
 }
 
-.moosync_testinomial {
-  padding: 5rem 0;
-  background-color: #212121;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.testimonial__heading {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-}
-
-#quote__icon__visible {
-  width: 10rem;
-  padding: 0 1rem;
-  object-fit: cover;
-}
-
-#quote__icon__hidden {
-  padding: 0 1rem;
-  visibility: hidden;
-}
-
-.testimonial__container {
-  margin: 1.5rem 0;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
-}
-
-.testimonial__message__container {
-  width: 350px;
-  margin: 1rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border: none;
-  outline: none;
-}
-
-#testimonial__message__heading {
-  font-size: 1.25rem;
-  font-weight: bold;
-}
-
-.testimonial__message__text {
-  padding: 1rem;
-  width: fit-content;
-  background-color: white;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  border-radius: 10px;
-}
-
-#testimonial__users__message {
-  width: auto;
-  display: block;
-  text-align: justify;
-}
-
-#testimonial__message__heading {
-  width: 100%;
-  display: block;
-  text-align: center;
-}
-
-.triangle__div {
-  padding: 1rem;
-  margin-top: -1px;
-  background-color: white;
-  border-bottom-left-radius: 100px;
-  border-bottom-right-radius: 100px;
-  border: none;
-  outline: none;
-  clip-path: polygon(45% 100%, 55% 100%, 100% 0, 0 0);
-}
-
-.reviewer__info {
-  padding: 1.5rem 0;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  color: white;
-}
-
-.reviewer__name__designation {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-}
-
-#reviewer__img {
-  height: 4rem;
-  margin: 0 0.75rem;
-  object-fit: cover;
-}
-
-#reviewer__name {
-  padding: 0.25rem 0;
-  font-size: 1.25rem;
-}
-
-#reviewer__designation {
-  font-size: 0.8rem;
-}
+/* Video Section Style */
 
 .moosync__numbers {
   padding: 5rem 0;
@@ -463,7 +521,7 @@ a {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-image: url("https://res.cloudinary.com/thepranaygupta/image/upload/v1642947849/moosync/hexagon_cvamui.svg");
+  background-image: url("../img/hexagon.svg");
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -484,7 +542,7 @@ a {
 }
 
 .footer__section {
-  padding: 3rem 2.5rem 2rem 2.5rem;
+  padding: 3rem 2.5rem 1rem 2.5rem;
   background-color: #141414;
   display: flex;
   flex-direction: column;
@@ -639,7 +697,7 @@ a {
 
 #notice {
   width: 60%;
-  margin: 1.5rem 0;
+  margin: 1rem 0;
   align-self: center;
   display: flex;
   flex-direction: column;
@@ -719,8 +777,6 @@ a {
 
 @media (max-width: 800px) {
   .nav__bar {
-    padding-bottom: 1rem;
-    flex-direction: column;
     position: relative;
     top: auto;
   }
@@ -736,6 +792,14 @@ a {
   #download__btn {
     padding: 0.25rem 0.5rem;
     border-radius: 5px;
+  }
+
+  .navbar__buttons {
+    display: none;
+  }
+
+  .moosync__navbar-mobileScreen {
+    display: block;
   }
 
   .footer__container {
@@ -768,6 +832,10 @@ a {
     width: 250px;
   }
 
+  #subscribe__button {
+    width: 290px;
+  }
+
   .general__info__links {
     width: 100%;
     justify-content: space-evenly;
@@ -798,21 +866,6 @@ a {
   }
 }
 
-@media (max-width: 700px) {
-  .testimonial__heading {
-    flex-direction: column;
-  }
-
-  #quote__icon__visible {
-    width: 8rem;
-    padding: 0;
-  }
-
-  #quote__icon__hidden {
-    display: none;
-  }
-}
-
 @media (max-width: 550px) {
   .navbar__buttons {
     width: auto;
@@ -835,6 +888,11 @@ a {
     text-align: center;
     font-size: 0.75rem;
     margin-bottom: 10px;
+  }
+
+  #login__title__line {
+    width: 90%;
+    margin-top: 2.5rem;
   }
 
   .circle__div__container {
@@ -863,25 +921,25 @@ a {
     flex-direction: column;
   }
 
-  .moosync__video__player {
+  /* .moosync__video__player {
     margin: 2rem;
-  }
+  } */
 
   .moosync__section__heading {
     width: 90vw;
   }
 
-  .usage__icons__text {
+  /* .usage__icons__text {
     flex-direction: column;
-  }
+  } */
 
   .usage {
     margin: 2rem 0;
   }
 
-  .usage__icons {
+  /* .usage__icons {
     width: 25vw;
-  }
+  } */
 
   .list__items {
     line-height: normal;
@@ -893,38 +951,19 @@ a {
   }
 
   #subscribe__button {
+    width: 275px;
     font-size: 1rem;
     padding: 0.5rem 0.5rem;
   }
 }
 
 @media (max-width: 500px) {
-  .testimonial__message__container {
-    width: 75vw;
-  }
-
   #footer__info__text__2 {
     font-size: 1.5rem;
   }
 }
 
 @media (max-width: 450px) {
-  .reviewer__info {
-    flex-direction: column;
-  }
-
-  .reviewer__name__designation {
-    align-items: center;
-  }
-
-  #reviewer__name {
-    text-align: center;
-  }
-
-  #reviewer__designation {
-    text-align: center;
-  }
-
   .info__text__3 {
     font-size: 0.9rem;
   }
@@ -938,6 +977,10 @@ a {
 @media (max-width: 350px) {
   .email__input {
     width: 75vw;
+  }
+
+  #subscribe__button {
+    width: 82vw;
   }
 
   .general__info__links {
@@ -986,5 +1029,5 @@ a {
 }
 
 [hidden] {
-    display: none !important;
+  display: none !important;
 }
