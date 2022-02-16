@@ -2,6 +2,7 @@ export function setupPageFunctionality() {
   const music = document.getElementById("music");
   music.volume = 0.2;
   const playButton = document.getElementById("playButton");
+  const playButtonIcon = document.getElementById("playButtonIcon");
   let isPlaying = false;
 
   const playPause = () => {
@@ -10,13 +11,13 @@ export function setupPageFunctionality() {
 
       music.play();
       playButton.title = "Pause";
-      playButton.src = "./assets/img/pausebutton_kaq80l.svg";
+      playButtonIcon.src = "./assets/img/pausebutton.svg";
     } else {
       isPlaying = false;
 
       music.pause();
       playButton.title = "Play";
-      playButton.src = "./assets/img/playbutton_gbdn8n.svg";
+      playButtonIcon.src = "./assets/img/playbutton.svg";
     }
   };
 

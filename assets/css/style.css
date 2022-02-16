@@ -362,17 +362,32 @@ a {
   position: absolute;
 }
 
-.play__button__img {
-  cursor: pointer;
-}
-
-#playButton {
-  width: 15vw;
-}
-
-.play__button__img:hover {
-  transform: scale(1.1);
+.playbutton__container {
+  position: relative;
   transition: all 0.2s;
+}
+
+.play__button__img {
+  display: block;
+  cursor: pointer;
+  width: 165px;
+}
+
+.play__button__icon {
+  position: absolute;
+  left: 0; 
+  right: 0; 
+  top: 0;
+  bottom: 0;
+  margin-left: auto; 
+  margin-right: auto; 
+  margin-top: auto;
+  margin-bottom: auto;
+  width: 30px;
+}
+
+.playbutton__container:hover {
+  transform: scale(1.1);
 }
 
 .buttons {
