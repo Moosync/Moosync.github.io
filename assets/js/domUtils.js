@@ -29,4 +29,31 @@ export function setupPageFunctionality() {
       inline: "center",
     });
   };
+
+  document.getElementById('hamburger-close').onclick = overlayHandler.bind(this)
+  document.getElementById('hamburger-open').onclick = overlayHandler.bind(this)
+
+  document.getElementById('home').onclick = overlayHandler.bind(this)
+  document.getElementById('privacy').onclick = overlayHandler.bind(this)
+  document.getElementById('documentation').onclick = overlayHandler.bind(this)
+  document.getElementById('download').onclick = overlayHandler.bind(this)
+
+}
+
+let toggleStatus = true;
+
+function overlayHandler () {
+  const overlayElement = document.getElementById("menu-overlay");
+
+  if (toggleStatus) {
+    overlayElement.classList.remove(
+      "moosync__navbar-mobileScreen-overlayClose"
+    );
+    overlayElement.classList.add("moosync__navbar-mobileScreen-overlayOpen");
+    toggleStatus = false;
+  } else {
+    overlayElement.classList.remove("moosync__navbar-mobileScreen-overlayOpen");
+    overlayElement.classList.add("moosync__navbar-mobileScreen-overlayClose");
+    toggleStatus = true;
+  }
 }

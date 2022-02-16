@@ -41,15 +41,15 @@
             </button>
         </div>
         <div class="moosync__navbar-mobileScreen">
-            <img src="./assets/img/hamburgerIcon.svg" alt="Menu" id="hamburger-open" onclick="overlayHandler()">
+            <img src="./assets/img/hamburgerIcon.svg" alt="Menu" id="hamburger-open">
             <div class="moosync__navbar-mobileScreen-overlayClose flex__center slide__bottom" id="menu-overlay">
-                <img src="./assets/img/hamburgerCloseIcon.svg" alt="Close" id="hamburger-close"
-                    onclick="overlayHandler()">
+                <img src="./assets/img/hamburgerCloseIcon.svg" alt="Close" id="hamburger-close">
                 <ul class='moosync__navbar-mobileScreen-links'>
-                    <li class='p__normal' onclick="overlayHandler()"><a href="#">Home</a></li>
-                    <li class='p__normal' onclick="overlayHandler()"><a href="#">Privacy Policy</a></li>
-                    <li class='p__normal' onclick="overlayHandler()"><a href="#">Documentation</a></li>
-                    <li onclick="overlayHandler()"><button type="button" name="button" class="navigation__buttons"
+                    <li class='p__normal' id="home"><a href="#">Home</a></li>
+                    <li class='p__normal' id="privacy"><a href="#">Privacy Policy</a></li>
+                    <li class='p__normal' id="documentation"><a href="#">Documentation</a>
+                    </li>
+                    <li id="download"><button type="button" name="button" class="navigation__buttons"
                             id="download__btn">Download</button></li>
                 </ul>
             </div>
