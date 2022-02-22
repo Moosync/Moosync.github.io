@@ -6,6 +6,10 @@ import {
 } from "./locationUtils.js";
 
 export function setupPageFunctionality () {
+
+  document.body.onscroll = disableScrolling
+  document.body.onmousewheel = enableScrolling
+
   const music = document.getElementById("music");
   music.volume = 0.2;
   const playButton = document.getElementById("playButton");
@@ -104,4 +108,22 @@ function overlayHandler () {
     overlayElement.classList.add("moosync__navbar-mobileScreen-overlayClose");
     toggleStatus = true;
   }
+}
+
+let scrollTimeout
+
+function disableScrolling () {
+  if (!scrollTimeout) {
+    scrollTimeout = setTimeout(function () {
+      document.body.style.color = 'transparent';
+    }, 1000);
+  }
+}
+
+function enableScrolling () {
+  if (scrollTimeout) {
+    clearTimeout(scrollTimeout)
+    scrollTimeout = undefined
+  }
+  document.body.style.color = 'white';
 }
