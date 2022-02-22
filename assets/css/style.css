@@ -85,6 +85,7 @@ a {
   color: white;
   border: none;
   cursor: pointer;
+  transition: transform 250ms ease-in-out;
 }
 
 .navigation__buttons::after {
@@ -92,7 +93,6 @@ a {
   content: "";
   border-bottom: 2px solid #5bb67a;
   transform: scaleX(0);
-  transition: transform 250ms ease-in-out;
 }
 
 .navigation__buttons:hover::after {
@@ -124,6 +124,7 @@ a {
 
 .moosync__navbar-mobileScreen {
   display: none;
+  transition: 0.5s ease;
 }
 
 #hamburger-open {
@@ -143,7 +144,6 @@ a {
   flex-direction: column;
   top: 0;
   left: 0;
-  transition: 0.5s ease;
   z-index: 9999;
 }
 
@@ -412,11 +412,11 @@ a {
   border: none;
   border-radius: 10px;
   cursor: pointer;
+  transition: all 0.2s;
 }
 
 .link__buttons:hover {
   transform: scale(1.1);
-  transition: all 0.2s;
 }
 
 .icons {
@@ -624,11 +624,11 @@ a {
   color: white;
   border-bottom: 2px solid white;
   cursor: pointer;
+  transition: all 0.2s;
 }
 
 .info__text__3:hover #link__icon {
   transform: scale(1.25);
-  transition: all 0.2s;
 }
 #link__icon {
   height: 0.75rem;
