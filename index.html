@@ -252,6 +252,33 @@
         <span id="copyright__text">Copyright &copy; 2022 Moosync</span>
     </footer>
 
+    <!-- Login modal-->
+    <div id="login-modal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span id="login-modal-close" class="close">&times;</span>
+            <div id="login-modal-postlogin">
+                <p class="modal-content-text" id="login-modal-content">Thanks for logging in to
+                    <span id="login-modal-platform-text-post">${platform}</span><br />
+                    you may now close this window<br />
+                    and enjoy your experience.
+                </p>
+            </div>
+
+            <div id="login-modal-prelogin">
+                <p class="modal-content-text" id="login-modal-content">
+                    Do you want to login to <span id="login-modal-platform-text-pre">${platform}</span>?
+                    <button title="Login" id="login-button" class="link__buttons login__button">
+                        Click to login
+                    </button>
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
     <!-- Start Single Page Apps for GitHub Pages -->
     <script type="text/javascript">
         // Single Page Apps for GitHub Pages

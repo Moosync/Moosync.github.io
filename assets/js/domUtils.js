@@ -1,4 +1,11 @@
-export function setupPageFunctionality() {
+import {
+  getProviderColor,
+  getProviderFromURL,
+  getProviderRedirectURL,
+  getQueryParams,
+} from "./locationUtils.js";
+
+export function setupPageFunctionality () {
   const music = document.getElementById("music");
   music.volume = 0.2;
   const playButton = document.getElementById("playButton");
@@ -42,6 +49,46 @@ export function setupPageFunctionality() {
 }
 
 let toggleStatus = true;
+
+export function setupLoginModalFunctionality () {
+  const loginModal = document.getElementById('login-modal')
+  const loginModalPreLogin = document.getElementById('login-modal-prelogin')
+  const loginModalPostLogin = document.getElementById('login-modal-postlogin')
+
+  const loginModalCloseButton = document.getElementById('login-modal-close')
+  const loginModalPlatformTextPost = document.getElementById('login-modal-platform-text-post')
+  const loginModalPlatformTextPre = document.getElementById('login-modal-platform-text-pre')
+  const loginButton = document.getElementById('login-button')
+
+  loginModalPostLogin.style.display = 'none'
+  loginModalPreLogin.style.display = 'block'
+
+  const providerMatch = getProviderFromURL();
+  if (providerMatch && providerMatch.length > 0) {
+    const color = getProviderColor(providerMatch[0])
+    loginModalPlatformTextPost.innerHTML = providerMatch[0]
+    loginModalPlatformTextPost.style.color = color
+
+    loginModalPlatformTextPre.innerHTML = providerMatch[0]
+    loginModalPlatformTextPre.style.color = color
+
+    loginButton.style.backgroundColor = color
+    loginButton.onclick = () => {
+      const redirectPath = getProviderRedirectURL(providerMatch[0]);
+      const res = window.open("moosync://" + redirectPath + getQueryParams())
+      if (res) {
+        loginModalPostLogin.style.display = 'block'
+        loginModalPreLogin.style.display = 'none'
+      } else {
+        alert('Failed to open Moosync. Check for blocked popup')
+      }
+    }
+
+    loginModal.style.display = "block"
+  }
+
+  loginModalCloseButton.onclick = () => loginModal.style.display = "none"
+}
 
 function overlayHandler () {
   const overlayElement = document.getElementById("menu-overlay");

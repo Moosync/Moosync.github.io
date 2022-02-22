@@ -37,7 +37,7 @@ a {
   box-shadow: 0 8px 32px 0 rgba(33, 33, 33, 0.37);
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
-  z-index: 99999;
+  z-index: 999;
 }
 
 .login__navbar {
@@ -144,7 +144,7 @@ a {
   flex-direction: column;
   top: 0;
   left: 0;
-  z-index: 9999;
+  z-index: 999;
 }
 
 .moosync__navbar-mobileScreen-links {
@@ -209,7 +209,7 @@ a {
   top: 0;
   left: 0;
   transition: 0.5s ease;
-  z-index: 9999;
+  z-index: 999;
 }
 
 .moosync__navbar-mobileScreen-links {
@@ -1046,3 +1046,57 @@ a {
 [hidden] {
   display: none !important;
 }
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%;
+  overflow: hidden;
+  background-color: rgba(0,0,0,0.7);
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: #141414;
+  margin: 15% auto; 
+  border-radius: 16px;
+  width: 60%;
+  font-family: 'Lexend Deca';
+  font-weight: 500;
+  font-size: 38px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.modal-content-text {
+  padding: 100px 20px 100px 20px;
+}
+#login-modal-platform-text-pre, #login-modal-platform-text-post {
+  text-transform: capitalize;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  padding-right: 20px;
+  padding-top: 15px;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  text-decoration: none;
+}
+
+.login__button {
+  margin: auto;
+  margin-top: 30px;
+  padding: 15px;
+}
+
