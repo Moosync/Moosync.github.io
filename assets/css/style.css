@@ -519,6 +519,7 @@ a {
 /* Video Section Style */
 
 .moosync__numbers {
+  color: black;
   padding: 5rem 0;
   background-color: #212121;
   display: flex;
