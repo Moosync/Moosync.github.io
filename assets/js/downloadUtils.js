@@ -7,7 +7,7 @@ const OSEnum = Object.freeze({
   UNDEFINED: "undefined",
 });
 
-function getOS() {
+function getOS () {
   // Lets be safe and get platform from deprecated field too
   // https://developer.mozilla.org/en-US/docs/Web/API/Navigator/platform
   const platform = (
@@ -30,7 +30,7 @@ function getOS() {
   return OSEnum.UNDEFINED;
 }
 
-function getReaderFriendlyName(os) {
+function getReaderFriendlyName (os) {
   switch (os) {
     case OSEnum.WINDOWS:
       return "Windows";
@@ -41,13 +41,13 @@ function getReaderFriendlyName(os) {
   }
 }
 
-function getLatestAsset(os, assets) {
+function getLatestAsset (os, assets) {
   return assets.filter(
     (val) => !val.name.match("blockmap|yml") && val.name.match(os)
   );
 }
 
-async function getReleaseInfo(os) {
+async function getReleaseInfo (os) {
   const cache = JSON.parse(localStorage.getItem("artifacts"));
 
   if (shouldRegenRequest(cache)) {
@@ -74,7 +74,7 @@ async function getReleaseInfo(os) {
   return cache.data;
 }
 
-function getIconClass(os) {
+function getIconClass (os) {
   switch (os) {
     case OSEnum.WINDOWS:
       return "uil-windows";
@@ -85,7 +85,7 @@ function getIconClass(os) {
   }
 }
 
-function extractExtension(fileName) {
+function extractExtension (fileName) {
   const split = fileName.split(".");
   if (split.at(-1) !== "gz") {
     return split.at(-1);
@@ -94,7 +94,7 @@ function extractExtension(fileName) {
   return split.at(-2) + "." + split.at(-1);
 }
 
-export async function setupDownloadButton() {
+export async function setupDownloadButton () {
   const os = getOS();
   const downloadParent = document.getElementById("downloads");
 
@@ -121,5 +121,9 @@ export async function setupDownloadButton() {
   } else {
     downloadParent.innerHTML =
       "Sorry Moosync is not available for your platform yet";
+  }
+
+  document.getElementById('other-download').onclick = () => {
+    window.open('https://github.com/Moosync/Moosync/releases/latest')
   }
 }
