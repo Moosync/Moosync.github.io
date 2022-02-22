@@ -111,8 +111,12 @@ export async function setupDownloadButton() {
         "${version}",
         `${release.version} ${releases.length > 0 ? release.ext : ""}`
       );
+      button.id = `${release.version} ${release.ext}`
+
       clone.getElementById("download-icon").classList.add(getIconClass(os));
       downloadParent.appendChild(document.importNode(clone, true));
+
+      document.getElementById(`${release.version} ${release.ext}`).onclick = () => window.open(release.url)
     }
   } else {
     downloadParent.innerHTML =
