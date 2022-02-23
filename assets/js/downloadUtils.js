@@ -50,7 +50,7 @@ function getLatestAsset (os, assets) {
 async function getReleaseInfo (os) {
   const cache = JSON.parse(localStorage.getItem("artifacts"));
 
-  if (shouldRegenRequest(cache)) {
+  if (shouldRegenRequest(cache) || cache.platform !== os) {
     const resp = await (
       await fetch("https://api.github.com/repos/Moosync/Moosync/releases")
     ).json();
@@ -66,7 +66,7 @@ async function getReleaseInfo (os) {
         });
       }
 
-      setCache("artifacts", { data: ret, expiry: getExpiryTime() });
+      setCache("artifacts", { platform: os, data: ret, expiry: getExpiryTime() });
       return ret;
     }
   }
