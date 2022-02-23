@@ -64,34 +64,48 @@ export function setupLoginModalFunctionality () {
   const loginModalPlatformTextPre = document.getElementById('login-modal-platform-text-pre')
   const loginButton = document.getElementById('login-button')
 
-  loginModalPostLogin.style.display = 'none'
-  loginModalPreLogin.style.display = 'block'
-
-  const providerMatch = getProviderFromURL();
-  if (providerMatch && providerMatch.length > 0) {
-    const color = getProviderColor(providerMatch[0])
-    loginModalPlatformTextPost.innerHTML = providerMatch[0]
+  const providerMatch = getProviderFromURL()[0];
+  if (providerMatch) {
+    const color = getProviderColor(providerMatch)
+    loginModalPlatformTextPost.innerHTML = providerMatch
     loginModalPlatformTextPost.style.color = color
 
-    loginModalPlatformTextPre.innerHTML = providerMatch[0]
+    loginModalPlatformTextPre.innerHTML = providerMatch
     loginModalPlatformTextPre.style.color = color
 
+    // Try to open popup
+    openPopupAndHandleModal(loginModalPostLogin, loginModalPreLogin, providerMatch, false)
+
     loginButton.style.backgroundColor = color
-    loginButton.onclick = () => {
-      const redirectPath = getProviderRedirectURL(providerMatch[0]);
-      const res = window.open("moosync://" + redirectPath + getQueryParams())
-      if (res) {
-        loginModalPostLogin.style.display = 'block'
-        loginModalPreLogin.style.display = 'none'
-      } else {
-        alert('Failed to open Moosync. Check for blocked popup')
-      }
-    }
+    loginButton.onclick = () => openPopupAndHandleModal(loginModalPostLogin, loginModalPreLogin, providerMatch, true)
 
     loginModal.style.display = "block"
   }
 
   loginModalCloseButton.onclick = () => loginModal.style.display = "none"
+}
+
+function openPopupAndHandleModal (loginModalPostLogin, loginModalPreLogin, provider, showWarning) {
+  if (openMoosync(provider, showWarning)) {
+    loginModalPostLogin.style.display = 'block'
+    loginModalPreLogin.style.display = 'none'
+  } else {
+    loginModalPostLogin.style.display = 'none'
+    loginModalPreLogin.style.display = 'block'
+  }
+}
+
+function openMoosync (provider, showWarning) {
+  const res = window.open("moosync://" + getProviderRedirectURL(provider) + getQueryParams())
+  if (res) {
+    window.history.replaceState(null, null, '/')
+  } else {
+    if (showWarning) {
+      alert('Failed to open Moosync. Check for blocked popup')
+    }
+  }
+
+  return !!res
 }
 
 function overlayHandler () {

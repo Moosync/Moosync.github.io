@@ -49,7 +49,6 @@ async function getGithubContributorsCount () {
 
 async function getDiscordCount () {
   const resp = await (await fetch('https://discord.com/api/guilds/919246266167332894/widget.json')).json()
-  console.log(resp)
   return resp.members.length || 0
 }
 

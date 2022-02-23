@@ -89,7 +89,7 @@
 
         <!-- TODO: Popup modal on button press -->
         <div class="other__platform" id="other-download">
-            Download for another platform
+            Download for other platforms
         </div>
     </header>
     <section class="moosync__usage">
@@ -114,7 +114,7 @@
             </span>
             <span id="usage__mid" class="usage">
                 <img src="./assets/img/usageIcon4.svg" alt="" class="usage__icons" />
-                <span class="info__text__4">Play songs directly from youtube using youtube embed</span>
+                <span class="info__text__4">Play songs directly from youtube</span>
             </span>
         </div>
         <div class="usage__icons__text">
@@ -162,28 +162,6 @@
             </a>
         </div>
     </section>
-    <!-- <section class="moosync__video">
-        <p class="moosync__section__heading">Simple Yet Powerful</p>
-        <p id="video__info__text__1" class="info__text__1">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-            veniam, quis nostrud asbjdhad kjasdkjh asdsajd. labore et dolore magna
-            aliqua. Ut enim ad minim veniam,
-        </p>
-        <video autoplay muted class="moosync__video__player">
-            <source
-                src="https://storage.coverr.co/videos/ZqXv1BIo00WFH1QiOp7J2fhONrsn8Yy4X?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6Ijg3NjdFMzIzRjlGQzEzN0E4QTAyIiwiaWF0IjoxNjQyODU2OTQ4fQ.R8zsKrppHz5keNKOCLdj0caIV3QqAp2QzZ59y_34CXM"
-                type="video/mp4" />
-        </video>
-        <div id="video__section__buttons" class="buttons">
-            <button id="video__section__link__buttons" title="Click to download for Windows" class="link__buttons">
-                <i class="uil uil-windows icons"></i>Download
-            </button>
-            <button title="Click to download for Linux" class="link__buttons">
-                <i class="uil uil-linux icons"></i>Download
-            </button>
-        </div>
-    </section> -->
     <footer class="footer__section">
         <div class="footer__container">
             <div id="left__footer__content" class="footer__content">
@@ -259,9 +237,9 @@
         <div class="modal-content">
             <span id="login-modal-close" class="close">&times;</span>
             <div id="login-modal-postlogin">
-                <p class="modal-content-text" id="login-modal-content">Thanks for logging in to
-                    <span id="login-modal-platform-text-post">${platform}</span><br />
-                    you may now close this window<br />
+                <p class="modal-content-text" id="login-modal-content">Thank you for logging in to
+                    <span id="login-modal-platform-text-post">${platform}</span>.<br />
+                    You may now close this window<br />
                     and enjoy your experience.
                 </p>
             </div>
@@ -270,7 +248,7 @@
                 <p class="modal-content-text" id="login-modal-content">
                     Do you want to login to <span id="login-modal-platform-text-pre">${platform}</span>?
                     <button title="Login" id="login-button" class="link__buttons login__button">
-                        Click to login
+                        Click to open Moosync
                     </button>
                 </p>
             </div>
@@ -300,8 +278,6 @@
                     l.pathname.slice(0, -1) + decoded + l.hash
                 );
             }
-
-            console.log('changed window')
         }(window.location))
     </script>
     <!-- End Single Page Apps for GitHub Pages -->

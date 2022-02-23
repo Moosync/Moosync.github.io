@@ -1,5 +1,5 @@
 export function getProviderFromURL () {
-  return window.location.pathname.match('youtube|spotify|lastfm')
+  return window.location.pathname.match('youtube|spotify|lastfm') || []
 }
 
 export function getProviderColor (provider) {
