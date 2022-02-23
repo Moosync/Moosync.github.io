@@ -1125,3 +1125,33 @@ a {
   background: transparent;
 }
 
+.icon-linux, .icon-win, .icon-mac {
+  width:24px;
+  height:24px;
+  padding-right: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.icon-linux::before, .icon-win::before, .icon-mac::before {
+  content: '';
+  background-size:cover;
+  position:absolute;
+  width:24px;
+  height:24px;
+}
+
+.icon-linux::before {
+  background: url('/assets/img/codicon_terminal-linux.svg');
+}
+
+.icon-win::before {
+  background: url('/assets/img/bi_windows.svg');
+}
+
+.icon-mac::before {
+  background: url('/assets/img/bi_apple.svg');
+}
+
+
+

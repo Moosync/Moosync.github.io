@@ -77,11 +77,11 @@ async function getReleaseInfo (os) {
 function getIconClass (os) {
   switch (os) {
     case OSEnum.WINDOWS:
-      return "uil-windows";
+      return "icon-win";
     case OSEnum.MACOS:
-      return "uil-apple";
+      return "icon-mac";
     case OSEnum.LINUX:
-      return "uil-linux";
+      return "icon-linux";
   }
 }
 
