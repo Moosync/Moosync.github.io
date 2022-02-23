@@ -79,14 +79,30 @@
             </div>
         </div>
         <div id="downloads" class="buttons">
-            <template id="download-template">
+            <template id="download-template-multi">
+                <div class="select__container">
+                    <div class="select__box">
+                        <div class="options__container" id="options-container">
+                        </div>
+                        <div class="selected">
+                            <i id="download-icon" class="icons"></i>
+
+                            <div class="download__text" id="download-text">Download for Linux <div
+                                    class="version__text"> ${version} </div>
+                            </div>
+                            <img class="arrow__down" src="/assets/img/arrow-down.svg" />
+                        </div>
+                    </div>
+                </div>
+            </template>
+
+            <template id="download-template-single">
                 <button id="download-button" title="Click to download for ${os}" class="link__buttons">
                     <i id="download-icon" class="icons"></i>Download ${version}
                 </button>
             </template>
         </div>
 
-        <!-- TODO: Popup modal on button press -->
         <div class="other__platform" id="other-download">
             Download for other platforms
         </div>

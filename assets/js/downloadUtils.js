@@ -94,22 +94,34 @@ function extractExtension (fileName) {
   return split.at(-2) + "." + split.at(-1);
 }
 
+function getSanitizedLinuxName (ext) {
+  switch (ext) {
+    case 'deb':
+      return 'Debian (.deb)'
+    case 'pacman':
+      return 'Arch Linux (.pacman)'
+    default:
+      return ext
+  }
+}
+
 export async function setupDownloadButton () {
   const os = getOS();
   const downloadParent = document.getElementById("downloads");
 
   if (os && os !== OSEnum.UNDEFINED) {
     const releases = await getReleaseInfo(os);
-    const buttonTemplate = document.getElementById("download-template").content;
 
-    for (const release of releases) {
+    if (releases.length === 1) {
+      const release = releases[0]
+      const buttonTemplate = document.getElementById("download-template-single").content;
       const clone = buttonTemplate.cloneNode(true);
       const button = clone.getElementById("download-button");
 
       button.title = button.title.replace("${os}", getReaderFriendlyName(os));
       button.innerHTML = button.innerHTML.replace(
         "${version}",
-        `${release.version} ${releases.length > 0 ? release.ext : ""}`
+        `${release.version}`
       );
       button.id = `${release.version} ${release.ext}`
 
@@ -118,6 +130,35 @@ export async function setupDownloadButton () {
 
       document.getElementById(`${release.version} ${release.ext}`).onclick = () => window.open(release.url)
     }
+
+    if (releases.length > 1) {
+      const buttonTemplate = document.getElementById('download-template-multi').content
+      const clone = buttonTemplate.cloneNode(true)
+
+      const downloadText = clone.getElementById('download-text')
+      downloadText.innerHTML = downloadText.innerHTML.replace('${version}', releases[0].version)
+
+      downloadParent.appendChild(document.importNode(clone, true));
+
+      const optionsContainer = document.getElementById('options-container')
+
+      for (const release of releases) {
+        const optionDiv = document.createElement('div')
+        optionDiv.classList.add('option')
+        optionDiv.innerHTML = `${getSanitizedLinuxName(release.ext)}`
+        optionsContainer.appendChild(optionDiv)
+
+        optionDiv.onclick = () => window.open(release.url)
+      }
+
+      const selected = document.querySelector('.selected');
+
+      selected.addEventListener("click", () => {
+        optionsContainer.classList.toggle("options__active");
+      })
+
+    }
+
   } else {
     downloadParent.innerHTML =
       "Sorry Moosync is not available for your platform yet";
