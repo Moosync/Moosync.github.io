@@ -2,279 +2,302 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8" />
+    <meta name="description" content="A simple music player" />
+    <meta name="keywords" content="Moosync, Spotify, Youtube, Songs, Playlist" />
+    <meta name="author" content="Moosync" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width = device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon/favicon-16x16.png" />
+    <link rel="manifest" href="./assets/favicon/site.webmanifest" />
+    <link rel="mask-icon" href="./assets/favicon/safari-pinned-tab.svg" color="#5bbad5" />
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
     <title>Moosync</title>
-    <script src="https://kit.fontawesome.com/210f6e27a7.js" crossorigin="anonymous"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
-
 </head>
 
-<body>
-    <div class="dots-container">
-        <div class="dots"></div>
-    </div>
-
-    <div class="main-container">
-        <div class="navbar-custom">
-            <div class="logo-container">
-                <img class="logo" src="assets/logo.svg" alt="moosync logo" />
-            </div>
-            <div class="socials">
-                <div class="logo-container">
-                    <a href="/legal/privacy" class="me-3">
-                        Privacy policy
-                    </a>
-                    <a href="/docs/extensions_api/index.html" class="me-3">
-                        Extension API
-                    </a>
-                    <a href="https://github.com/Moosync/moosync-app" title="Github repo">
-                        <img class="logo" src="assets/github.svg" alt="github logo" />
-                    </a>
-                </div>
+<body class="main">
+    <nav class="nav__bar">
+        <a href="#">
+            <span class="title__logo">
+                <span class="logo">
+                    <img src="./assets/img/logo.svg" title="Moosync" alt="moosync logo" class="logo__img" />
+                </span>
+                <span class="title">moosync</span>
+            </span>
+        </a>
+        <div class="navbar__buttons">
+            <button class="navigation__buttons"><a href="#">home</a></button>
+            <button class="navigation__buttons"><a href="https://www.iubenda.com/privacy-policy/70189564/full-legal"
+                    target="_blank" rel="noopener noreferrer">privacy policy</a>
+            </button>
+            <button class="navigation__buttons"><a href="/docs/index.html" rel="noopener noreferrer">documentation</a>
+            </button>
+            <button id="download__btn" class="navigation__buttons">Download
+            </button>
+        </div>
+        <div class="moosync__navbar-mobileScreen">
+            <img src="./assets/img/hamburgerIcon.svg" alt="Menu" id="hamburger-open">
+            <div class="moosync__navbar-mobileScreen-overlayClose flex__center slide__bottom" id="menu-overlay">
+                <img src="./assets/img/hamburgerCloseIcon.svg" alt="Close" id="hamburger-close">
+                <ul class='moosync__navbar-mobileScreen-links'>
+                    <li class='p__normal' id="home"><a href="#">Home</a></li>
+                    <li class='p__normal' id="privacy"><a href="#">Privacy Policy</a></li>
+                    <li class='p__normal' id="documentation"><a href="#">Documentation</a>
+                    </li>
+                    <li id="download"><button type="button" name="button" class="navigation__buttons"
+                            id="download__btn">Download</button></li>
+                </ul>
             </div>
         </div>
-        <div class="main-content">
-            <div class="container container-fluid">
-                <div class="row justify-content-center">
-                    <div class="col col-auto custom-card">
-                        <div class="title">
-                            <div class="d-flex g-0 justify-content-center">
-                                <img class="logo-m me-4" src="assets/logo-m.svg" alt="logo but only m" />
-                                <b>Moosync</b>
-                            </div>
+    </nav>
+    <header class="heading__page">
+        <span id="heading__info__text__1" class="info__text__1">An Open Source Music Player</span>
+        <span class="title__line">A music player <br /> For the community</span>
+        <div class="circle__div__container">
+            <div class="music__person__img__container">
+                <img id="music__person__img" src="./assets/img/person.png" alt="">
+            </div>
+            <div id="circle__div__1" class="circle__div">
+                <div id="circle__div__2" class="circle__div">
+                </div>
+            </div>
+            <div id="circle__div__3" class="circle__div">
+                <audio id="music"
+                    src="https://res.cloudinary.com/thepranaygupta/video/upload/v1643119296/moosync/bg-music_x3sspk.mp3"
+                    type="audio/mpeg" volume="0.2"> </audio>
+                <div class="playbutton__container">
+                    <img src="./assets/img/musicbutton.svg" title="Play" alt="" class="play__button__img"
+                        id="playButton" />
+                    <img src="./assets/img/playbutton.svg" title="Play" alt="" class="play__button__icon"
+                        id="playButtonIcon" />
+                </div>
 
-                            <div class="desc">
-                                A simple music player
-                            </div>
+            </div>
+        </div>
+        <div id="downloads" class="buttons">
+            <template id="download-template-multi">
+                <div class="select__container">
+                    <div class="select__box">
+                        <div class="options__container" id="options-container">
                         </div>
-                        <div class="download-btns container-fluid">
-                            <div class="row justify-content-center mb-5 mt-4">
-                                <div class="col col-auto">
-                                    <div onclick="location.href='https://github.com/Moosync/Moosync/releases/download/v0.0.9/Moosync-0.0.9-win-x64.exe';"
-                                        style="cursor: pointer;" class="download android">
-                                        <i class="fab fa fa-windows fa-3x"></i>
-                                        <span class="df">Download for</span>
-                                        <span class="dfn">Windows</span>
-                                    </div>
-                                </div>
-                                <div class="col col-auto">
-                                    <div onclick="location.href='https://github.com/Moosync/Moosync/releases/download/v0.0.9/Moosync-0.0.9-linux-amd64.deb';"
-                                        style="cursor: pointer;" class="download apple">
-                                        <i class="fab fa fa-linux fa-3x"></i>
-                                        <span class="df">Download for</span>
-                                        <span class="dfn">Linux</span>
-                                    </div>
-                                </div>
+                        <div class="selected">
+                            <i id="download-icon" class="icons"></i>
+
+                            <div class="download__text" id="download-text">Download for Linux <div
+                                    class="version__text"> ${version} </div>
                             </div>
+                            <img class="arrow__down" src="/assets/img/arrow-down.svg" />
                         </div>
+                    </div>
+                </div>
+            </template>
 
-                        <div class="container container-fluid">
-                            <div class="row g-0 justify-content-center">
-                                <div class="col-auto">
-                                    <div class="features-ul">
-                                        <div class="list-title">Features:</div>
+            <template id="download-template-single">
+                <button id="download-button" title="Click to download for ${os}" class="link__buttons">
+                    <i id="download-icon" class="icons"></i>Download ${version}
+                </button>
+            </template>
+        </div>
 
-                                        <li>Play audio files on your desktop.</li>
-                                        <li>Seamlessly integrate your Spotify and Youtube playlists.</li>
-                                        <li>Add Spotify and Youtube tracks and playlists by URLs.</li>
-                                        <li>Play songs directly from youtube using youtube embed</li>
-                                        <li>Scrobble your tracks on LastFM.</li>
-                                        <li>Get music recommendations directly from Spotify, Youtube and LastFM</li>
-                                        <li>Mix and match songs from different providers in a single playlist</li>
-                                        <li>Easy to use interface</li>
-                                        <li>Customizable theme engine</li>
-                                        <li>Develop own apps on top of Moosync Extension API</li>
-                                        <li>Available on Windows and Linux</li>
-                                    </div>
-                                    <div class="notice">
-                                        <div class="list-title-notice mt-4">Notice:</div>
-                                        Moosync does not track any user data.<br />Moosync is not responsible for data
-                                        tracked
-                                        using
-                                        third
-                                        party
-                                        integrations.<br />Some private user data may be stored in your device
-                                        locally.<br />By
-                                        signing in
-                                        to Youtube,
-                                        Spotify or LastFM you agree to their respective<br /> privacy policy and terms
-                                        and
-                                        conditions<br /> <br />
-                                        Moosync's use and transfer to any other app of information received from Google
-                                        APIs<br /> will adhere to the Google API
-                                        Services User Data Policy, including the Limited Use requirements.
-                                        </divc>
-                                    </div>
-                                </div>
-                            </div>
+        <div class="other__platform" id="other-download">
+            Download for other platforms
+        </div>
+    </header>
+    <section class="moosync__usage">
+        <p id="usage__section__heading" class="moosync__section__heading">Why use Moosync</p>
+        <div class="usage__icons__text">
+            <span class="usage">
+                <img src="./assets/img/usageIcon1.svg" alt="" class="usage__icons" />
+                <span class="info__text__4">Customizable theme engine & Easy to use interface</span>
+            </span>
+            <span class="usage">
+                <img src="./assets/img/usageIcon2.svg" alt="" class="usage__icons" />
+                <span class="info__text__4">Develop own apps on top of Moosync Extension API</span>
+            </span>
+        </div>
+        <div id="usage__icons__text__mid" class="usage__icons__text">
+            <span id="usage__mid" class="usage">
+                <img src="./assets/img/usageIcon3.svg" alt="" class="usage__icons" />
+                <span class="info__text__4">Seamlessly integrate your Spotify and Youtube playlists.</span>
+            </span>
+            <span class="usage">
+                <img src="./assets/img/laptopbg.svg" alt="" id="usage__mid__img" />
+            </span>
+            <span id="usage__mid" class="usage">
+                <img src="./assets/img/usageIcon4.svg" alt="" class="usage__icons" />
+                <span class="info__text__4">Play songs directly from youtube</span>
+            </span>
+        </div>
+        <div class="usage__icons__text">
+            <span class="usage">
+                <img src="./assets/img/usageIcon5.svg" alt="" class="usage__icons" />
+                <span class="info__text__4">Mix and match songs from different providers in a single
+                    playlist</span>
+            </span>
+            <span class="usage">
+                <img src="./assets/img/usageIcon6.svg" alt="" class="usage__icons" />
+                <span class="info__text__4">Add Spotify and Youtube tracks and playlists by URLs</span>
+            </span>
+        </div>
+    </section>
+    <section class="moosync__numbers">
+        <p class="moosync__section__heading">Some counts that matters</p>
+        <div class="moosync__countbox__container">
+            <div class="count__box">
+                <p id="downloads__count">100+</p>
+                <p id="downloads__description">Downloads</p>
+            </div>
+            <div class="count__box">
+                <p id="discord__count">15+</p>
+                <p id="discord__description">Discord Community</p>
+            </div>
+            <div class="count__box">
+                <p id="contri__count">7+</p>
+                <p id="contri__description">Active Contributors</p>
+            </div>
+            <div class="count__box">
+                <p id="programs__count">3+</p>
+                <p id="programs__description">Programs Participated</p>
+            </div>
+        </div>
+        <div id="moosync__numbers__button" class="buttons">
+            <a href="https://discord.gg/HsbqbRune3" target="_blank" rel="noopener noreferrer">
+                <button title="Join us on Discord" class="link__buttons">
+                    <img src="./assets/img/discordLogo.svg" alt="" class="icons" id="discord__icon" />Join Discord
+                </button>
+            </a>
+            <a href="https://github.com/Moosync/Moosync" target="_blank" rel="noopener noreferrer">
+                <button title="Contribute to Moosync" class="link__buttons">
+                    <i class="uil uil-github icons"></i>Contribute
+                </button>
+            </a>
+        </div>
+    </section>
+    <footer class="footer__section">
+        <div class="footer__container">
+            <div id="left__footer__content" class="footer__content">
+                <a href="#home__page">
+                    <span class="title__logo">
+                        <img src="./assets/img/logo.svg" title="Moosync" alt="" id="footer__logo" class="logo__img" />
+                        <span class="title">moosync</span>
+                    </span>
+                </a>
+                <p id="footer__info__text__2" class="info__text__2">
+                    Incase of any query or suggestion<br>feel free to reach us.
+                </p>
+                <a href="mailto:support@moosync.app">
+                    <p class="info__text__3">
+                        support@moosync.app
+                        <img src="./assets/img/link.svg" alt="" id="link__icon" />
+                    </p>
+                </a>
+            </div>
+            <div id="right__footer__content__wrapper">
+                <div id="right__footer__content" class="footer__content">
+                    <span id="footer__info__text__1" class="info__text__1">Subscribe to the newsletter for
+                        updates</span>
+                    <form action="" class="subscribe">
+                        <input type="email" placeholder="yourname@domain.com" required autocomplete="off"
+                            class="email__input" />
+                        <button type="submit" id="subscribe__button" class="link__buttons">
+                            Subscribe
+                        </button>
+                    </form>
+                    <div class="general__info__links">
+                        <div class="footer__general">
+                            <span id="footer__info__text__heading" class="info__text__1">general</span>
+                            <ul class="general__info__link__list">
+                                <li class="list__items">About Us</li>
+                                <li class="list__items"><a
+                                        href="https://www.iubenda.com/privacy-policy/70189564/full-legal"
+                                        target="_blank" rel="noopener noreferrer">Privacy Policy</a>
+                                </li>
+                                <li class="list__items"><a href="/docs/index.html"
+                                        rel="noopener noreferrer">Documentation</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div id="right__footer__general" class="footer__general">
+                            <span id="footer__info__text__heading" class="info__text__1">community</span>
+                            <ul class="general__info__link__list">
+                                <li class="list__items"><a href="https://github.com/Moosync" target="_blank"
+                                        rel="noopener noreferrer">GitHub Repositories</a>
+                                </li>
+                                <li class="list__items"><a href="https://discord.gg/A5yePzN2" target="_blank"
+                                        rel="noopener noreferrer">Join us on Discord</a>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
+        <div id="notice">
+            <p class="notice__text">
+                Moosync's use and transfer to any other app of information received from Google APIs
+                will adhere to the Google API Services User Data Policy, including the Limited Use requirements.
+            </p>
+        </div>
+        <span id="copyright__text">Copyright &copy; 2022 Moosync</span>
+    </footer>
+
+    <!-- Login modal-->
+    <div id="login-modal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span id="login-modal-close" class="close">&times;</span>
+            <div id="login-modal-postlogin">
+                <p class="modal-content-text" id="login-modal-content">Thank you for logging in to
+                    <span id="login-modal-platform-text-post">${platform}</span>.<br />
+                    You may now close this window<br />
+                    and enjoy your experience.
+                </p>
+            </div>
+
+            <div id="login-modal-prelogin">
+                <p class="modal-content-text" id="login-modal-content">
+                    Do you want to login to <span id="login-modal-platform-text-pre">${platform}</span>?
+                    <button title="Login" id="login-button" class="link__buttons login__button">
+                        Click to open Moosync
+                    </button>
+                </p>
+            </div>
 
         </div>
+
+    </div>
+
+    <!-- Start Single Page Apps for GitHub Pages -->
+    <script type="text/javascript">
+        // Single Page Apps for GitHub Pages
+        // MIT License
+        // https://github.com/rafgraph/spa-github-pages
+        // This script checks to see if a redirect is present in the query string,
+        // converts it back into the correct url and adds it to the
+        // browser's history using window.history.replaceState(...),
+        // which won't cause the browser to attempt to load the new url.
+        // When the single page app is loaded further down in this file,
+        // the correct url will be waiting in the browser's history for
+        // the single page app to route accordingly.
+        (function (l) {
+            if (l.search[1] === '/') {
+                var decoded = l.search.slice(1).split('&').map(function (s) {
+                    return s.replace(/~and~/g, '&')
+                }).join('?');
+                window.history.replaceState(null, null,
+                    l.pathname.slice(0, -1) + decoded + l.hash
+                );
+            }
+        }(window.location))
+    </script>
+    <!-- End Single Page Apps for GitHub Pages -->
+
+    <script src="./assets/js/index.js" type="module"></script>
 </body>
 
 </html>
-
-<style>
-    body {
-        font-family: 'Open Sans', sans-serif;
-        color: #ffffff
-    }
-
-    .dots-container {
-        position: absolute;
-        width: 100%;
-        bottom: -200px;
-        top: 0;
-        z-index: -999;
-        overflow: hidden;
-        background-color: #111111;
-
-    }
-
-    .dots {
-        position: absolute;
-        top: 0;
-        left: -100%;
-        transform: rotate(45deg);
-        background: url(assets/dots.svg);
-        width: 500%;
-        height: 500%;
-        opacity: 0.2;
-    }
-
-
-    .main-container {
-        margin-top: 15px;
-        margin-left: 8px;
-        margin-right: 8px;
-    }
-
-    .navbar-custom {
-        height: 30px;
-        display: flex;
-    }
-
-    .logo,
-    .logo-container {
-        height: 100%;
-    }
-
-    .logo-container>a {
-        color: gray;
-        text-decoration: none;
-    }
-
-    .logo-m {
-        height: 80px;
-    }
-
-    .socials {
-        margin-left: auto;
-    }
-
-
-    .title {
-        margin-top: 0px;
-        width: 100%;
-        text-align: center;
-        font-size: 60px;
-    }
-
-    .download-ul {
-        width: 100%;
-        text-align: center;
-        margin: 0;
-        padding: 0;
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-    }
-
-    .dl-btn {
-        display: inline-block;
-        margin: 10px;
-    }
-
-    .download {
-        width: 230px;
-        height: 105px;
-        border-radius: 5px;
-        position: relative;
-        color: #fff;
-        cursor: pointer;
-    }
-
-    .download>.fa {
-        color: #65CB88;
-        position: absolute;
-        top: 50%;
-        left: 15px;
-        transform: translateY(-50%);
-    }
-
-    .download-btns {
-        margin-top: 80px;
-    }
-
-    .df,
-    .dfn {
-        position: absolute;
-        left: 70px;
-    }
-
-    .df {
-        top: 30px;
-        font-size: 16px;
-    }
-
-    .dfn {
-        top: 48px;
-        font-size: 20px;
-    }
-
-    .download:hover .fa {
-        color: #66ec95;
-    }
-
-    .list-title {
-        font-size: 26px;
-    }
-
-    .list-title-notice {
-        font-size: 18px;
-    }
-
-    .notice {
-        color: #727272;
-
-    }
-
-    .desc {
-        height: 30px;
-        font-weight: 100;
-        font-size: 30px;
-    }
-
-    .extra-content {}
-
-    .features-ul {
-        width: max-content;
-    }
-
-    .features-container {
-        width: max-content;
-    }
-
-    .custom-card {
-        background-color: #212121;
-        padding: 40px 20px;
-        border-radius: 15px;
-        margin-bottom: 35px;
-    }
-</style>

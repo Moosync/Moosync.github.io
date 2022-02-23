@@ -1,0 +1,54 @@
+{
+  "projectName": "Moosync.github.io",
+  "projectOwner": "Moosync",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": true,
+  "commitConvention": "eslint",
+  "contributors": [
+    {
+      "login": "thepranaygupta",
+      "name": "Pranay Gupta",
+      "avatar_url": "https://avatars.githubusercontent.com/u/64855541?v=4",
+      "profile": "https://github.com/thepranaygupta",
+      "contributions": [
+        "design",
+        "code"
+      ]
+    },
+    {
+      "login": "kashyap1905",
+      "name": "BOBBY KUMAR",
+      "avatar_url": "https://avatars.githubusercontent.com/u/87887741?v=4",
+      "profile": "https://github.com/kashyap1905",
+      "contributions": [
+        "design",
+        "code"
+      ]
+    },
+    {
+      "login": "shreya40",
+      "name": "shreya40",
+      "avatar_url": "https://avatars.githubusercontent.com/u/88774355?v=4",
+      "profile": "https://github.com/shreya40",
+      "contributions": [
+        "design",
+        "code"
+      ]
+    },
+    {
+      "login": "garvitraj",
+      "name": "Garvitraj Pandey",
+      "avatar_url": "https://avatars.githubusercontent.com/u/62978449?v=4",
+      "profile": "https://www.linkedin.com/in/garvitraj-pandey-5b1311155/",
+      "contributions": [
+        "design"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7
+}
