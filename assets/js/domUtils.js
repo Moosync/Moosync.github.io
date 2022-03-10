@@ -7,8 +7,20 @@ import {
 
 export function setupPageFunctionality () {
 
-  document.body.onscroll = disableScrolling
+  enableScrolling()
   document.body.onmousewheel = enableScrolling
+
+  // Approximately
+  const scrollBarWidth = 16
+
+  document.onmousedown = (e) => {
+    if (document.body.clientWidth <= e.clientX + scrollBarWidth) {
+      enableScrolling(false)
+    }
+  }
+
+  document.onmouseup = enableScrolling
+
 
   const music = document.getElementById("music");
   music.volume = 0.2;
@@ -126,18 +138,16 @@ function overlayHandler () {
 
 let scrollTimeout
 
-function disableScrolling () {
-  if (!scrollTimeout) {
+function enableScrolling (enableTimeout = true) {
+  if (scrollTimeout) {
+    clearTimeout(scrollTimeout)
+  }
+
+  if (enableTimeout) {
     scrollTimeout = setTimeout(function () {
       document.body.style.color = 'transparent';
     }, 1000);
   }
-}
 
-function enableScrolling () {
-  if (scrollTimeout) {
-    clearTimeout(scrollTimeout)
-    scrollTimeout = undefined
-  }
   document.body.style.color = 'white';
 }
