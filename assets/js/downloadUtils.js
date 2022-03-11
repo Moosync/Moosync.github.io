@@ -14,12 +14,13 @@ function getOS () {
     (navigator.userAgentData && navigator.userAgentData.platform) ||
     navigator.platform
   ).toLowerCase();
+  console.log(platform)
 
   if (platform.startsWith("win")) {
     return OSEnum.WINDOWS;
   }
 
-  if (platform.startsWith("mac") || platform.match("darwin")) {
+  if (platform.match("mac") || platform.match("darwin")) {
     return OSEnum.MACOS;
   }
 
