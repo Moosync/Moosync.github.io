@@ -14,7 +14,6 @@ function getOS () {
     (navigator.userAgentData && navigator.userAgentData.platform) ||
     navigator.platform
   ).toLowerCase();
-  console.log(platform)
 
   if (platform.startsWith("win")) {
     return OSEnum.WINDOWS;
@@ -112,6 +111,7 @@ export async function setupDownloadButton () {
 
   if (os && os !== OSEnum.UNDEFINED) {
     const releases = await getReleaseInfo(os);
+    const osReadable = getReaderFriendlyName(os)
 
     if (releases.length === 1) {
       const release = releases[0]
@@ -119,7 +119,7 @@ export async function setupDownloadButton () {
       const clone = buttonTemplate.cloneNode(true);
       const button = clone.getElementById("download-button");
 
-      button.title = button.title.replace("${os}", getReaderFriendlyName(os));
+      button.title = button.title.replace("${os}", osReadable);
       button.innerHTML = button.innerHTML.replace(
         "${version}",
         `${release.version}`
@@ -137,7 +137,9 @@ export async function setupDownloadButton () {
       const clone = buttonTemplate.cloneNode(true)
 
       const downloadText = clone.getElementById('download-text')
-      downloadText.innerHTML = downloadText.innerHTML.replace('${version}', releases[0].version)
+      downloadText.innerHTML = downloadText.innerHTML
+        .replaceAll('${version}', releases[0].version)
+        .replaceAll('${os}', osReadable)
 
       downloadParent.appendChild(document.importNode(clone, true));
 
