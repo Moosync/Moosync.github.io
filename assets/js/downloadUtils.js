@@ -138,8 +138,8 @@ export async function setupDownloadButton () {
 
       const downloadText = clone.getElementById('download-text')
       downloadText.innerHTML = downloadText.innerHTML
-        .replaceAll('${version}', releases[0].version)
-        .replaceAll('${os}', osReadable)
+        .replace('${version}', releases[0].version)
+        .replace('${os}', osReadable)
 
       downloadParent.appendChild(document.importNode(clone, true));
 
