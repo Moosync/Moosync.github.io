@@ -88,11 +88,11 @@ function getIconClass (os) {
 
 function extractExtension (fileName) {
   const split = fileName.split(".");
-  if (split.at(-1) !== "gz") {
-    return split.at(-1);
+  if (split[split.length - 1] !== "gz") {
+    return split[split.length - 1];
   }
 
-  return split.at(-2) + "." + split.at(-1);
+  return split[split.length - 2] + "." + [split.length - 1];
 }
 
 function getSanitizedLinuxName (ext) {
