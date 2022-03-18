@@ -91,7 +91,7 @@ function extractExtension (fileName) {
     return split[split.length - 1];
   }
 
-  return split[split.length - 2] + "." + [split.length - 1];
+  return split[split.length - 2] + "." + split[split.length - 1];
 }
 
 function getSanitizedLinuxName (ext) {
