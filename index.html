@@ -3,8 +3,8 @@
 
 <head>
     <meta charset="utf-8" />
-    <meta name="description" content="A simple music player" />
-    <meta name="keywords" content="Moosync, Spotify, Youtube, Songs, Playlist" />
+    <meta name="description" content="A customizable music player" />
+    <meta name="keywords" content="moosync,spotify,youtube,songs,playlist,music,desktop,application,player,music player,musicplayer,open,source,opensource,custom,customizable,customisable,download,windows,linux,mac,osx,darwin," />
     <meta name="author" content="Moosync" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width = device-width, initial-scale=1.0" />
@@ -16,6 +16,17 @@
     <link rel="manifest" href="./assets/favicon/site.webmanifest" />
     <link rel="mask-icon" href="./assets/favicon/safari-pinned-tab.svg" color="#5bbad5" />
     <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
+
+    <meta property="og:title" content="Moosync" />
+    <meta property="og:description" content="A customizable music player" />
+    <meta property="og:site_name" content="Moosync" />
+    <meta property="og:url" content="https://moosync.app" />
+    <meta property="og:image" content="https://moosync.app/assets/img/preview.png" />
+    <meta property="og:image:secure_url" content="https://moosync.app/assets/img/preview.png" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1440" />
+    <meta property="og:image:height" content="1024" />
+    <meta property="og:image:alt" content="Moosync logo" />
     <title>Moosync</title>
 </head>
 
@@ -30,14 +41,14 @@
             </span>
         </a>
         <div class="navbar__buttons">
-            <button class="navigation__buttons"><a href="#">home</a></button>
+            <button class="navigation__buttons"><a href="#">Home</a></button>
             <button class="navigation__buttons"><a href="https://www.iubenda.com/privacy-policy/70189564/full-legal"
-                    target="_blank" rel="noopener noreferrer">privacy policy</a>
+                    target="_blank" rel="noopener noreferrer">Privacy policy</a>
             </button>
-            <button class="navigation__buttons"><a href="/docs/index.html" rel="noopener noreferrer">documentation</a>
+            <button class="navigation__buttons"><a href="/docs/index.html" rel="noopener noreferrer">Extension docs</a>
             </button>
             <button class="navigation__buttons"><a href="https://github.com/Moosync"
-                    rel="noopener noreferrer">github</a>
+                    rel="noopener noreferrer">Github</a>
             </button>
             <button id="download__btn" class="navigation__buttons">Download
             </button>
@@ -50,8 +61,8 @@
                     <li class='p__normal' id="home"><a href="#">Home</a></li>
                     <li class='p__normal' id="privacy"><a
                             href="https://www.iubenda.com/privacy-policy/70189564/full-legal">Privacy Policy</a></li>
-                    <li class='p__normal' id="documentation"><a href="/docs/index.html">Documentation</a></li>
-                    <li class='p__normal' id="github"><a href="https://github.com/Moosync/Moosync">github</a></li>
+                    <li class='p__normal' id="documentation"><a href="/docs/index.html">Extension Docs</a></li>
+                    <li class='p__normal' id="github"><a href="https://github.com/Moosync/Moosync">Github</a></li>
                     <li id="download"><button type="button" name="button" class="navigation__buttons"
                             id="download__btn">Download</button></li>
                 </ul>
@@ -63,7 +74,7 @@
         <span class="title__line">A music player <br /> For the community</span>
         <div class="circle__div__container">
             <div class="music__person__img__container">
-                <img id="music__person__img" src="./assets/img/person.png" alt="">
+                <img id="music__person__img" src="./assets/img/person.svg" alt="">
             </div>
             <div id="circle__div__1" class="circle__div">
                 <div id="circle__div__2" class="circle__div">
@@ -133,14 +144,13 @@
             </span>
             <span id="usage__mid" class="usage">
                 <img src="./assets/img/usageIcon4.svg" alt="" class="usage__icons" />
-                <span class="info__text__4">Play songs directly from youtube</span>
+                <span class="info__text__4">Play songs directly from Youtube and Spotify</span>
             </span>
         </div>
         <div class="usage__icons__text">
             <span class="usage">
                 <img src="./assets/img/usageIcon5.svg" alt="" class="usage__icons" />
-                <span class="info__text__4">Mix and match songs from different providers in a single
-                    playlist</span>
+                <span class="info__text__4">Track your music with LastFm and get recommendations</span>
             </span>
             <span class="usage">
                 <img src="./assets/img/usageIcon6.svg" alt="" class="usage__icons" />
@@ -157,7 +167,7 @@
             </div>
             <div class="count__box">
                 <p id="discord__count">15+</p>
-                <p id="discord__description">Discord Community</p>
+                <p id="discord__description">Online in Discord</p>
             </div>
             <div class="count__box">
                 <p id="contri__count">7+</p>
@@ -221,7 +231,7 @@
                                         target="_blank" rel="noopener noreferrer">Privacy Policy</a>
                                 </li>
                                 <li class="list__items"><a href="/docs/index.html"
-                                        rel="noopener noreferrer">Documentation</a>
+                                        rel="noopener noreferrer">Extension Docs</a>
                                 </li>
                             </ul>
                         </div>
