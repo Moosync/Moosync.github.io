@@ -23,7 +23,6 @@ email: support@moosync.app
 description: >- # this means to ignore newlines until "baseurl:"
   Moosync is an Electron based simple music player with a primary goal to provide a clean and easy interface. 
   Through Moosync you can easily listen songs from your desktop or through Youtube and Spotify.
-baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://moosync.app" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  ovenoboyo
 
