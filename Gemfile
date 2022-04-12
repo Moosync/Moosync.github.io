@@ -9,7 +9,7 @@ source "https://rubygems.org"
 # Happy Jekylling!
 gem "github-pages", "~> 225", group: :jekyll_plugins
 # This is the default theme for new Jekyll sites. You may change this to anything you like.
-gem "minima", github: "jekyll/minima"
+gem "minima"
 # If you want to use GitHub Pages, remove the "gem "jekyll"" above and
 # uncomment the line below. To upgrade, run `bundle update github-pages`.
 # gem "github-pages", group: :jekyll_plugins
