@@ -1,10 +1,11 @@
 export function getProviderFromURL () {
-  return window.location.pathname.match('youtube|spotify|lastfm') || []
+  return window.location.pathname.match('youtube|spotify|lastfm|invidious') || []
 }
 
 export function getProviderColor (provider) {
   switch (provider) {
     case 'youtube':
+    case 'invidious':
       return '#E62017'
     case 'spotify':
       return '#1ED760'
@@ -25,5 +26,7 @@ export function getProviderRedirectURL (provider) {
       return 'spotifyoauthcallback'
     case 'lastfm':
       return 'lastfmCallback'
+    case 'invidious':
+      return 'invidiousCallback'
   }
 }

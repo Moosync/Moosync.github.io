@@ -24,6 +24,7 @@ export function setupPageFunctionality () {
 
   const music = document.getElementById("music");
   music.volume = 0.2;
+  const playButtonContainer = document.getElementsByClassName("playbutton__container")[0];
   const playButton = document.getElementById("playButton");
   const playButtonIcon = document.getElementById("playButtonIcon");
   let isPlaying = false;
@@ -44,7 +45,7 @@ export function setupPageFunctionality () {
     }
   };
 
-  playButton.onclick = playPause;
+  playButtonContainer.onclick = playPause;
 
   document.getElementById("download__btn").onclick = () => {
     document.getElementById("downloads").scrollIntoView({

@@ -370,12 +370,12 @@ a {
 
 .playbutton__container {
   position: relative;
+  cursor: pointer;
   transition: all 0.2s;
 }
 
 .play__button__img {
   display: block;
-  cursor: pointer;
   width: 165px;
 }
 
