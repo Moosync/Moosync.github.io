@@ -1,3 +1,12 @@
+GIT
+  remote: https://github.com/jekyll/minima.git
+  revision: 69664442e5a45f631d5bccaba6d7978a91ce22c8
+  specs:
+    minima (2.5.1)
+      jekyll (>= 3.5, < 5.0)
+      jekyll-feed (~> 0.9)
+      jekyll-seo-tag (~> 2.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -20,7 +29,7 @@ GEM
       simpleidn (~> 0.1)
     em-websocket (0.5.3)
       eventmachine (>= 0.12.9)
-      http_parser.rb
+      http_parser.rb (~> 0)
     ethon (0.15.0)
       ffi (>= 1.15.0)
     eventmachine (1.2.7)
@@ -225,10 +234,6 @@ GEM
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
     mercenary (0.3.6)
-    minima (2.5.1)
-      jekyll (>= 3.5, < 5.0)
-      jekyll-feed (~> 0.9)
-      jekyll-seo-tag (~> 2.1)
     minitest (5.15.0)
     multipart-post (2.1.1)
     nokogiri (1.13.4-x86_64-linux)
@@ -237,12 +242,12 @@ GEM
       faraday (>= 0.9)
       sawyer (~> 0.8.0, >= 0.5.3)
     pathutil (0.16.2)
-      forwardable-extended (>= 2.6)
+      forwardable-extended (~> 2.6)
     public_suffix (4.0.6)
     racc (1.6.0)
     rb-fsevent (0.11.1)
     rb-inotify (0.10.1)
-      ffi (>= 1.0)
+      ffi (~> 1.0)
     rexml (3.2.5)
     rouge (3.26.0)
     ruby2_keywords (0.0.5)
@@ -278,10 +283,11 @@ DEPENDENCIES
   github-pages (~> 225)
   http_parser.rb (~> 0.6.0)
   jekyll-feed (~> 0.12)
-  minima (~> 2.5)
+  jekyll-sitemap
+  minima!
   tzinfo (~> 1.2)
   tzinfo-data
   wdm (~> 0.1.1)
 
 BUNDLED WITH
-   2.3.10
+   2.3.11

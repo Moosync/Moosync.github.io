@@ -15,19 +15,31 @@
 }
 
 body {
-  color: white;
   overflow: overlay;
   transition: color 0.2s ease-in;
+  background-color: #212121 !important;
+  color: white !important;
 }
 
-a {
-  color: inherit;
+nav > * a,
+nav > * a:hover,
+footer > * a,
+footer > * a:hover {
+  color: white !important;
+  text-decoration: none;
+}
+
+footer > * ul {
+  margin: 0;
+}
+
+a:hover {
+  color: white;
 }
 
 .main {
   min-height: 100vh;
   display: block;
-  background-color: #212121;
 }
 
 .nav__bar {
@@ -381,12 +393,12 @@ a {
 
 .play__button__icon {
   position: absolute;
-  left: 0; 
-  right: 0; 
+  left: 0;
+  right: 0;
   top: 0;
   bottom: 0;
-  margin-left: auto; 
-  margin-right: auto; 
+  margin-left: auto;
+  margin-right: auto;
   margin-top: auto;
   margin-bottom: auto;
   width: 30px;
@@ -1060,19 +1072,19 @@ a {
   z-index: 1;
   left: 0;
   top: 0;
-  width: 100%; 
+  width: 100%;
   height: 100%;
   overflow: hidden;
-  background-color: rgba(0,0,0,0.7);
+  background-color: rgba(0, 0, 0, 0.7);
   z-index: 1000;
 }
 
 .modal-content {
   background-color: #141414;
-  margin: 15% auto; 
+  margin: 15% auto;
   border-radius: 16px;
   width: 60%;
-  font-family: 'Lexend Deca';
+  font-family: "Lexend Deca";
   font-weight: 500;
   font-size: 38px;
   text-align: center;
@@ -1082,7 +1094,8 @@ a {
 .modal-content-text {
   padding: 100px 20px 100px 20px;
 }
-#login-modal-platform-text-pre, #login-modal-platform-text-post {
+#login-modal-platform-text-pre,
+#login-modal-platform-text-post {
   text-transform: capitalize;
 }
 
@@ -1125,34 +1138,37 @@ a {
   background: transparent;
 }
 
-.icon-linux, .icon-win, .icon-mac {
-  width:24px;
-  height:24px;
+.icon-linux,
+.icon-win,
+.icon-mac {
+  width: 24px;
+  height: 24px;
   padding-right: 15px;
   padding-top: 5px;
   padding-bottom: 5px;
 }
 
-.icon-linux::before, .icon-win::before, .icon-mac::before {
-  content: '';
-  background-size:cover;
-  position:absolute;
-  width:24px;
-  height:24px;
+.icon-linux::before,
+.icon-win::before,
+.icon-mac::before {
+  content: "";
+  background-size: cover;
+  position: absolute;
+  width: 24px;
+  height: 24px;
 }
 
 .icon-linux::before {
-  background: url('/assets/img/codicon_terminal-linux.svg');
+  background: url("/assets/img/codicon_terminal-linux.svg");
 }
 
 .icon-win::before {
-  background: url('/assets/img/bi_windows.svg');
+  background: url("/assets/img/bi_windows.svg");
 }
 
 .icon-mac::before {
-  background: url('/assets/img/bi_apple.svg');
+  background: url("/assets/img/bi_apple.svg");
 }
-
 
 .select__box {
   display: flex;
