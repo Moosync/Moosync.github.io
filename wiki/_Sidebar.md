@@ -9,10 +9,10 @@
   - [Discord integration](/wiki/integrations#discord-integration)
 
 - [Extensions](/wiki/extensions)
-  - [Developing extensions](/wiki/extensions/develop)
-  - [API examples](/wiki/extensions/api)
-  - [Packaging](/wiki/extensions/packaging)
-  - [Publishing](/wiki/extensions/publishing)
+  - [Developing extensions](/wiki/Develop-Extensions)
+  - [API examples](/wiki/Extension-API)
+  - [Packaging](/wiki/Packaging-Extensions)
+  - [Publishing](/wiki/Publishing-Extensions)
   
 - [Building Moosync from Source](/wiki/building-from-source)
   - [Requirements](/wiki/building-from-source#requirements)

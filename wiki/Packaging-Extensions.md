@@ -1,6 +1,6 @@
 ---
 layout: page
-permalink: /wiki/extensions/packaging
+permalink: /wiki/Packaging-Extensions
 ---
 
 # Packaging

@@ -1,6 +1,6 @@
 ---
 layout: page
-permalink: /wiki/extensions/publishing
+permalink: /wiki/Publishing-Extensions
 ---
 
 # Publishing extensions to store
@@ -13,7 +13,7 @@ To add your extension in the store,
   ```
   git clone https://github.com/<your-username>/moosync-exts
   ```
-- Create a new directory inside the cloned repository. The name of the directory should be the [displayName](/wiki/extensions/develop.md#package.json-attributes) of your extension
+- Create a new directory inside the cloned repository. The name of the directory should be the [displayName](/wiki/Develop-Extensions.md#package.json-attributes) of your extension
 - Inside the newly created directory, create a new file called ```extension.yml```
   
   ```yml

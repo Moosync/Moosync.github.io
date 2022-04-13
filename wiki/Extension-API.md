@@ -1,6 +1,6 @@
 ---
 layout: page
-permalink: /wiki/extensions/api
+permalink: /wiki/Extension-API
 ---
 
 # API examples

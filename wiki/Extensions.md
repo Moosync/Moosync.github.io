@@ -1,6 +1,6 @@
 ---
 layout: page
-permalink: /wiki/extensions
+permalink: /wiki/Extensions
 index: 2
 ---
 

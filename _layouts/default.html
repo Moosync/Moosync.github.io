@@ -24,23 +24,33 @@
 
             <ul>
               {%- for sub in nav.subHeadings -%}
-              {% assign subUrl = nav.url | append: sub.url %}
+
+              {% if sub.url contains "/wiki/" %}
               <li>
-                <a {% if page.url contains subUrl %} class="active" {% endif %} href="{{ subUrl | relative_url}}">{{
+                <a {% if page.url contains sub.url %} class="active" {% endif %} href="{{ sub.url | relative_url}}">{{
                   sub.title | escape }}</a>
                 {%- if sub.subHeadings -%}
                 <ul>
                   {%- for subsub in sub.subHeadings -%}
-                  {% assign subsubUrl = subUrl | append: subsub.url %}
+                  {% assign subsubUrl = sub.url | append: subsub.url %}
                   <li>
                     <a {% if page.url contains subsubUrl %} class="active" {% endif %}
-                      href="{{ subsubUrl | relative_url}}">{{ subsub.title | escape }}</a>
+                      href="{{ subsubUrl | relative_url}}">{{
+                      subsub.title | escape
+                      }}</a>
                   </li>
                   {%- endfor -%}
                 </ul>
-
                 {%- endif -%}
               </li>
+
+              {% else %}
+              {% assign subUrl = nav.url | append: sub.url %}
+              <li>
+                <a {% if page.url contains subUrl %} class="active" {% endif %} href="{{ subUrl | relative_url}}">{{
+                  sub.title | escape }}</a>
+              </li>
+              {% endif %}
               {%- endfor -%}
             </ul>
             {%- endif -%}

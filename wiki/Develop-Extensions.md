@@ -1,6 +1,6 @@
 ---
 layout: page
-permalink: /wiki/extensions/develop
+permalink: /wiki/Develop-Extensions
 ---
 
 # Creating an extension
@@ -51,7 +51,7 @@ Here,
 - **version**: The version in [semver format](https://semver.org/)
 - **description**: A short description 
 - **icon**: Icon is displayed when your extensions provides a playlist or song (For example the Youtube icon in image below)  
-![Extension icon example](../images/extension_icon_example.png)
+![Extension icon example](./images/extension_icon_example.png)
 - **extensionEntry**: File from which the extension is created
 - **moosyncExtension**: true if this package is a moosync extension.
 - **displayName**: A human readable name for this extension

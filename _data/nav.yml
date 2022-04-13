@@ -14,10 +14,10 @@ toc:
       - title: Discord integration
         url: "#discord-integration"
   - title: Extensions
-    url: /wiki/extensions
+    url: /wiki/Extensions
     subHeadings: 
       - title: Creating an extension
-        url: "/develop"
+        url: "/wiki/Develop-Extensions"
         subHeadings:
           - title: Getting started
             url: "#getting-started"
@@ -28,7 +28,7 @@ toc:
           - title: Writing code
             url: "#writing-code-for-extension"
       - title: API examples
-        url: /api
+        url: /wiki/Extension-API
         subHeadings:
           - title: Lifecycle hooks
             url: "#lifecycle-hooks"
@@ -39,9 +39,9 @@ toc:
           - title: Documentation and Examples
             url: "#documentation"
       - title: Packaging
-        url: /packaging
+        url: /wiki/Packaging-Extensions
       - title: Publishing
-        url: /publishing
+        url: /wiki/Publishing-Extensions
   - title: Building from source
     url: /wiki/building-from-source
     subHeadings: 
