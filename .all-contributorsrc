@@ -48,6 +48,16 @@
       "contributions": [
         "design"
       ]
+    },
+    {
+      "login": "jay-io",
+      "name": "Jayanta Pandit",
+      "avatar_url": "https://avatars.githubusercontent.com/u/55305804?v=4",
+      "profile": "https://github.com/jay-io",
+      "contributions": [
+        "content",
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7
