@@ -39,7 +39,7 @@ jobs:
           cp -r $GITHUB_WORKSPACE/Moosync.website/wiki/* $GITHUB_WORKSPACE/Moosync.wiki
           cd $GITHUB_WORKSPACE/Moosync.wiki
           sed -i -e '1,/---/{/^---/,//d}' $(find . -type f)
-          sed -i -e 's/\/wiki\//https:\/\/github.com\/Moosync\/Moosync\/wiki\//' $(find wiki/*.md -type f)
+          sed -i -e 's/\/wiki\//https:\/\/github.com\/Moosync\/Moosync\/wiki\//' $(find ./*.md -type f)
           git add -A
           git diff-index --quiet HEAD -- || git commit -m "sync from Moosync/Moosync.github.io/wiki"
           git push
