@@ -280,6 +280,7 @@ DEPENDENCIES
   jekyll-commonmark-ghpages
   jekyll-feed (~> 0.12)
   jekyll-sitemap
+  jekyll-titles-from-headings
   kramdown (~> 2.3)
   minima
   rouge (~> 3.26)

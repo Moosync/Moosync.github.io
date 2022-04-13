@@ -1,3 +1,11 @@
+---
+layout: page
+permalink: /wiki/building-from-source
+index: 3
+---
+
+# Building from source
+
 Follow these steps to brew the latest image of Moosync from our github repository with all the newest features and bug fixes.
 
 ## Requirements

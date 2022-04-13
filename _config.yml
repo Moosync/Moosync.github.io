@@ -31,9 +31,15 @@ theme: minima
 plugins:
   - jekyll-feed
   - jekyll-sitemap
+  - jekyll-titles-from-headings
 
 markdown: CommonMarkGhPages
 highlighter: rouge
+
+titles_from_headings:
+  enabled:     true
+  strip_title: true
+  collections: false
 
 commonmark:
   options: ["UNSAFE", "SMART", "FOOTNOTES"]

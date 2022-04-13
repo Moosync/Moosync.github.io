@@ -1,3 +1,11 @@
+---
+layout: page
+permalink: /wiki/integrations
+index: 1
+---
+
+# 3rd party Integrations
+
 ## Enabling Spotify integration
 
 Due to restrictions from Spotify, a public api key could not be integrated into the app.

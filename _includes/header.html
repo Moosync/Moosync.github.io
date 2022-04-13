@@ -1,4 +1,7 @@
 <nav class="nav__bar">
+  {%- assign default_paths = site.pages | map: "path" -%} {%- assign page_paths
+  = site.header_pages | default: default_paths -%} {%- assign titles_size =
+  site.pages | map: 'title' | join: '' | size -%}
   <a href="#">
     <span class="title__logo">
       <span class="logo">

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: " en" }}">
+
+{%- include head.html -%}
+
+<body>
+
+  {%- include header.html -%}
+
+  <main class="page-content" aria-label="Content">
+    <div class="content-container">
+
+      <div class="sidenav">
+
+        <ul>
+          {%- for nav in site.data.nav.toc -%}
+          {%- if nav.title -%}
+          <li>
+            <a {% if page.url contains nav.url and nav.url !="/wiki/" %} class="active" {% endif %} {% if
+              page.url=="/wiki/" and nav.url=="/wiki/" %} class="active" {% endif %}
+              href="{{ nav.url | relative_url }}">{{
+              nav.title | escape }}</a>
+            {%- if nav.subHeadings -%}
+
+            <ul>
+              {%- for sub in nav.subHeadings -%}
+              {% assign subUrl = nav.url | append: sub.url %}
+              <li>
+                <a {% if page.url contains subUrl %} class="active" {% endif %} href="{{ subUrl | relative_url}}">{{
+                  sub.title | escape }}</a>
+                {%- if sub.subHeadings -%}
+                <ul>
+                  {%- for subsub in sub.subHeadings -%}
+                  {% assign subsubUrl = subUrl | append: subsub.url %}
+                  <li>
+                    <a {% if page.url contains subsubUrl %} class="active" {% endif %}
+                      href="{{ subsubUrl | relative_url}}">{{ subsub.title | escape }}</a>
+                  </li>
+                  {%- endfor -%}
+                </ul>
+
+                {%- endif -%}
+              </li>
+              {%- endfor -%}
+            </ul>
+            {%- endif -%}
+          </li>
+          {%- endif -%}
+          {%- endfor -%}
+        </ul>
+
+
+        <!-- <a href="#about">About</a> -->
+
+      </div>
+      <div class="wrapper">
+        {{ content }}
+      </div>
+    </div>
+
+  </main>
+
+  {%- include footer.html -%}
+
+</body>
+<script>
+  const hashHandle = () => {
+    const hash = window.location.hash
+    if (hash) {
+      const element = document.getElementById(hash.substring(1))
+      if (element) {
+        const headerOffset = 76;
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth"
+        });
+      }
+    }
+  }
+
+  window.onhashchange = hashHandle
+  window.onload = hashHandle
+
+  let scrollTimeout
+
+  enableScrolling()
+  document.body.onmousewheel = enableScrolling
+
+  // Approximately
+  const scrollBarWidth = 16
+
+  document.onmousedown = (e) => {
+    if (document.body.clientWidth <= e.clientX + scrollBarWidth) {
+      enableScrolling(false)
+    }
+  }
+
+  document.onmouseup = enableScrolling
+
+  function enableScrolling (enableTimeout = true) {
+    if (scrollTimeout) {
+      clearTimeout(scrollTimeout)
+    }
+
+    if (enableTimeout) {
+      scrollTimeout = setTimeout(function () {
+        document.body.style.color = 'transparent';
+      }, 1000);
+    }
+
+    document.body.style.color = 'white';
+  }
+</script>
+
+</html>

@@ -36,3 +36,4 @@ gem "http_parser.rb", "~> 0.6.0", :platforms => [:jruby]
 
 gem "kramdown", "~> 2.3"
 gem "rouge", "~> 3.26"
+gem 'jekyll-titles-from-headings'

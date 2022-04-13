@@ -1,0 +1,61 @@
+toc:
+  - title: Welcome to Moosync
+    url: /wiki/
+    subHeadings: 
+      - title: Features
+        url: "#features"
+      - title: Download
+        url: "#download-latest-release"
+  - title: 3rd party integrations
+    url: /wiki/integrations
+    subHeadings: 
+      - title: Enabling Spotify integration
+        url: "#enabling-spotify-integration"
+      - title: Discord integration
+        url: "#discord-integration"
+  - title: Extensions
+    url: /wiki/extensions
+    subHeadings: 
+      - title: Creating an extension
+        url: "/develop"
+        subHeadings:
+          - title: Getting started
+            url: "#getting-started"
+          - title: Create a new project
+            url: "#create-a-new-project"
+          - title: Creating extension descriptor
+            url: "#creating-extension-descriptor"
+          - title: Writing code
+            url: "#writing-code-for-extension"
+      - title: API examples
+        url: /api
+        subHeadings:
+          - title: Lifecycle hooks
+            url: "#lifecycle-hooks"
+          - title: Methods
+            url: "#methods"
+          - title: Events
+            url: "#events"
+          - title: Documentation and Examples
+            url: "#documentation"
+      - title: Packaging
+        url: /packaging
+      - title: Publishing
+        url: /publishing
+  - title: Building from source
+    url: /wiki/building-from-source
+    subHeadings: 
+      - title: Requirements
+        url: "#requirements"
+      - title: Setting up the project
+        url: "#setting-up-the-project"
+      - title: Downloading dependencies
+        url: "#downloading-dependencies"
+      - title: Setting up environment variables
+        url: "#setting-up-environment-variables"
+      - title: Post installation
+        url: "#post-installation"
+      - title: Running in development environment
+        url: "#running-in-development-environment"
+      - title: Building a production build
+        url: "#building-a-production-build"

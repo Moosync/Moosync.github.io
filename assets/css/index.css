@@ -18,7 +18,6 @@ body {
   overflow: overlay;
   transition: color 0.2s ease-in;
   background-color: #212121 !important;
-  color: white !important;
 }
 
 nav > * a,
@@ -40,6 +39,7 @@ a:hover {
 .main {
   min-height: 100vh;
   display: block;
+  color: white !important;
 }
 
 .nav__bar {
@@ -51,6 +51,7 @@ a:hover {
   justify-content: space-between;
   position: sticky;
   top: 0;
+  height: 56px;
   background: rgba(33, 33, 33, 0.45);
   box-shadow: 0 8px 32px 0 rgba(33, 33, 33, 0.37);
   backdrop-filter: blur(15px);
@@ -1236,4 +1237,104 @@ a:hover {
 .version__text {
   width: 100%;
   text-align: center;
+}
+
+.sidenav {
+  height: calc(100vh - (56px + 0.625rem * 2) - 20px);
+  top: calc(56px + 0.625rem * 2);
+  width: 300px;
+  position: sticky;
+  z-index: 1;
+  left: 0;
+  background-color: #141414;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 16px;
+  color: #565656;
+  display: block;
+}
+
+a.active {
+  color: white !important;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.page-content {
+  padding: 0;
+  color: white !important;
+}
+
+.content-container {
+  display: flex;
+}
+
+.wrapper {
+  padding-top: 30px;
+  width: calc(1000px - 30px * 2);
+  max-width: calc(1000px - 30px * 2);
+}
+
+.highlight {
+  background: #151515 !important;
+}
+
+pre,
+code {
+  background: #151515 !important;
+  border: none;
+}
+
+h1,
+h2,
+h3,
+figure {
+  margin-top: 50px;
+  padding-bottom: 0.2em;
+  border-bottom: 1px solid #464646;
+}
+
+h4,
+h5,
+h5 {
+  margin-top: 30px;
+  border-bottom: 1px solid #464646;
+  padding-bottom: 0.2em;
+}
+
+span.k {
+  color: #b87eb4;
+}
+
+span.kd,
+span.kr {
+  color: #4f85b2;
+}
+
+span.nx {
+  color: #4dc4ab;
+}
+
+span.nl {
+  color: #78a7bf;
+}
+
+span.p,
+span.o {
+  color: rgb(212, 212, 212);
+}
+
+span.p {
+  margin-right: 4px;
+}
+
+span.dl {
+  margin-left: 0px;
 }
