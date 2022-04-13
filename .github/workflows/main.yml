@@ -35,7 +35,8 @@ jobs:
         run: |
           git config --global user.email "actions@github.com"
           git config --global user.name "Wiki update"
-          cp $GITHUB_WORKSPACE/Moosync.website/wiki/* $GITHUB_WORKSPACE/Moosync.wiki
+          rm -rf $GITHUB_WORKSPACE/Moosync.wiki/*
+          cp -r $GITHUB_WORKSPACE/Moosync.website/wiki/* $GITHUB_WORKSPACE/Moosync.wiki
           cd $GITHUB_WORKSPACE/Moosync.wiki
           sed -i -e '1,/---/{/^---/,//d}' $(find . -type f)
           git add -A
