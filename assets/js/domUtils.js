@@ -96,6 +96,11 @@ export function setupLoginModalFunctionality () {
   }
 
   loginModalCloseButton.onclick = () => loginModal.style.display = "none"
+
+  const oauthCodeManual = document.getElementById('oauth-code')
+  if (oauthCodeManual) {
+    oauthCodeManual.innerText = getQueryParams()
+  }
 }
 
 function openPopupAndHandleModal (loginModalPostLogin, loginModalPreLogin, provider, showWarning) {

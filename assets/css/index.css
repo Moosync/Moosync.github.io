@@ -1338,3 +1338,13 @@ span.p {
 span.dl {
   margin-left: 0px;
 }
+
+.oauth-code {
+  padding: 15px;
+  background: #0c0c0c;
+  color: white;
+  font-size: 18px;
+  margin-top: 15px;
+  margin-left: 50px;
+  margin-right: 50px;
+}
