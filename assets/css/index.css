@@ -1347,4 +1347,22 @@ span.dl {
   margin-top: 15px;
   margin-left: 50px;
   margin-right: 50px;
+  white-space: nowrap;
+  overflow: auto;
+}
+
+.oauth-code::-webkit-scrollbar {
+  min-height: 28px !important;
+}
+
+.oauth-code::-webkit-scrollbar-thumb {
+  min-width: 50px;
+}
+
+.oauth-code::selection {
+  background: #1a66c9;
+}
+
+.oauth-code::-moz-selection {
+  background: #1a66c9;
 }
