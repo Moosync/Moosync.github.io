@@ -77,8 +77,7 @@ export function setupLoginModalFunctionality () {
   const loginModalPlatformTextPre = document.getElementById('login-modal-platform-text-pre')
   const loginButton = document.getElementById('login-button')
 
-  let providerMatch = getProviderFromURL()[0];
-  providerMatch = 'lastfm'
+  const providerMatch = getProviderFromURL()[0];
   if (providerMatch) {
     const color = getProviderColor(providerMatch)
     loginModalPlatformTextPost.innerHTML = providerMatch
