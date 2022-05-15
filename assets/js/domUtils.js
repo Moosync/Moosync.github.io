@@ -77,7 +77,8 @@ export function setupLoginModalFunctionality () {
   const loginModalPlatformTextPre = document.getElementById('login-modal-platform-text-pre')
   const loginButton = document.getElementById('login-button')
 
-  const providerMatch = getProviderFromURL()[0];
+  let providerMatch = getProviderFromURL()[0];
+  providerMatch = 'lastfm'
   if (providerMatch) {
     const color = getProviderColor(providerMatch)
     loginModalPlatformTextPost.innerHTML = providerMatch
@@ -85,6 +86,11 @@ export function setupLoginModalFunctionality () {
 
     loginModalPlatformTextPre.innerHTML = providerMatch
     loginModalPlatformTextPre.style.color = color
+
+    const oauthCodeManual = document.getElementById('oauth-code')
+    if (oauthCodeManual) {
+      oauthCodeManual.innerText = getQueryParams()
+    }
 
     // Try to open popup
     openPopupAndHandleModal(loginModalPostLogin, loginModalPreLogin, providerMatch, false)
@@ -96,11 +102,6 @@ export function setupLoginModalFunctionality () {
   }
 
   loginModalCloseButton.onclick = () => loginModal.style.display = "none"
-
-  const oauthCodeManual = document.getElementById('oauth-code')
-  if (oauthCodeManual) {
-    oauthCodeManual.innerText = getQueryParams()
-  }
 }
 
 function openPopupAndHandleModal (loginModalPostLogin, loginModalPreLogin, provider, showWarning) {
