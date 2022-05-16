@@ -3,6 +3,7 @@
 - [Welcome to Moosync Wiki](/wiki/)
   - [Features](/wiki/#features)
   - [Download latest release](/wiki/#download-latest-release)
+  - [Known bugs](/wiki/#known-bugs)
 - [3rd party integrations](/wiki/integrations)
   - [Enabling Spotify integration](/wiki/integrations#enabling-spotify-integration)
   - [Discord integration](/wiki/integrations#discord-integration)

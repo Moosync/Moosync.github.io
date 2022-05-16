@@ -26,3 +26,30 @@ Moosync is an Electron based simple music player with a primary goal to provide 
 ## Download latest release
 
 **The latest release can be found under [Releases](https://github.com/Moosync/Moosync/releases) section**
+
+## Known bugs
+- **libvips-cpp.so.42 missing** - [Sharp](https://sharp.pixelplumbing.com/), a module required for Moosync to work requires libvips-cpp.so. If this library is missing for you, it will need to be installed manually.
+  
+  ### Archlinux
+  Vips can be installed from [official repo](https://archlinux.org/packages/community/x86_64/libvips/) using
+  ```bash
+  yay -S libvips
+  ```
+
+  ### Ubuntu/Debian
+  On Ubuntu and Debian, libvips can be installed using
+  ```bash
+  apt-get install libvips-dev
+  ```
+
+  ### Fedora
+  On fedora, libvips can be installed using dnf
+
+  ```bash
+  dnf install vips
+  ```
+
+  ### Installing manually
+  If none of the above methods apply to you, you may try to find libvips for your distro. Or you may build it from source by following [this guide](https://www.libvips.org/install.html)
+
+
