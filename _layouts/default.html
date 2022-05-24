@@ -15,7 +15,7 @@
         <ul>
           {%- for nav in site.data.nav.toc -%}
           {%- if nav.title -%}
-          <li>
+          <li {% if nav.subHeadings %} class="arrow-li" {% endif %}>
             <a {% if page.url contains nav.url and nav.url !="/wiki/" %} class="active" {% endif %} {% if
               page.url=="/wiki/" and nav.url=="/wiki/" %} class="active" {% endif %}
               href="{{ nav.url | relative_url }}">{{
@@ -26,7 +26,7 @@
               {%- for sub in nav.subHeadings -%}
 
               {% if sub.url contains "/wiki/" %}
-              <li>
+              <li {% if sub.subHeadings %} class="arrow-li" {% endif %}>
                 <a {% if page.url contains sub.url %} class="active" {% endif %} href="{{ sub.url | relative_url}}">{{
                   sub.title | escape }}</a>
                 {%- if sub.subHeadings -%}

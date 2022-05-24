@@ -1366,3 +1366,11 @@ span.dl {
 .oauth-code::-moz-selection {
   background: #1a66c9;
 }
+
+li {
+  list-style-image: url("../img/ellipse.svg");
+}
+
+.arrow-li {
+  list-style-image: url("../img/ic_round-navigate-next.svg") !important;
+}
