@@ -36,15 +36,12 @@ yarn install
 
 ## Post installation
 
-Native dependencies need to be compiled for electron separately.
+Native dependencies need to be compiled for electron separately. This process is done automatically.
+Incase that does not happen, you can run,
 
-Incase this does not work, you can run
-
-``` bash
-yarn native
+```bash
+yarn postinstall
 ```
-
-To compile native dependencies.
 
 ## Running in development environment
 
