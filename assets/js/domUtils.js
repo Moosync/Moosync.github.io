@@ -131,10 +131,9 @@ function openPopupAndHandleModal (loginModalPostLogin, loginModalPreLogin, provi
 }
 
 function openMoosync (provider, showWarning) {
-  // const res = window.open("moosync://" + getProviderRedirectURL(provider) + getQueryParams())
-  const res = true
+  const res = window.open("moosync://" + getProviderRedirectURL(provider) + getQueryParams())
   if (res) {
-    // window.history.replaceState(null, null, '/')
+    window.history.replaceState(null, null, '/')
   } else {
     if (showWarning) {
       alert('Failed to open Moosync. Check for blocked popup')
