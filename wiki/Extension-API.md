@@ -55,15 +55,22 @@ declare const api: import('@moosync/moosync-types').extensionAPI
 Events can be listened to using [api.on(...)](https://moosync.app/docs/interfaces/extensionAPI.html#on)
 
 List of events:
-- ```requestedPlaylists```<font color=red>*</font>
-- ```requestedPlaylistSongs```<font color=red>*</font>
-- ```oauthCallback```
-- ```songQueueChanged```
-- ```seeked```
-- ```volumeChanged```
-- ```playerStateChanged```
-- ```songChanged```
-- ```preferenceChanged```
+- 'requestedPlaylists' <font color=red>*</font>
+- 'requestedPlaylistSongs' <font color=red>*</font>
+- 'oauthCallback'
+- 'songQueueChanged'
+- 'seeked'
+- 'volumeChanged'
+- 'playerStateChanged'
+- 'songChanged'
+- 'preferenceChanged'
+- 'playbackDetailsRequested' <font color=red>*</font>
+- 'customRequest' <font color=red>*</font>
+- 'requestedSongFromURL' <font color=red>*</font>
+- 'requestedPlaylistFromURL' <font color=red>*</font>
+- 'requestSearchResult' <font color=red>*</font>
+- 'requestedRecommendations' <font color=red>*</font>
+- 'requestedLyrics' <font color=red>*</font>
 
 <font color=red>*</font> These events require you to return some data from their callbacks
 
