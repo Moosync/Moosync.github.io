@@ -29,6 +29,39 @@
   <meta property="og:image:height" content="1024" />
   <meta property="og:image:alt" content="Moosync logo" />
   <title>Moosync</title>
+
+  <!-- Start Single Page Apps for GitHub Pages -->
+  <script type="text/javascript">
+    // Single Page Apps for GitHub Pages
+    // MIT License
+    // https://github.com/rafgraph/spa-github-pages
+    // This script checks to see if a redirect is present in the query string,
+    // converts it back into the correct url and adds it to the
+    // browser's history using window.history.replaceState(...),
+    // which won't cause the browser to attempt to load the new url.
+    // When the single page app is loaded further down in this file,
+    // the correct url will be waiting in the browser's history for
+    // the single page app to route accordingly.
+    ; (function (l) {
+      if (l.search[1] === "/") {
+        var decoded = l.search
+          .slice(1)
+          .split("&")
+          .map(function (s) {
+            return s.replace(/~and~/g, "&")
+          })
+          .join("?")
+        window.history.replaceState(
+          null,
+          null,
+          l.pathname.slice(0, -1) + decoded + l.hash
+        )
+      }
+    })(window.location)
+  </script>
+  <!-- End Single Page Apps for GitHub Pages -->
+
+  <script src="/assets/js/index.js" type="module"></script>
 </head>
 
 <body class="main" id="body">
@@ -36,7 +69,7 @@
     <a href="#">
       <span class="title__logo">
         <span class="logo">
-          <img src="/assets/img/logo.svg" title="Moosync" alt="moosync logo" class="logo__img" />
+          <img loading=lazy src="/assets/img/logo.svg" title="Moosync" alt="moosync logo" class="logo__img" />
         </span>
         <span class="title">moosync</span>
       </span>
@@ -56,9 +89,9 @@
       <button id="download__btn" class="navigation__buttons">Download</button>
     </div>
     <div class="moosync__navbar-mobileScreen">
-      <img src="/assets/img/hamburgerIcon.svg" alt="Menu" id="hamburger-open" />
+      <img loading="lazy" src="/assets/img/hamburgerIcon.svg" alt="Menu" id="hamburger-open" />
       <div class="moosync__navbar-mobileScreen-overlayClose flex__center slide__bottom" id="menu-overlay">
-        <img src="/assets/img/hamburgerCloseIcon.svg" alt="Close" id="hamburger-close" />
+        <img loading="lazy" src="/assets/img/hamburgerCloseIcon.svg" alt="Close" id="hamburger-close" />
         <ul class="moosync__navbar-mobileScreen-links">
           <li class="p__normal" id="home"><a href="#">Home</a></li>
           <li class="p__normal" id="privacy">
@@ -85,18 +118,18 @@
       For the community</span>
     <div class="circle__div__container">
       <div class="music__person__img__container">
-        <img id="music__person__img" src="/assets/img/person.svg" alt="" />
+        <img loading="lazy" id="music__person__img" loading="lazy" src="/assets/img/person.svg" alt="" />
       </div>
       <div id="circle__div__1" class="circle__div">
         <div id="circle__div__2" class="circle__div"></div>
       </div>
       <div id="circle__div__3" class="circle__div">
-        <audio id="music"
-          src="https://res.cloudinary.com/thepranaygupta/video/upload/v1643119296/moosync/bg-music_x3sspk.mp3"
-          type="audio/mpeg" volume="0.2"></audio>
+        <audio id="music" src="" type="audio/mpeg" volume="0.2"></audio>
         <div class="playbutton__container">
-          <img src="/assets/img/musicbutton.svg" title="Play" alt="" class="play__button__img" id="playButton" />
-          <img src="/assets/img/playbutton.svg" title="Play" alt="" class="play__button__icon" id="playButtonIcon" />
+          <img loading="lazy" src="/assets/img/musicbutton.svg" title="Play" alt="" class="play__button__img"
+            id="playButton" />
+          <img loading="lazy" src="/assets/img/playbutton.svg" title="Play" alt="" class="play__button__icon"
+            id="playButtonIcon" />
         </div>
       </div>
     </div>
@@ -112,7 +145,7 @@
                 Download for ${os}
                 <div class="version__text">${version}</div>
               </div>
-              <img class="arrow__down" src="/assets/img/arrow-down.svg" alt="down arrow" />
+              <img loading="lazy" class="arrow__down" src="/assets/img/arrow-down.svg" alt="down arrow" />
             </div>
           </div>
         </div>
@@ -135,34 +168,34 @@
     </p>
     <div class="usage__icons__text">
       <span class="usage">
-        <img src="/assets/img/usageIcon1.svg" alt="" class="usage__icons" />
+        <img loading="lazy" src="/assets/img/usageIcon1.svg" alt="" class="usage__icons" />
         <span class="info__text__4">Customizable theme engine & Easy to use interface</span>
       </span>
       <span class="usage">
-        <img src="/assets/img/usageIcon2.svg" alt="" class="usage__icons" />
+        <img loading="lazy" src="/assets/img/usageIcon2.svg" alt="" class="usage__icons" />
         <span class="info__text__4">Develop own apps on top of Moosync Extension API</span>
       </span>
     </div>
     <div id="usage__icons__text__mid" class="usage__icons__text">
       <span id="usage__mid" class="usage">
-        <img src="/assets/img/usageIcon3.svg" alt="" class="usage__icons" />
+        <img loading="lazy" src="/assets/img/usageIcon3.svg" alt="" class="usage__icons" />
         <span class="info__text__4">Seamlessly integrate your Spotify and Youtube playlists.</span>
       </span>
       <span class="usage">
-        <img src="/assets/img/laptopbg.svg" alt="" id="usage__mid__img" />
+        <img loading="lazy" src="/assets/img/laptopbg.svg" alt="" id="usage__mid__img" />
       </span>
       <span id="usage__mid" class="usage">
-        <img src="/assets/img/usageIcon4.svg" alt="" class="usage__icons" />
+        <img loading="lazy" src="/assets/img/usageIcon4.svg" alt="" class="usage__icons" />
         <span class="info__text__4">Play songs directly from Youtube and Spotify</span>
       </span>
     </div>
     <div class="usage__icons__text">
       <span class="usage">
-        <img src="/assets/img/usageIcon5.svg" alt="" class="usage__icons" />
+        <img loading="lazy" src="/assets/img/usageIcon5.svg" alt="" class="usage__icons" />
         <span class="info__text__4">Track your music with LastFm and get recommendations</span>
       </span>
       <span class="usage">
-        <img src="/assets/img/usageIcon6.svg" alt="" class="usage__icons" />
+        <img loading="lazy" src="/assets/img/usageIcon6.svg" alt="" class="usage__icons" />
         <span class="info__text__4">Add Spotify and Youtube tracks and playlists by URLs</span>
       </span>
     </div>
@@ -190,12 +223,12 @@
     <div id="moosync__numbers__button" class="buttons">
       <a href="https://discord.gg/HsbqbRune3" target="_blank" rel="noopener noreferrer">
         <button title="Join us on Discord" class="link__buttons">
-          <img src="/assets/img/discordLogo.svg" alt="" class="icons" id="discord__icon" />Join Discord
+          <img loading="lazy" src="/assets/img/discordLogo.svg" alt="" class="icons" id="discord__icon" />Join Discord
         </button>
       </a>
       <a href="https://github.com/Moosync/Moosync" target="_blank" rel="noopener noreferrer">
         <button title="Contribute to Moosync" class="link__buttons">
-          <img src="/assets/img/githubIcon.svg" alt="" class="icons" id="discord__icon" />Contribute
+          <img loading="lazy" src="/assets/img/githubIcon.svg" alt="" class="icons" id="discord__icon" />Contribute
         </button>
       </a>
     </div>
@@ -205,7 +238,7 @@
       <div id="left__footer__content" class="footer__content">
         <a href="#home__page">
           <span class="title__logo">
-            <img src="/assets/img/logo.svg" title="Moosync" alt="" id="footer__logo" class="logo__img" />
+            <img loading="lazy" src="/assets/img/logo.svg" title="Moosync" alt="" id="footer__logo" class="logo__img" />
             <span class="title">moosync</span>
           </span>
         </a>
@@ -215,7 +248,7 @@
         <a href="mailto:support@moosync.app">
           <p class="info__text__3">
             support@moosync.app
-            <img src="/assets/img/link.svg" alt="" id="link__icon" />
+            <img loading="lazy" src="/assets/img/link.svg" alt="" id="link__icon" />
           </p>
         </a>
       </div>
@@ -272,72 +305,6 @@
     </div>
     <span id="copyright__text">Copyright &copy; 2022 Moosync</span>
   </footer>
-
-  <!-- Login modal-->
-  <div id="login-modal" class="modal">
-    <!-- Modal content -->
-    <div class="modal-content">
-      <span id="login-modal-close" class="close">&times;</span>
-      <div id="login-modal-postlogin">
-        <div class="modal-content-text" id="login-modal-content">
-          Thank you for logging in to
-          <span id="login-modal-platform-text-post">${platform}</span>.<br />
-          You may now close this window<br />
-          and enjoy your experience.
-          <br />
-          <br />
-          Alternatively, You may enter this code
-          <div id="oauth-code" class="oauth-code"></div>
-
-        </div>
-
-
-      </div>
-
-      <div id="login-modal-prelogin">
-        <p class="modal-content-text" id="login-modal-content">
-          Do you want to login to
-          <span id="login-modal-platform-text-pre">${platform}</span>?
-          <button title="Login" id="login-button" class="link__buttons login__button">
-            Click to open Moosync
-          </button>
-        </p>
-      </div>
-    </div>
-  </div>
-
-  <!-- Start Single Page Apps for GitHub Pages -->
-  <script type="text/javascript">
-    // Single Page Apps for GitHub Pages
-    // MIT License
-    // https://github.com/rafgraph/spa-github-pages
-    // This script checks to see if a redirect is present in the query string,
-    // converts it back into the correct url and adds it to the
-    // browser's history using window.history.replaceState(...),
-    // which won't cause the browser to attempt to load the new url.
-    // When the single page app is loaded further down in this file,
-    // the correct url will be waiting in the browser's history for
-    // the single page app to route accordingly.
-    ; (function (l) {
-      if (l.search[1] === "/") {
-        var decoded = l.search
-          .slice(1)
-          .split("&")
-          .map(function (s) {
-            return s.replace(/~and~/g, "&")
-          })
-          .join("?")
-        window.history.replaceState(
-          null,
-          null,
-          l.pathname.slice(0, -1) + decoded + l.hash
-        )
-      }
-    })(window.location)
-  </script>
-  <!-- End Single Page Apps for GitHub Pages -->
-
-  <script src="/assets/js/index.js" type="module"></script>
 </body>
 
 </html>
