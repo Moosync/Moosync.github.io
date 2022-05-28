@@ -21,7 +21,6 @@ export function setupPageFunctionality () {
 
   document.onmouseup = enableScrolling
 
-
   const music = document.getElementById("music");
   music.volume = 0.2;
   const playButtonContainer = document.getElementsByClassName("playbutton__container")[0];
@@ -32,7 +31,7 @@ export function setupPageFunctionality () {
   const playPause = () => {
     if (!isPlaying) {
       isPlaying = true;
-
+      music.src = 'https://res.cloudinary.com/thepranaygupta/video/upload/v1643119296/moosync/bg-music_x3sspk.mp3'
       music.play();
       playButton.title = "Pause";
       playButtonIcon.src = "./assets/img/pausebutton.svg";
@@ -68,39 +67,57 @@ export function setupPageFunctionality () {
 let toggleStatus = true;
 
 export function setupLoginModalFunctionality () {
-  const loginModal = document.getElementById('login-modal')
-  const loginModalPreLogin = document.getElementById('login-modal-prelogin')
-  const loginModalPostLogin = document.getElementById('login-modal-postlogin')
-
-  const loginModalCloseButton = document.getElementById('login-modal-close')
-  const loginModalPlatformTextPost = document.getElementById('login-modal-platform-text-post')
-  const loginModalPlatformTextPre = document.getElementById('login-modal-platform-text-pre')
-  const loginButton = document.getElementById('login-button')
-
   const providerMatch = getProviderFromURL()[0];
   if (providerMatch) {
     const color = getProviderColor(providerMatch)
-    loginModalPlatformTextPost.innerHTML = providerMatch
-    loginModalPlatformTextPost.style.color = color
 
-    loginModalPlatformTextPre.innerHTML = providerMatch
-    loginModalPlatformTextPre.style.color = color
+    const loginModal = document.createElement('div')
+    loginModal.classList.add('modal')
+    loginModal.id = 'login-modal'
+    loginModal.innerHTML = `
+    <div class="modal-content">
+      <span id="login-modal-close" class="close">&times;</span>
+      <div id="login-modal-postlogin">
+        <div class="modal-content-text" id="login-modal-content">
+          Thank you for logging in to
+          <span id="login-modal-platform-text-post" style="color:${color};">${providerMatch}</span>.<br />
+          You may now close this window<br />
+          and enjoy your experience.
+          <br />
+          <br />
+          Alternatively, You may enter this code
+          <div id="oauth-code" class="oauth-code">${getQueryParams()}</div>
+        </div>
+      </div>
+      <div id="login-modal-prelogin">
+        <p class="modal-content-text" id="login-modal-content">
+          Do you want to login to
+          <span id="login-modal-platform-text-pre" style="color:${color};">${providerMatch}</span>?
+          <button title="Login" id="login-button" class="link__buttons login__button">
+            Click to open Moosync
+          </button>
+        </p>
+      </div>
+    </div>`
 
-    const oauthCodeManual = document.getElementById('oauth-code')
-    if (oauthCodeManual) {
-      oauthCodeManual.innerText = getQueryParams()
-    }
+    const body = document.getElementById('body')
+    body.append(loginModal)
+
+    const loginButton = document.getElementById('login-button')
+    const loginModalPostLogin = document.getElementById('login-modal-postlogin')
+    const loginModalPreLogin = document.getElementById('login-modal-prelogin')
+    const closeButton = document.getElementById('login-modal-close')
+
 
     // Try to open popup
     openPopupAndHandleModal(loginModalPostLogin, loginModalPreLogin, providerMatch, false)
 
     loginButton.style.backgroundColor = color
     loginButton.onclick = () => openPopupAndHandleModal(loginModalPostLogin, loginModalPreLogin, providerMatch, true)
+    closeButton.onclick = () => loginModal.style.display = 'none'
 
     loginModal.style.display = "block"
   }
-
-  loginModalCloseButton.onclick = () => loginModal.style.display = "none"
 }
 
 function openPopupAndHandleModal (loginModalPostLogin, loginModalPreLogin, provider, showWarning) {
@@ -114,9 +131,10 @@ function openPopupAndHandleModal (loginModalPostLogin, loginModalPreLogin, provi
 }
 
 function openMoosync (provider, showWarning) {
-  const res = window.open("moosync://" + getProviderRedirectURL(provider) + getQueryParams())
+  // const res = window.open("moosync://" + getProviderRedirectURL(provider) + getQueryParams())
+  const res = true
   if (res) {
-    window.history.replaceState(null, null, '/')
+    // window.history.replaceState(null, null, '/')
   } else {
     if (showWarning) {
       alert('Failed to open Moosync. Check for blocked popup')
