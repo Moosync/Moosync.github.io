@@ -1,14 +1,1 @@
-<svg width="93" height="93" viewBox="0 0 93 93" fill="none" xmlns="http://www.w3.org/2000/svg">
-<mask id="mask0_1578_3881" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="93" height="93">
-<circle cx="46.5" cy="46.5" r="46.5" fill="#C4C4C4"/>
-</mask>
-<g mask="url(#mask0_1578_3881)">
-<rect width="93" height="93" rx="8.71875" fill="#1D1D1D"/>
-<mask id="mask1_1578_3881" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="-3" y="-3" width="94" height="94">
-<rect x="-2.17969" y="-2.90625" width="93" height="93" rx="8.71875" fill="#212121"/>
-</mask>
-<g mask="url(#mask1_1578_3881)">
-<path d="M32.5211 36.615V63.7153C32.5211 66.2233 30.488 68.2563 27.9801 68.2563C25.4722 68.2563 23.4391 66.2233 23.4391 63.7153V33.7446C23.4391 28.1269 27.9932 23.5728 33.611 23.5728H58.3141C63.9319 23.5728 68.486 28.1269 68.486 33.7446V63.8957C68.486 66.5047 66.371 68.6196 63.7621 68.6196C61.1541 68.6196 59.0395 66.5062 59.0382 63.8982L59.0239 36.6097C59.0226 34.2245 57.0886 32.2915 54.7034 32.2915C52.3173 32.2915 50.383 34.2258 50.383 36.612V46.008C50.383 48.5526 48.3201 50.6154 45.7755 50.6154C43.2309 50.6154 41.168 48.5526 41.168 46.008V36.615C41.168 34.2272 39.2323 32.2915 36.8446 32.2915C34.4568 32.2915 32.5211 34.2272 32.5211 36.615Z" fill="#65CB88"/>
-</g>
-</g>
-</svg>
+<svg width="93" height="93" fill="none" xmlns="http://www.w3.org/2000/svg"><mask id="a" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="93" height="93"><circle cx="46.5" cy="46.5" r="46.5" fill="#C4C4C4"/></mask><g mask="url(#a)"><rect width="93" height="93" rx="8.719" fill="#1D1D1D"/><mask id="b" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="-3" y="-3" width="94" height="94"><rect x="-2.18" y="-2.906" width="93" height="93" rx="8.719" fill="#212121"/></mask><g mask="url(#b)"><path d="M32.521 36.615v27.1a4.541 4.541 0 1 1-9.082 0v-29.97c0-5.618 4.554-10.172 10.172-10.172h24.703c5.618 0 10.172 4.554 10.172 10.172v30.15a4.724 4.724 0 0 1-9.448.003l-.014-27.288a4.32 4.32 0 0 0-8.641.002v9.396a4.607 4.607 0 0 1-9.215 0v-9.393a4.323 4.323 0 1 0-8.647 0Z" fill="#65CB88"/></g></g></svg>
