@@ -620,7 +620,7 @@ a:hover {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  margin-left: 15px;
+  /* margin-left: 15px; */
 }
 
 .info__text__2 {
@@ -717,7 +717,6 @@ a:hover {
 }
 
 .list__items {
-  list-style-type: none;
   font-size: 1rem;
   font-family: "Lexend Deca", sans-serif;
   font-weight: 200;
@@ -726,8 +725,8 @@ a:hover {
   cursor: pointer;
 }
 
-.list__items:hover {
-  color: var(--green-secondary);
+.list-items-link:hover {
+  color: #80ed99 !important; 
 }
 
 #notice {
@@ -877,10 +876,10 @@ a:hover {
   }
 
   .footer__general {
-    margin: 0 1rem;
+    padding: 0 1rem;
     align-items: center;
-    justify-content: center;
-    text-align: center;
+    justify-content: space-between;
+    text-align:center;
   }
 
   #left__footer__content {
@@ -1369,6 +1368,7 @@ span.dl {
 
 li {
   list-style-image: url("../img/ellipse.svg");
+  list-style: none;
 }
 
 .arrow-li {
