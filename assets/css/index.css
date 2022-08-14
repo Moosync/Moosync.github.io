@@ -20,14 +20,13 @@ body {
   background-color: #212121 !important;
 }
 
-
 footer > * a,
 footer > * a:hover {
   color: white !important;
   text-decoration: none;
 }
 
-footer > * ul {
+footer>* ul {
   margin: 0;
 }
 
@@ -60,11 +59,9 @@ a:hover {
 
 .login__navbar {
   background-color: none;
-  background-image: linear-gradient(
-    180deg,
-    rgba(40, 40, 40, 0.3),
-    rgba(86, 86, 86, 0.3)
-  );
+  background-image: linear-gradient(180deg,
+      rgba(40, 40, 40, 0.3),
+      rgba(86, 86, 86, 0.3));
 }
 
 .title__logo {
@@ -296,6 +293,7 @@ a:hover {
     -webkit-transform: translateY(-25%);
     transform: translateY(-25%);
   }
+
   100% {
     -webkit-transform: translateY(0);
     transform: translateY(0);
@@ -307,6 +305,7 @@ a:hover {
     -webkit-transform: translateY(-25%);
     transform: translateY(-25%);
   }
+
   100% {
     -webkit-transform: translateY(0);
     transform: translateY(0);
@@ -461,6 +460,7 @@ a:hover {
 
 .link__buttons:hover {
   transform: scale(1.1);
+  background-color: #4e9f6a;
 }
 
 .icons {
@@ -577,6 +577,7 @@ a:hover {
 .count__box {
   width: 15rem;
   height: 15rem;
+  margin-bottom: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -585,19 +586,33 @@ a:hover {
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
+  transition: all 0.2s;
 }
 
-.count__box > p:first-child {
+
+
+.count__box>p:first-child {
   font-size: 1.9rem;
   font-weight: 500;
 }
 
-.count__box > p:last-child {
+.count__box>p:last-child {
   padding: 0.25rem 0;
   font-size: 0.8rem;
 }
 
-#moosync__numbers__button {
+.count__box:hover {
+  color: #FAF3E3;
+  width: 16rem;
+  margin-bottom: 0;
+  background-image: url("../img/hexagon-hover.svg");
+  height: 16rem;
+  /* transition: all 0.2s; */
+  transform: scale(1.04);
+}
+
+
+.count__box>#moosync__numbers__button {
   margin-top: 2rem;
 }
 
@@ -675,6 +690,7 @@ a:hover {
 .info__text__3:hover #link__icon {
   transform: scale(1.25);
 }
+
 #link__icon {
   height: 0.75rem;
   width: 0.75rem;
@@ -751,7 +767,7 @@ a:hover {
 }
 
 .list-items-link:hover {
-  color: #80ed99 !important; 
+  color: #80ed99 !important;
 }
 
 #notice {
@@ -904,7 +920,7 @@ a:hover {
     padding: 0 1rem;
     align-items: center;
     justify-content: space-between;
-    text-align:center;
+    text-align: center;
   }
 
   #left__footer__content {
@@ -1066,15 +1082,18 @@ a:hover {
     width: 75vw;
   }
 }
+
 .all_counts {
   padding: 5rem 0;
   background-color: #212121;
 }
+
 .count_matters_boxes {
   padding-left: 12rem;
   display: flex;
   flex-direction: row;
 }
+
 .countimages {
   height: 283px;
   width: 283px;
@@ -1119,6 +1138,7 @@ a:hover {
 .modal-content-text {
   padding: 100px 20px 100px 20px;
 }
+
 #login-modal-platform-text-pre,
 #login-modal-platform-text-post {
   text-transform: capitalize;
@@ -1232,7 +1252,7 @@ a:hover {
   opacity: 1;
 }
 
-.select__box .options__container.options__active + .selected::after {
+.select__box .options__container.options__active+.selected::after {
   transform: rotateX(180deg);
   top: -6px;
 }
