@@ -26,7 +26,7 @@ footer > * a:hover {
   text-decoration: none;
 }
 
-footer>* ul {
+footer > * ul {
   margin: 0;
 }
 
@@ -59,9 +59,11 @@ a:hover {
 
 .login__navbar {
   background-color: none;
-  background-image: linear-gradient(180deg,
-      rgba(40, 40, 40, 0.3),
-      rgba(86, 86, 86, 0.3));
+  background-image: linear-gradient(
+    180deg,
+    rgba(40, 40, 40, 0.3),
+    rgba(86, 86, 86, 0.3)
+  );
 }
 
 .title__logo {
@@ -85,7 +87,7 @@ a:hover {
 }
 
 .navbar__buttons {
-  width: 700px;
+  width: 600px;
   background-color: none;
   display: flex;
   flex-direction: row;
@@ -109,11 +111,11 @@ a:hover {
   border-bottom: 2px solid #5bb67a;
   transform: scaleX(0);
 } */
-.navigation__buttons a{
+.navigation__buttons a {
   color: white;
 }
 .navigation__buttons {
-  width: 125px;
+  width: fit-content;
   height: 50px;
   padding: 0%;
   transition: background-position-x 0.9s linear;
@@ -127,9 +129,6 @@ a:hover {
 }
 .navigation__buttons a:hover {
   color: #5bb67a;
-}
-.navigation__buttons:not(:last-child) {
-  margin-right: 30px;
 }
 
 @-webkit-keyframes line {
@@ -589,20 +588,18 @@ a:hover {
   transition: all 0.2s;
 }
 
-
-
-.count__box>p:first-child {
+.count__box > p:first-child {
   font-size: 1.9rem;
   font-weight: 500;
 }
 
-.count__box>p:last-child {
+.count__box > p:last-child {
   padding: 0.25rem 0;
   font-size: 0.8rem;
 }
 
 .count__box:hover {
-  color: #FAF3E3;
+  color: #faf3e3;
   width: 16rem;
   margin-bottom: 0;
   background-image: url("../img/hexagon-hover.svg");
@@ -611,8 +608,7 @@ a:hover {
   transform: scale(1.04);
 }
 
-
-.count__box>#moosync__numbers__button {
+.count__box > #moosync__numbers__button {
   margin-top: 2rem;
 }
 
@@ -1252,7 +1248,7 @@ a:hover {
   opacity: 1;
 }
 
-.select__box .options__container.options__active+.selected::after {
+.select__box .options__container.options__active + .selected::after {
   transform: rotateX(180deg);
   top: -6px;
 }
