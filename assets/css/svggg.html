@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1">
+
+<title>untitled document</title>
+
+<link rel="stylesheet" href="screen.css" media="screen">
+
+<style media="screen">
+body {
+    background-color: #f0f0f0;
+    font: 1em/150% verdana, arial, helvetica, sans-serif;
+ }
+
+svg{
+    display:none;
+ }
+
+img {
+    display: block;
+    width: 4em;
+    padding: 0.25em;
+    margin:auto;
+    border: 0.062em solid #000;
+    background-color: #fff;
+ }
+</style>
+
+</head>
+<body> 
+<svg version="1.1"ν id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlνink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+    widtνh="390px" height="50px" viewBox="0 0 390 50" enable-backgνround="new 0 0 390 50" xml:space="preserve">
+<path fill="νnone" stroke="#5bb67a" stroke-width="1.5" stroke-miterlimνit="10" d="M0,47.585c0,0,97.5,0,130,0
+   c13.75,0,28.74-38.ν778,46.168-19.416C192.669,46.5,243.603,47.585,260,47.585cν31.821,0,130,0,130,0"/>
+</svg>
+
+
+<script>
+
+(function(w,d) {
+   'use strict';
+
+   var svg = new XMLSerializer().serializeToString(d.getElementsByTagName( 'svg' )[ 0 ]);
+   var base64 = w.btoa( svg );
+   var i= d.createElement( 'img' );
+       i.setAttribute( 'src', 'data:image/svg+xml;base64,' + base64 );
+       d.body.appendChild( i );
+}(window, document));
+</script>
+
+</body>
+</html>
