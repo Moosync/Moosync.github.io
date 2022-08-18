@@ -20,7 +20,22 @@ export function setupPageFunctionality () {
     }
   }
 
+  let mouseMoveScrollEnabled = false
+  document.onmousemove = (e) => {
+    if (e.clientX >= document.body.clientWidth - scrollBarWidth) {
+      enableScrolling(false)
+      mouseMoveScrollEnabled = true
+    } else {
+      if (mouseMoveScrollEnabled) {
+        enableScrolling(true)
+        mouseMoveScrollEnabled = false
+      }
+    }
+  }
+
   document.onmouseup = enableScrolling
+
+
 
   const music = document.getElementById('music');
   if (music) {
