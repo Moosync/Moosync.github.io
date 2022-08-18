@@ -1,6 +1,6 @@
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-8-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-9-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 ## Contributors ✨
 
@@ -21,6 +21,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
   </tr>
   <tr>
     <td align="center"><a href="https://github.com/SujalSamai"><img src="https://avatars.githubusercontent.com/u/87236576?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Sujal Samai</b></sub></a><br /><a href="https://github.com/Moosync/Moosync.github.io/commits?author=SujalSamai" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/ranmerc"><img src="https://avatars.githubusercontent.com/u/33200113?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Kamran Ansari</b></sub></a><br /><a href="https://github.com/Moosync/Moosync.github.io/commits?author=ranmerc" title="Code">💻</a></td>
   </tr>
 </table>
 
