@@ -1,4 +1,5 @@
 import { shouldRegenRequest, getExpiryTime, setCache } from './commonUtils.js'
+import { setElemProperty } from './commonUtils.js'
 
 // TODO: fetch this from all-contributors spec
 const noCodeContributorsCount = 3
@@ -54,17 +55,14 @@ async function getDiscordCount () {
 
 export function setupCounters () {
   (async () => {
-    const downloadsCounter = document.getElementById('downloads__count')
-    downloadsCounter.innerHTML = Math.floor((await getGithubDownloadCount()) / 10) * 10 + '+'
+    setElemProperty('downloads__count', 'innerHTML', Math.floor((await getGithubDownloadCount()) / 10) * 10 + '+')
   })();
 
   (async () => {
-    const activeContributorsCount = document.getElementById('contri__count')
-    activeContributorsCount.innerHTML = ((await getGithubContributorsCount()) + noCodeContributorsCount) + "+"
+    setElemProperty('contri__count', 'innerHTML', ((await getGithubContributorsCount()) + noCodeContributorsCount) + "+")
   })();
 
   (async () => {
-    const discordCount = document.getElementById('discord__count')
-    discordCount.innerHTML = (await getDiscordCount()) + "+"
+    setElemProperty('discord__count', 'innerHTML', (await getDiscordCount()) + "+")
   })();
 }

@@ -3,8 +3,9 @@ import {
   getProviderFromURL,
   getProviderRedirectURL,
   getQueryParams,
-} from "./locationUtils.js";
+} from './locationUtils.js';
 
+import { setElemProperty, callElemMethod } from './commonUtils.js';
 export function setupPageFunctionality () {
 
   enableScrolling()
@@ -21,46 +22,53 @@ export function setupPageFunctionality () {
 
   document.onmouseup = enableScrolling
 
-  const music = document.getElementById("music");
-  music.volume = 0.2;
-  const playButtonContainer = document.getElementsByClassName("playbutton__container")[0];
-  const playButton = document.getElementById("playButton");
-  const playButtonIcon = document.getElementById("playButtonIcon");
+  const music = document.getElementById('music');
+  if (music) {
+    music.volume = 0.2;
+  }
+
+  const playButtonContainer = document.getElementsByClassName('playbutton__container')[0];
+  const playButton = document.getElementById('playButton');
+  const playButtonIcon = document.getElementById('playButtonIcon');
   let isPlaying = false;
 
   const playPause = () => {
-    if (!isPlaying) {
-      isPlaying = true;
-      music.src = 'https://res.cloudinary.com/thepranaygupta/video/upload/v1643119296/moosync/bg-music_x3sspk.mp3'
-      music.play();
-      playButton.title = "Pause";
-      playButtonIcon.src = "./assets/img/pausebutton.svg";
-    } else {
-      isPlaying = false;
+    if (playButton && playButtonIcon) {
+      if (!isPlaying) {
+        isPlaying = true;
+        music.src = 'https://res.cloudinary.com/thepranaygupta/video/upload/v1643119296/moosync/bg-music_x3sspk.mp3'
+        music.play();
+        playButton.title = 'Pause';
+        playButtonIcon.src = './assets/img/pausebutton.svg';
+      } else {
+        isPlaying = false;
 
-      music.pause();
-      playButton.title = "Play";
-      playButtonIcon.src = "./assets/img/playbutton.svg";
+        music.pause();
+        playButton.title = 'Play';
+        playButtonIcon.src = './assets/img/playbutton.svg';
+      }
     }
   };
 
-  playButtonContainer.onclick = playPause;
+  if (playButtonContainer) {
+    playButtonContainer.onclick = playPause;
+  }
 
-  document.getElementById("download__btn").onclick = () => {
-    document.getElementById("downloads").scrollIntoView({
-      behavior: "smooth",
-      block: "center",
-      inline: "center",
+  setElemProperty('download__btn', 'onclick', () => {
+    callElemMethod('downloads', 'scrollIntoView', {
+      behavior: 'smooth',
+      block: 'center',
+      inline: 'center',
     });
-  };
+  });
 
-  document.getElementById('hamburger-close').onclick = overlayHandler.bind(this)
-  document.getElementById('hamburger-open').onclick = overlayHandler.bind(this)
+  setElemProperty('hamburger-close', 'onclick', overlayHandler.bind(this))
+  setElemProperty('hamburger-open', 'onclick', overlayHandler.bind(this))
 
-  document.getElementById('home').onclick = overlayHandler.bind(this)
-  document.getElementById('privacy').onclick = overlayHandler.bind(this)
-  document.getElementById('documentation').onclick = overlayHandler.bind(this)
-  document.getElementById('download').onclick = overlayHandler.bind(this)
+  setElemProperty('home', 'onclick', overlayHandler.bind(this))
+  setElemProperty('privacy', 'onclick', overlayHandler.bind(this))
+  setElemProperty('documentation', 'onclick', overlayHandler.bind(this))
+  setElemProperty('download', 'onclick', overlayHandler.bind(this))
 
 }
 
@@ -75,25 +83,25 @@ export function setupLoginModalFunctionality () {
     loginModal.classList.add('modal')
     loginModal.id = 'login-modal'
     loginModal.innerHTML = `
-    <div class="modal-content">
-      <span id="login-modal-close" class="close">&times;</span>
-      <div id="login-modal-postlogin">
-        <div class="modal-content-text" id="login-modal-content">
+    <div class='modal-content'>
+      <span id='login-modal-close' class='close'>&times;</span>
+      <div id='login-modal-postlogin'>
+        <div class='modal-content-text' id='login-modal-content'>
           Thank you for logging in to
-          <span id="login-modal-platform-text-post" style="color:${color};">${providerMatch}</span>.<br />
+          <span id='login-modal-platform-text-post' style='color:${color};'>${providerMatch}</span>.<br />
           You may now close this window<br />
           and enjoy your experience.
           <br />
           <br />
           Alternatively, You may enter this code
-          <div id="oauth-code" class="oauth-code">${getQueryParams()}</div>
+          <div id='oauth-code' class='oauth-code'>${getQueryParams()}</div>
         </div>
       </div>
-      <div id="login-modal-prelogin">
-        <p class="modal-content-text" id="login-modal-content">
+      <div id='login-modal-prelogin'>
+        <p class='modal-content-text' id='login-modal-content'>
           Do you want to login to
-          <span id="login-modal-platform-text-pre" style="color:${color};">${providerMatch}</span>?
-          <button title="Login" id="login-button" class="link__buttons login__button">
+          <span id='login-modal-platform-text-pre' style='color:${color};'>${providerMatch}</span>?
+          <button title='Login' id='login-button' class='link__buttons login__button'>
             Click to open Moosync
           </button>
         </p>
@@ -109,14 +117,23 @@ export function setupLoginModalFunctionality () {
     const closeButton = document.getElementById('login-modal-close')
 
 
-    // Try to open popup
-    openPopupAndHandleModal(loginModalPostLogin, loginModalPreLogin, providerMatch, false)
+    if (loginModalPostLogin, loginModalPreLogin, providerMatch) {
+      // Try to open popup
+      openPopupAndHandleModal(loginModalPostLogin, loginModalPreLogin, providerMatch, false)
+    }
 
-    loginButton.style.backgroundColor = color
-    loginButton.onclick = () => openPopupAndHandleModal(loginModalPostLogin, loginModalPreLogin, providerMatch, true)
-    closeButton.onclick = () => loginModal.style.display = 'none'
+    if (loginButton) {
+      loginButton.style.backgroundColor = color
+      loginButton.onclick = () => openPopupAndHandleModal(loginModalPostLogin, loginModalPreLogin, providerMatch, true)
+    }
 
-    loginModal.style.display = "block"
+    if (closeButton) {
+      closeButton.onclick = () => loginModal.style.display = 'none'
+    }
+
+    if (loginModal) {
+      loginModal.style.display = 'block'
+    }
   }
 }
 
@@ -131,7 +148,7 @@ function openPopupAndHandleModal (loginModalPostLogin, loginModalPreLogin, provi
 }
 
 function openMoosync (provider, showWarning) {
-  const res = window.open("moosync://" + getProviderRedirectURL(provider) + getQueryParams())
+  const res = window.open('moosync://' + getProviderRedirectURL(provider) + getQueryParams())
   if (res) {
     window.history.replaceState(null, null, '/')
   } else {
@@ -144,18 +161,20 @@ function openMoosync (provider, showWarning) {
 }
 
 function overlayHandler () {
-  const overlayElement = document.getElementById("menu-overlay");
+  const overlayElement = document.getElementById('menu-overlay');
 
-  if (toggleStatus) {
-    overlayElement.classList.remove(
-      "moosync__navbar-mobileScreen-overlayClose"
-    );
-    overlayElement.classList.add("moosync__navbar-mobileScreen-overlayOpen");
-    toggleStatus = false;
-  } else {
-    overlayElement.classList.remove("moosync__navbar-mobileScreen-overlayOpen");
-    overlayElement.classList.add("moosync__navbar-mobileScreen-overlayClose");
-    toggleStatus = true;
+  if (overlayElement) {
+    if (toggleStatus) {
+      overlayElement.classList.remove(
+        'moosync__navbar-mobileScreen-overlayClose'
+      );
+      overlayElement.classList.add('moosync__navbar-mobileScreen-overlayOpen');
+      toggleStatus = false;
+    } else {
+      overlayElement.classList.remove('moosync__navbar-mobileScreen-overlayOpen');
+      overlayElement.classList.add('moosync__navbar-mobileScreen-overlayClose');
+      toggleStatus = true;
+    }
   }
 }
 

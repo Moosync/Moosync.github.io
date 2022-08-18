@@ -1,4 +1,4 @@
-import { shouldRegenRequest, getExpiryTime, setCache } from "./commonUtils.js";
+import { shouldRegenRequest, getExpiryTime, setCache, callElemMethod, setElemProperty } from "./commonUtils.js";
 
 const OSEnum = Object.freeze({
   WINDOWS: "win",
@@ -127,7 +127,7 @@ export async function setupDownloadButton () {
       button.id = `${release.version} ${release.ext}`
 
       clone.getElementById("download-icon").classList.add(getIconClass(os));
-      downloadParent.appendChild(document.importNode(clone, true));
+      callElemMethod('downloads', 'appendChild', document.importNode(clone, true))
 
       document.getElementById(`${release.version} ${release.ext}`).onclick = () => window.open(release.url)
     }
@@ -141,8 +141,7 @@ export async function setupDownloadButton () {
         .replace('${version}', releases[0].version)
         .replace('${os}', osReadable)
 
-      downloadParent.appendChild(document.importNode(clone, true));
-
+      callElemMethod('downloads', 'appendChild', document.importNode(clone, true))
       const optionsContainer = document.getElementById('options-container')
 
       for (const release of releases) {
@@ -163,11 +162,10 @@ export async function setupDownloadButton () {
     }
 
   } else {
-    downloadParent.innerHTML =
-      "Sorry Moosync is not available for your platform yet";
+    setElemProperty('downloads', 'innerHTML', "Sorry Moosync is not available for your platform yet")
   }
 
-  document.getElementById('other-download').onclick = () => {
+  setElemProperty('other-download', 'onclick', () => {
     window.open('https://github.com/Moosync/Moosync/releases/latest')
-  }
+  })
 }
