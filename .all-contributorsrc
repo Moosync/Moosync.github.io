@@ -58,6 +58,15 @@
         "content",
         "doc"
       ]
+    },
+    {
+      "login": "undextered",
+      "name": "Abhimanyu Gabhrani",
+      "avatar_url": "https://avatars.githubusercontent.com/u/76005012?v=4",
+      "profile": "https://github.com/undextered",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7
