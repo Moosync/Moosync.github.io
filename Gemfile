@@ -7,7 +7,7 @@ source "https://rubygems.org"
 #
 # This will help ensure the proper Jekyll version is running.
 # Happy Jekylling!
-gem "github-pages", "~> 225", group: :jekyll_plugins
+gem "github-pages", group: :jekyll_plugins
 # This is the default theme for new Jekyll sites. You may change this to anything you like.
 gem "minima"
 # If you want to use GitHub Pages, remove the "gem "jekyll"" above and
@@ -37,3 +37,4 @@ gem "http_parser.rb", "~> 0.6.0", :platforms => [:jruby]
 gem "kramdown", "~> 2.3"
 gem "rouge", "~> 3.26"
 gem 'jekyll-titles-from-headings'
+gem 'webrick'

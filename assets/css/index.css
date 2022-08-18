@@ -57,6 +57,10 @@ a:hover {
   z-index: 999;
 }
 
+.nav__bar > * a:hover {
+  text-decoration: none;
+}
+
 .login__navbar {
   background-color: none;
   background-image: linear-gradient(

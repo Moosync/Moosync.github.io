@@ -2,28 +2,19 @@
   {%- assign default_paths = site.pages | map: "path" -%} {%- assign page_paths
   = site.header_pages | default: default_paths -%} {%- assign titles_size =
   site.pages | map: 'title' | join: '' | size -%}
-  <a href="#">
+  <a href="/">
     <span class="title__logo">
       <span class="logo">
-        <img
-          src="/assets/img/logo.svg"
-          title="Moosync"
-          alt="moosync logo"
-          class="logo__img"
-        />
+        <img src="/assets/img/logo.svg" title="Moosync" alt="moosync logo" class="logo__img" />
       </span>
       <span class="title">moosync</span>
     </span>
   </a>
   <div class="navbar__buttons">
-    <button class="navigation__buttons"><a href="#">Home</a></button>
+    <button class="navigation__buttons"><a href="/">Home</a></button>
     <button class="navigation__buttons">
-      <a
-        href="https://www.iubenda.com/privacy-policy/70189564/full-legal"
-        target="_blank"
-        rel="noopener noreferrer"
-        >Privacy policy</a
-      >
+      <a href="https://www.iubenda.com/privacy-policy/70189564/full-legal" target="_blank"
+        rel="noopener noreferrer">Privacy policy</a>
     </button>
     <button class="navigation__buttons">
       <a href="/docs/index.html" rel="noopener noreferrer">Extension docs</a>
@@ -31,31 +22,18 @@
     <button class="navigation__buttons">
       <a href="https://github.com/Moosync" rel="noopener noreferrer">Github</a>
     </button>
-    <button
-      id="download__btn"
-      class="navigation__buttons"
-      onclick="window.location.href='/'"
-    >
+    <button id="download__btn" class="navigation__buttons" onclick="window.location.href='/'">
       Download
     </button>
   </div>
   <div class="moosync__navbar-mobileScreen">
     <img src="/assets/img/hamburgerIcon.svg" alt="Menu" id="hamburger-open" />
-    <div
-      class="moosync__navbar-mobileScreen-overlayClose flex__center slide__bottom"
-      id="menu-overlay"
-    >
-      <img
-        src="/assets/img/hamburgerCloseIcon.svg"
-        alt="Close"
-        id="hamburger-close"
-      />
+    <div class="moosync__navbar-mobileScreen-overlayClose flex__center slide__bottom" id="menu-overlay">
+      <img src="/assets/img/hamburgerCloseIcon.svg" alt="Close" id="hamburger-close" />
       <ul class="moosync__navbar-mobileScreen-links">
         <li class="p__normal" id="home"><a href="#">Home</a></li>
         <li class="p__normal" id="privacy">
-          <a href="https://www.iubenda.com/privacy-policy/70189564/full-legal"
-            >Privacy Policy</a
-          >
+          <a href="https://www.iubenda.com/privacy-policy/70189564/full-legal">Privacy Policy</a>
         </li>
         <li class="p__normal" id="documentation">
           <a href="/docs/index.html">Extension Docs</a>
@@ -64,13 +42,8 @@
           <a href="https://github.com/Moosync/Moosync">Github</a>
         </li>
         <li id="download">
-          <button
-            type="button"
-            name="button"
-            class="navigation__buttons"
-            id="download__btn"
-            onclick="window.location.href='/'"
-          >
+          <button type="button" name="button" class="navigation__buttons" id="download__btn"
+            onclick="window.location.href='/'">
             Download
           </button>
         </li>
