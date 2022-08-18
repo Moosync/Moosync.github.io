@@ -164,8 +164,4 @@ export async function setupDownloadButton () {
   } else {
     setElemProperty('downloads', 'innerHTML', "Sorry Moosync is not available for your platform yet")
   }
-
-  setElemProperty('other-download', 'onclick', () => {
-    window.open('https://github.com/Moosync/Moosync/releases/latest')
-  })
 }
