@@ -20,6 +20,8 @@ body {
   background-color: #212121 !important;
 }
 
+nav> * a,
+nav> * a:hover,
 footer > * a,
 footer > * a:hover {
   color: white !important;
@@ -37,6 +39,7 @@ a:hover {
 .main {
   min-height: 100vh;
   display: block;
+  color:white !important;
 }
 
 .nav__bar {
@@ -213,7 +216,7 @@ a:hover {
 }
 
 .moosync__navbar-mobileScreen-links li:hover {
-  color: var(--color-text-green);
+  color: #5bb67a;
 }
 
 #hamburger-close {
@@ -267,13 +270,13 @@ a:hover {
 .moosync__navbar-mobileScreen-links li {
   margin-top: 2rem;
   font-size: 2rem;
-  color: white;
+  color: var(--color-white);
   text-align: center;
   cursor: pointer;
 }
 
 .moosync__navbar-mobileScreen-links li:hover {
-  color: var(--green-primary);
+  color: var(--color-text-green);
 }
 
 #hamburger-close {
