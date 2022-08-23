@@ -13,15 +13,18 @@
   scroll-behavior: smooth;
   font-family: "Lexend Deca", sans-serif;
 }
-
+::selection {
+  color: var(--green-primary);
+  background: #141414;
+}
 body {
   overflow: overlay;
   transition: color 0.2s ease-in;
   background-color: #212121 !important;
 }
 
-nav> * a,
-nav> * a:hover,
+nav > * a,
+nav > * a:hover,
 footer > * a,
 footer > * a:hover {
   color: white !important;
@@ -39,7 +42,7 @@ a:hover {
 .main {
   min-height: 100vh;
   display: block;
-  color:white !important;
+  color: white !important;
 }
 
 .nav__bar {
@@ -60,9 +63,8 @@ a:hover {
 }
 
 .nav__bar > * a:hover {
-  text-decoration: none;
+  color: var(--green-primary) !important;
 }
-
 .login__navbar {
   background-color: none;
   background-image: linear-gradient(
@@ -1166,23 +1168,18 @@ a:hover {
   margin-top: 30px;
   padding: 15px;
 }
-
-::-webkit-scrollbar,
+::-webkit-scrollbar {
+  overflow: scroll;
+  padding-right: 10px;
+  width: 6px;
+} 
 ::-webkit-scrollbar-thumb {
-  width: 26px;
-  border-radius: 13px;
+  border-radius: 15px;
   background-clip: padding-box;
-  border: 10px solid transparent;
-  min-height: 50px;
-}
-
-::-webkit-scrollbar-thumb {
-  box-shadow: inset 0 0 0 10px;
-  min-height: 40px;
-}
-
-::-webkit-scrollbar-track {
-  background: transparent;
+  border: 5px solid var(--green-primary);
+  box-shadow: inset 0 0 0 1px;
+  min-height: 2px;
+  background: var(--green-primary);
 }
 
 .icon-linux,
