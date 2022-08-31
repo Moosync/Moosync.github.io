@@ -523,12 +523,24 @@ a:hover {
   align-items: center;
   justify-content: center;
   color: white;
+  padding: 10px;
+}
+.usage:hover{
+  border: #4dc4ab solid 1px;
+  border-radius: 15px;
+  background-color: #212121;
 }
 
 .usage__icons {
   width: 5rem;
+  padding: 10px;
   object-fit: cover;
 }
+/* .usage__icons:hover{
+  border-radius: 15px;
+  border: solid #4e9f6a 1px;
+  transition: all ease-in 5ms;
+} */
 
 .info__text__4 {
   width: 10rem;
@@ -607,6 +619,7 @@ a:hover {
 }
 
 .count__box:hover {
+  cursor: pointer;
   color: #faf3e3;
   width: 16rem;
   margin-bottom: 0;
