@@ -60,7 +60,7 @@ Due to this, each user will be required to generate an API key for themselves.
 - Select "External" and press "CREATE"
   ![Cloud console oauth consent](/assets/img/cloud_console_oauth_consent.png)
 
-- Fill in required details.
+- Fill in required details.  
   ![Cloud console app details](/assets/img/cloud_console_oauth_app_details.png)
 
 - Under "Authorized domains", input "moosync.app"
@@ -69,11 +69,12 @@ Due to this, each user will be required to generate an API key for themselves.
 - Press "SAVE AND CONTINUE"
 
 - Press on "ADD OR REMOVE SCOPES" and search for "Youtube Data API v3". Under it select the scope ".../auth/youtube.readonly" and press update. Then press "SAVE AND CONTINUE"
+  ![Cloud console oauth scope](/assets/img/cloud_console_oauth_scope.png)
+
 
 - Under test users add all the email addresses you wish to use.
 
 - Press "SAVE AND CONTINUE" and return back to the dashboard
-  ![Cloud console oauth scope](/assets/img/cloud_console_oauth_scope.png)
 
 
 ### Creating credentials

@@ -1427,7 +1427,7 @@ span.dl {
   background: #1a66c9;
 }
 
-li {
+.sidenav li {
   list-style-image: url("../img/ellipse.svg");
   list-style: none;
 }
