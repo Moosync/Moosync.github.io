@@ -34,7 +34,7 @@ Paste the string you copied earlier into these fields. Now you should be able to
 You can add your alternate accounts under **Users and Access** and use the same Client ID and Client Secret for multiple users.
 
 
-## Youtube integration
+## Enabling Youtube integration
 
 Due to restrictions from Youtube, a public API key could not be integrated into the app.
 Due to this, each user will be required to generate an API key for themselves.

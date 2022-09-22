@@ -11,6 +11,8 @@ toc:
     subHeadings: 
       - title: Enabling Spotify integration
         url: "#enabling-spotify-integration"
+      - title: Enabling Youtube integration
+        url: "#enabling-youtube-integration"
       - title: Discord integration
         url: "#discord-integration"
   - title: Extensions
