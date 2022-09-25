@@ -36,6 +36,8 @@ You can add your alternate accounts under **Users and Access** and use the same 
 
 ## Enabling Youtube integration
 
+#### (This is only required if you want to access your private playlists or videos. All other features will work without logging in to Youtube)
+
 Due to restrictions from Youtube, a public API key could not be integrated into the app.
 Due to this, each user will be required to generate an API key for themselves.
 
