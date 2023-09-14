@@ -105,6 +105,16 @@ function getSanitizedLinuxName (ext) {
   }
 }
 
+function getSanitizedName(release) {
+  if (release.url.includes('linux')) {
+    return getSanitizedLinuxName(release.ext)
+  }
+
+  const match = release.url.match(/^.*\/.*-\d+\.\d+\.\d+-([^.]*)\.(.*)$/)
+
+  return match && match.length === 3 ? `${match[1]}.${match[2]}` : release.ext
+}
+
 export async function setupDownloadButton () {
   const os = getOS();
   const downloadParent = document.getElementById("downloads");
@@ -147,7 +157,7 @@ export async function setupDownloadButton () {
       for (const release of releases) {
         const optionDiv = document.createElement('div')
         optionDiv.classList.add('option')
-        optionDiv.innerHTML = `${getSanitizedLinuxName(release.ext)}`
+        optionDiv.innerHTML = `${getSanitizedName(release)}`
         optionsContainer.appendChild(optionDiv)
 
         optionDiv.onclick = () => window.open(release.url)
