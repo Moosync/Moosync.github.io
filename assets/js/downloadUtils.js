@@ -1,4 +1,10 @@
-import { shouldRegenRequest, getExpiryTime, setCache, callElemMethod, setElemProperty } from "./commonUtils.js";
+import {
+  shouldRegenRequest,
+  getExpiryTime,
+  setCache,
+  callElemMethod,
+  setElemProperty,
+} from "./commonUtils.js";
 
 const OSEnum = Object.freeze({
   WINDOWS: "win",
@@ -7,7 +13,7 @@ const OSEnum = Object.freeze({
   UNDEFINED: "undefined",
 });
 
-function getOS () {
+function getOS() {
   // Lets be safe and get platform from deprecated field too
   // https://developer.mozilla.org/en-US/docs/Web/API/Navigator/platform
   const platform = (
@@ -30,7 +36,7 @@ function getOS () {
   return OSEnum.UNDEFINED;
 }
 
-function getReaderFriendlyName (os) {
+function getReaderFriendlyName(os) {
   switch (os) {
     case OSEnum.WINDOWS:
       return "Windows";
@@ -41,32 +47,51 @@ function getReaderFriendlyName (os) {
   }
 }
 
-function getLatestAsset (os, assets) {
-  return assets.filter(
-    (val) => !val.name.match("blockmap|yml") && val.name.match(os)
-  );
+function getLatestAsset(os, assets) {
+  const extensions = {
+    linux: ["deb", "rpm", "AppImage"],
+    windows: ["exe", "msi"],
+    macos: ["dmg"],
+  };
+
+  const extension = extensions[os];
+
+  return assets.filter((val) => {
+    for (const ext of extension) {
+      if (val.name.endsWith(ext)) {
+        return true;
+      }
+    }
+    return false;
+  });
 }
 
-async function getReleaseInfo (os) {
+async function getReleaseInfo(os) {
   const cache = JSON.parse(localStorage.getItem("artifacts"));
 
   if (shouldRegenRequest(cache) || cache.platform !== os) {
     const resp = await (
       await fetch("https://api.github.com/repos/Moosync/Moosync/releases")
     ).json();
+    console.log("got assets resp", resp);
     if (resp.length > 0) {
       const latest = resp[0];
       const downloadAssets = getLatestAsset(os, latest.assets);
       const ret = [];
       for (const asset of downloadAssets) {
         ret.push({
-          version: latest.name,
+          version: latest.name.replace("Moosync", "").trim(),
           url: asset.browser_download_url,
           ext: extractExtension(asset.name),
         });
+        console.log(latest.name.replace("Moosync", "").trim());
       }
 
-      setCache("artifacts", { platform: os, data: ret, expiry: getExpiryTime() });
+      setCache("artifacts", {
+        platform: os,
+        data: ret,
+        expiry: getExpiryTime(),
+      });
       return ret;
     }
   }
@@ -74,7 +99,7 @@ async function getReleaseInfo (os) {
   return cache.data;
 }
 
-function getIconClass (os) {
+function getIconClass(os) {
   switch (os) {
     case OSEnum.WINDOWS:
       return "icon-win";
@@ -85,7 +110,7 @@ function getIconClass (os) {
   }
 }
 
-function extractExtension (fileName) {
+function extractExtension(fileName) {
   const split = fileName.split(".");
   if (split[split.length - 1] !== "gz") {
     return split[split.length - 1];
@@ -94,84 +119,105 @@ function extractExtension (fileName) {
   return split[split.length - 2] + "." + split[split.length - 1];
 }
 
-function getSanitizedLinuxName (ext) {
+function getSanitizedLinuxName(ext) {
   switch (ext) {
-    case 'deb':
-      return 'Debian (.deb)'
-    case 'pacman':
-      return 'Arch Linux (.pacman)'
+    case "deb":
+      return "Debian (.deb)";
+    case "pacman":
+      return "Arch Linux (.pacman)";
+    case "rpm":
+      return "Fedora (.rpm)";
     default:
-      return ext
+      return ext;
   }
 }
 
 function getSanitizedName(release) {
-  if (release.url.includes('linux')) {
-    return getSanitizedLinuxName(release.ext)
+  if (
+    release.url.includes("rpm") ||
+    release.url.includes("deb") ||
+    release.url.includes("AppImage")
+  ) {
+    return getSanitizedLinuxName(release.ext);
   }
 
-  const match = release.url.match(/^.*\/.*-\d+\.\d+\.\d+-([^.]*)\.(.*)$/)
+  const match = release.url.match(/^.*\/.*-\d+\.\d+\.\d+-([^.]*)\.(.*)$/);
 
-  return match && match.length === 3 ? `${match[1]}.${match[2]}` : release.ext
+  return match && match.length === 3 ? `${match[1]}.${match[2]}` : release.ext;
 }
 
-export async function setupDownloadButton () {
+export async function setupDownloadButton() {
   const os = getOS();
   const downloadParent = document.getElementById("downloads");
 
   if (os && os !== OSEnum.UNDEFINED) {
     const releases = await getReleaseInfo(os);
-    const osReadable = getReaderFriendlyName(os)
+    const osReadable = getReaderFriendlyName(os);
 
     if (releases.length === 1) {
-      const release = releases[0]
-      const buttonTemplate = document.getElementById("download-template-single").content;
+      const release = releases[0];
+      const buttonTemplate = document.getElementById(
+        "download-template-single",
+      ).content;
       const clone = buttonTemplate.cloneNode(true);
       const button = clone.getElementById("download-button");
 
       button.title = button.title.replace("${os}", osReadable);
       button.innerHTML = button.innerHTML.replace(
         "${version}",
-        `${release.version}`
+        `${release.version}`,
       );
-      button.id = `${release.version} ${release.ext}`
+      button.id = `${release.version} ${release.ext}`;
 
       clone.getElementById("download-icon").classList.add(getIconClass(os));
-      callElemMethod('downloads', 'appendChild', document.importNode(clone, true))
+      callElemMethod(
+        "downloads",
+        "appendChild",
+        document.importNode(clone, true),
+      );
 
-      document.getElementById(`${release.version} ${release.ext}`).onclick = () => window.open(release.url)
+      document.getElementById(`${release.version} ${release.ext}`).onclick =
+        () => window.open(release.url);
     }
 
     if (releases.length > 1) {
-      const buttonTemplate = document.getElementById('download-template-multi').content
-      const clone = buttonTemplate.cloneNode(true)
+      const buttonTemplate = document.getElementById(
+        "download-template-multi",
+      ).content;
+      const clone = buttonTemplate.cloneNode(true);
 
-      const downloadText = clone.getElementById('download-text')
+      const downloadText = clone.getElementById("download-text");
       downloadText.innerHTML = downloadText.innerHTML
-        .replace('${version}', releases[0].version)
-        .replace('${os}', osReadable)
+        .replace("${version}", releases[0].version)
+        .replace("${os}", osReadable);
 
-      callElemMethod('downloads', 'appendChild', document.importNode(clone, true))
-      const optionsContainer = document.getElementById('options-container')
+      callElemMethod(
+        "downloads",
+        "appendChild",
+        document.importNode(clone, true),
+      );
+      const optionsContainer = document.getElementById("options-container");
 
       for (const release of releases) {
-        const optionDiv = document.createElement('div')
-        optionDiv.classList.add('option')
-        optionDiv.innerHTML = `${getSanitizedName(release)}`
-        optionsContainer.appendChild(optionDiv)
+        const optionDiv = document.createElement("div");
+        optionDiv.classList.add("option");
+        optionDiv.innerHTML = `${getSanitizedName(release)}`;
+        optionsContainer.appendChild(optionDiv);
 
-        optionDiv.onclick = () => window.open(release.url)
+        optionDiv.onclick = () => window.open(release.url);
       }
 
-      const selected = document.querySelector('.selected');
+      const selected = document.querySelector(".selected");
 
       selected.addEventListener("click", () => {
         optionsContainer.classList.toggle("options__active");
-      })
-
+      });
     }
-
   } else {
-    setElemProperty('downloads', 'innerHTML', "Sorry Moosync is not available for your platform yet")
+    setElemProperty(
+      "downloads",
+      "innerHTML",
+      "Sorry Moosync is not available for your platform yet",
+    );
   }
 }
