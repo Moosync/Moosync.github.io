@@ -1266,6 +1266,7 @@ a:hover {
 .select__box .options__container.options__active {
     max-height: 240px;
     opacity: 1;
+    overflow-y: auto;
 }
 
 .select__box .options__container.options__active + .selected::after {
