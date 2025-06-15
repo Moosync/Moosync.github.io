@@ -247,74 +247,54 @@ export async function setupDownloadButton() {
   const downloadParent = document.getElementById("downloads");
   const currentArch = getCurrentArch();
 
-  if (os && os !== OSEnum.UNDEFINED) {
-    const releases = await getReleaseInfo(os, currentArch);
-    const osReadable = getReaderFriendlyName(os);
-
-    if (releases.length === 1) {
-      const release = releases[0];
-      const buttonTemplate = document.getElementById(
-        "download-template-single",
-      ).content;
-      const clone = buttonTemplate.cloneNode(true);
-      const button = clone.getElementById("download-button");
-
-      button.title = button.title.replace("${os}", osReadable);
-      button.innerHTML = button.innerHTML.replace(
-        "${version}",
-        `${release.version}`,
-      );
-      button.id = `${release.version} ${release.ext}`;
-
-      clone.getElementById("download-icon").classList.add(getIconClass(os));
-      callElemMethod(
-        "downloads",
-        "appendChild",
-        document.importNode(clone, true),
-      );
-
-      document.getElementById(`${release.version} ${release.ext}`).onclick =
-        () => window.open(release.url);
-    }
-
-    if (releases.length > 1) {
-      const buttonTemplate = document.getElementById(
-        "download-template-multi",
-      ).content;
-      const clone = buttonTemplate.cloneNode(true);
-
-      const downloadText = clone.getElementById("download-text");
-      downloadText.innerHTML = downloadText.innerHTML
-        .replace("${version}", releases[0].version)
-        .replace("${os}", osReadable);
-
-      callElemMethod(
-        "downloads",
-        "appendChild",
-        document.importNode(clone, true),
-      );
-      const optionsContainer = document.getElementById("options-container");
-
-      for (const release of releases) {
-        const optionDiv = document.createElement("div");
-        optionDiv.classList.add("option");
-        optionDiv.innerHTML = `${getSanitizedName(release)}`;
-        optionsContainer.appendChild(optionDiv);
-
-        optionDiv.onclick = () => window.open(release.url);
-      }
-
-      const selected = document.querySelector(".selected");
-
-      selected.addEventListener("click", () => {
-        optionsContainer.classList.toggle("options__active");
-      });
-    }
-  } else {
+  if (!(os && os !== OSEnum.UNDEFINED)) {
     setElemProperty(
       "downloads",
       "innerHTML",
       "Sorry Moosync is not available for your platform yet",
     );
+    return;
   }
+
+  const releases = await getReleaseInfo(os, currentArch);
+  const osReadable = getReaderFriendlyName(os);
+
+  if (releases.length === 0) return;
+
+  if (releases.length === 1) {
+    const release = releases[0];
+    const clone = document.getElementById("download-template-single").content.cloneNode(true);
+    const button = clone.getElementById("download-button");
+
+    button.title = button.title.replace("${os}", osReadable);
+    button.innerHTML = button.innerHTML.replace("${version}", `${release.version}`);
+    button.id = `${release.version} ${release.ext}`;
+    clone.getElementById("download-icon").classList.add(getIconClass(os));
+
+    callElemMethod("downloads", "appendChild", document.importNode(clone, true));
+    document.getElementById(button.id).onclick = () => window.open(release.url);
+    return;
+  }
+
+  // Multi-release UI
+  const clone = document.getElementById("download-template-multi").content.cloneNode(true);
+  const downloadText = clone.getElementById("download-text");
+  downloadText.innerHTML = downloadText.innerHTML
+    .replace("${version}", releases[0].version)
+    .replace("${os}", osReadable);
+
+  callElemMethod("downloads", "appendChild", document.importNode(clone, true));
+  const optionsContainer = document.getElementById("options-container");
+
+  releases.forEach(release => {
+    const optionDiv = document.createElement("div");
+    optionDiv.classList.add("option");
+    optionDiv.innerHTML = getSanitizedName(release);
+    optionDiv.onclick = () => window.open(release.url);
+    optionsContainer.appendChild(optionDiv);
+  });
+
+  document.querySelector(".selected").addEventListener("click", () => {
+    optionsContainer.classList.toggle("options__active");
+  });
 }
