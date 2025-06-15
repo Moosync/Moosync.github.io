@@ -66,10 +66,30 @@ function getLatestAsset(os, assets) {
   });
 }
 
-async function getReleaseInfo(os) {
-  const cache = JSON.parse(localStorage.getItem("artifacts"));
+async function getReleaseInfo(os, currentArch) {
+  let cache = JSON.parse(localStorage.getItem("artifacts"));
 
-  if (shouldRegenRequest(cache) || cache.platform !== os) {
+  // Check if cache is missing required fields
+  let cacheInvalid = false;
+  if (
+    !cache ||
+    !cache.data ||
+    !cache.platform ||
+    !Array.isArray(cache.data) ||
+    cache.data.some(
+      (r) =>
+        typeof r.version === "undefined" ||
+        typeof r.url === "undefined" ||
+        typeof r.ext === "undefined" ||
+        !("arch" in r),
+    )
+  ) {
+    cacheInvalid = true;
+    localStorage.removeItem("artifacts");
+    cache = null;
+  }
+
+  if (cacheInvalid || shouldRegenRequest(cache) || cache.platform !== os) {
     const resp = await (
       await fetch("https://api.github.com/repos/Moosync/Moosync/releases")
     ).json();
@@ -79,12 +99,32 @@ async function getReleaseInfo(os) {
       const downloadAssets = getLatestAsset(os, latest.assets);
       const ret = [];
       for (const asset of downloadAssets) {
-        ret.push({
-          version: latest.name.replace("Moosync", "").trim(),
-          url: asset.browser_download_url,
-          ext: extractExtension(asset.name),
-        });
-        console.log(latest.name.replace("Moosync", "").trim());
+        const ext = extractExtension(asset.name);
+        let arch = null;
+        const url = asset.browser_download_url;
+
+        // Special case for rpm: Moosync-11.0.2-1.aarch64.rpm
+        let match = url.match(/\.([^.]+)\.rpm$/i);
+        if (match && match[1]) {
+          arch = sanitizeArch(match[1]);
+        } else if (
+          (match = url.match(/Moosync_([\w\d]+)\.app\.tar\.gz$/i)) &&
+          match[1]
+        ) {
+          arch = sanitizeArch(match[1]);
+        } else if ((match = url.match(/_([\w\d]+)(?=\.[^.]+$)/i)) && match[1]) {
+          arch = sanitizeArch(match[1]);
+        }
+
+        console.log(arch, currentArch, ext, url);
+        if (arch && arch === currentArch) {
+          ret.push({
+            version: latest.name.replace("Moosync", "").trim(),
+            url: url,
+            ext: ext,
+            arch: arch,
+          });
+        }
       }
 
       setCache("artifacts", {
@@ -119,17 +159,73 @@ function extractExtension(fileName) {
   return split[split.length - 2] + "." + split[split.length - 1];
 }
 
-function getSanitizedLinuxName(ext) {
+function sanitizeArch(arch) {
+  if (arch === "amd64" || arch === "x86_64") {
+    return "x64";
+  } else if (arch === "aarch64") {
+    return "armv8";
+  }
+  return arch;
+}
+
+function getCurrentArch() {
+  if (navigator.userAgentData && navigator.userAgentData.architecture) {
+    return sanitizeArch(navigator.userAgentData.architecture);
+  }
+
+  const ua = navigator.userAgent.toLowerCase();
+  const platform = navigator.platform.toLowerCase();
+
+  if (ua.includes("arm") || platform.includes("arm")) {
+    if (ua.includes("aarch64") || platform.includes("aarch64")) {
+      return "armv8";
+    }
+    return "arm";
+  }
+  if (
+    ua.includes("x86_64") ||
+    ua.includes("win64") ||
+    platform.includes("x86_64") ||
+    platform.includes("win64")
+  ) {
+    return "x64";
+  }
+  if (ua.includes("amd64") || platform.includes("amd64")) {
+    return "x64";
+  }
+  if (
+    ua.includes("i686") ||
+    ua.includes("i386") ||
+    platform.includes("i686") ||
+    platform.includes("i386")
+  ) {
+    return "x86";
+  }
+  return "unknown";
+}
+
+function getSanitizedLinuxName(release) {
+  let name;
+  let ext = release.ext;
+  let arch = release.arch;
+
   switch (ext) {
     case "deb":
-      return "Debian (.deb)";
+      name = "Debian (.deb)";
+      break;
     case "pacman":
-      return "Arch Linux (.pacman)";
+      name = "Arch Linux (.pacman)";
+      break;
     case "rpm":
-      return "Fedora (.rpm)";
+      name = "Fedora (.rpm)";
+      break;
+    case "AppImage":
+      name = "AppImage";
+      break;
     default:
-      return ext;
+      name = ext;
   }
+  return arch ? `${name} (${arch})` : name;
 }
 
 function getSanitizedName(release) {
@@ -138,7 +234,7 @@ function getSanitizedName(release) {
     release.url.includes("deb") ||
     release.url.includes("AppImage")
   ) {
-    return getSanitizedLinuxName(release.ext);
+    return getSanitizedLinuxName(release);
   }
 
   const match = release.url.match(/^.*\/.*-\d+\.\d+\.\d+-([^.]*)\.(.*)$/);
@@ -149,9 +245,10 @@ function getSanitizedName(release) {
 export async function setupDownloadButton() {
   const os = getOS();
   const downloadParent = document.getElementById("downloads");
+  const currentArch = getCurrentArch();
 
   if (os && os !== OSEnum.UNDEFINED) {
-    const releases = await getReleaseInfo(os);
+    const releases = await getReleaseInfo(os, currentArch);
     const osReadable = getReaderFriendlyName(os);
 
     if (releases.length === 1) {
