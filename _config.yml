@@ -8,7 +8,7 @@
 # For technical reasons, this file is *NOT* reloaded automatically when you use
 # 'bundle exec jekyll serve'. If you change this file, please restart the server process.
 #
-# If you need help with YAML syntax, here are some quick references for you: 
+# If you need help with YAML syntax, here are some quick references for you:
 # https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
 # https://learnxinyminutes.com/docs/yaml/
 #
@@ -21,10 +21,10 @@
 title: Moosync
 email: support@moosync.app
 description: >- # this means to ignore newlines until "baseurl:"
-  Moosync is an Electron based simple music player with a primary goal to provide a clean and easy interface. 
+  Moosync is an Electron based simple music player with a primary goal to provide a clean and easy interface.
   Through Moosync you can easily listen songs from your desktop or through Youtube and Spotify.
 url: "https://moosync.app" # the base hostname & protocol for your site, e.g. http://example.com
-github_username:  ovenoboyo
+github_username: ovenoboyo
 
 # Build settings
 theme: minima
@@ -37,7 +37,7 @@ markdown: CommonMarkGhPages
 highlighter: rouge
 
 titles_from_headings:
-  enabled:     true
+  enabled: true
   strip_title: true
   collections: false
 
@@ -45,6 +45,7 @@ commonmark:
   options: ["UNSAFE", "SMART", "FOOTNOTES"]
   extensions: ["strikethrough", "autolink", "table", "tagfilter"]
 
+include: [".well-known"]
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to
