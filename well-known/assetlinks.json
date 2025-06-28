@@ -1,0 +1,13 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "app.moosync.moosync",
+      "sha256_cert_fingerprints": [
+        "A6:0A:21:DA:C9:A9:C2:ED:73:F5:A9:9E:01:96:2B:0E:7B:9B:1F:FA:06:27:23:53:99:10:0C:A9:7A:EE:51:12",
+        "D4:28:A6:3E:D0:ED:BF:E3:72:9D:B8:E2:ED:2A:10:B4:EB:41:22:3E:45:C5:5C:B4:F8:90:DA:02:8F:36:80:C6"
+      ]
+    }
+  }
+]
