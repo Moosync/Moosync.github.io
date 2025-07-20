@@ -48,9 +48,10 @@ function getReaderFriendlyName(os) {
 }
 
 function getLatestAsset(os, assets) {
+  console.debug(os, assets);
   const extensions = {
     linux: ["deb", "rpm", "AppImage"],
-    windows: ["exe", "msi"],
+    win: ["exe", "msi"],
     macos: ["dmg"],
   };
 
@@ -93,7 +94,7 @@ async function getReleaseInfo(os, currentArch) {
     const resp = await (
       await fetch("https://api.github.com/repos/Moosync/Moosync/releases")
     ).json();
-    console.log("got assets resp", resp);
+    console.debug("got assets resp", resp);
     if (resp.length > 0) {
       const latest = resp[0];
       const downloadAssets = getLatestAsset(os, latest.assets);
@@ -116,8 +117,8 @@ async function getReleaseInfo(os, currentArch) {
           arch = sanitizeArch(match[1]);
         }
 
-        console.log(arch, currentArch, ext, url);
-        if (arch && arch === currentArch) {
+        console.debug(arch, currentArch, ext, url);
+        if (arch === currentArch || !arch) {
           ret.push({
             version: latest.name.replace("Moosync", "").trim(),
             url: url,
@@ -263,21 +264,32 @@ export async function setupDownloadButton() {
 
   if (releases.length === 1) {
     const release = releases[0];
-    const clone = document.getElementById("download-template-single").content.cloneNode(true);
+    const clone = document
+      .getElementById("download-template-single")
+      .content.cloneNode(true);
     const button = clone.getElementById("download-button");
 
     button.title = button.title.replace("${os}", osReadable);
-    button.innerHTML = button.innerHTML.replace("${version}", `${release.version}`);
+    button.innerHTML = button.innerHTML.replace(
+      "${version}",
+      `${release.version}`,
+    );
     button.id = `${release.version} ${release.ext}`;
     clone.getElementById("download-icon").classList.add(getIconClass(os));
 
-    callElemMethod("downloads", "appendChild", document.importNode(clone, true));
+    callElemMethod(
+      "downloads",
+      "appendChild",
+      document.importNode(clone, true),
+    );
     document.getElementById(button.id).onclick = () => window.open(release.url);
     return;
   }
 
   // Multi-release UI
-  const clone = document.getElementById("download-template-multi").content.cloneNode(true);
+  const clone = document
+    .getElementById("download-template-multi")
+    .content.cloneNode(true);
   const downloadText = clone.getElementById("download-text");
   downloadText.innerHTML = downloadText.innerHTML
     .replace("${version}", releases[0].version)
@@ -286,7 +298,7 @@ export async function setupDownloadButton() {
   callElemMethod("downloads", "appendChild", document.importNode(clone, true));
   const optionsContainer = document.getElementById("options-container");
 
-  releases.forEach(release => {
+  releases.forEach((release) => {
     const optionDiv = document.createElement("div");
     optionDiv.classList.add("option");
     optionDiv.innerHTML = getSanitizedName(release);
